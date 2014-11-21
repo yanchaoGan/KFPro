@@ -79,6 +79,7 @@
 		A03C25E91A1B1206005A56B7 /* btn_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A03C25E31A1B1206005A56B7 /* btn_close_selected.png */; };
 		A03C25EA1A1B1206005A56B7 /* btn_close_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A03C25E41A1B1206005A56B7 /* btn_close_selected@2x.png */; };
 		A03C25EB1A1B1206005A56B7 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A03C25E61A1B1206005A56B7 /* DXAlertView.m */; };
+		A06B185B1A1F127700F617B5 /* KFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B185A1A1F127700F617B5 /* KFUser.m */; };
 		A07857E51A1B1CE100C3FF15 /* MainShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07857E41A1B1CE100C3FF15 /* MainShow.storyboard */; };
 		A07857E81A1B2A0B00C3FF15 /* KFMainShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07857E71A1B2A0B00C3FF15 /* KFMainShowViewController.m */; };
 		A07857EB1A1B2A2F00C3FF15 /* KFRiLiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07857EA1A1B2A2F00C3FF15 /* KFRiLiViewController.m */; };
@@ -212,6 +213,8 @@
 		A03C25E41A1B1206005A56B7 /* btn_close_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_selected@2x.png"; sourceTree = "<group>"; };
 		A03C25E51A1B1206005A56B7 /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
 		A03C25E61A1B1206005A56B7 /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
+		A06B18591A1F127700F617B5 /* KFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUser.h; sourceTree = "<group>"; };
+		A06B185A1A1F127700F617B5 /* KFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUser.m; sourceTree = "<group>"; };
 		A07857E41A1B1CE100C3FF15 /* MainShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainShow.storyboard; sourceTree = SOURCE_ROOT; };
 		A07857E61A1B2A0B00C3FF15 /* KFMainShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFMainShowViewController.h; sourceTree = SOURCE_ROOT; };
 		A07857E71A1B2A0B00C3FF15 /* KFMainShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFMainShowViewController.m; sourceTree = SOURCE_ROOT; };
@@ -523,10 +526,20 @@
 				A021525B1A1DB4E5007A1C40 /* KFReuseView.h */,
 				A021525C1A1DB4E5007A1C40 /* KFReuseView.m */,
 				A02152591A1DB0A4007A1C40 /* ReuesView.xib */,
+				A06B18581A1F124700F617B5 /* Model */,
 				A02152431A1D8C19007A1C40 /* PersonCenter */,
 			);
 			path = AfterLogin;
 			sourceTree = "<group>";
+		};
+		A06B18581A1F124700F617B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A06B18591A1F127700F617B5 /* KFUser.h */,
+				A06B185A1A1F127700F617B5 /* KFUser.m */,
+			);
+			path = Model;
+			sourceTree = SOURCE_ROOT;
 		};
 		A07857FF1A1B3F1800C3FF15 /* Vurig Calendar */ = {
 			isa = PBXGroup;
@@ -694,6 +707,7 @@
 				A02152531A1D99E4007A1C40 /* KFPersonCenterViewController.m in Sources */,
 				A078580D1A1B3F1800C3FF15 /* UIView+convenience.m in Sources */,
 				A07857EB1A1B2A2F00C3FF15 /* KFRiLiViewController.m in Sources */,
+				A06B185B1A1F127700F617B5 /* KFUser.m in Sources */,
 				A03C258F1A1AF3CA005A56B7 /* AFURLConnectionOperation.m in Sources */,
 				A021525D1A1DB4E5007A1C40 /* KFReuseView.m in Sources */,
 				A07857E81A1B2A0B00C3FF15 /* KFMainShowViewController.m in Sources */,
