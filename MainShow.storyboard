@@ -159,7 +159,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="backClick:" destination="ONb-Bp-x36" eventType="touchUpInside" id="xvX-s6-vvV"/>
+                                            <action selector="backBtnClick:" destination="ONb-Bp-x36" eventType="touchUpInside" id="A5j-M8-J9i"/>
                                         </connections>
                                     </button>
                                 </subviews>
