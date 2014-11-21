@@ -32,8 +32,7 @@
         
         tem = subarr[0];
         
-        // 这里来修改canlendarview
-        [tem resetWithMaxWAndHByBounds:self.bounds];
+
         
     }else{
         
