@@ -35,6 +35,10 @@
 
 #import "KFListTableViewCell.h"
 #import "KFReuseView.h"
+#import "KFUser.h"
+
+
+
 
 #import "UIKit+AFNetworking.h"
 

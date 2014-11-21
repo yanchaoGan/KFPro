@@ -10,4 +10,16 @@
 
 @interface KFUser : NSObject
 
+
+@property (nonatomic,strong)NSString * username;
+@property (nonatomic,strong)NSString * nickname;
+@property (nonatomic,strong)NSString * userphoto;
+@property (nonatomic,strong)NSString * password;
+
+
+
++(instancetype)fillUseDic:(NSDictionary *)dataDic;
+
+
+
 @end

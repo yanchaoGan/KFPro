@@ -10,4 +10,17 @@
 
 @implementation KFUser
 
++(instancetype)fillUseDic:(NSDictionary *)dataDic{
+
+    KFUser * obj = [[self alloc] init];
+    
+    obj.username = [dataDic objectForKey:@"username"];
+    obj.nickname = [dataDic objectForKey:@"nickname"];
+    obj.userphoto = [dataDic objectForKey:@"userphoto"];
+    obj.password = [dataDic objectForKey:@"password"];
+    
+    
+    return obj;
+}
+
 @end
