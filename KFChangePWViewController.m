@@ -40,6 +40,10 @@
      
 }
 
+- (IBAction)cancelBtnClick:(UIButton *)sender {
+    
+    [self.navigationController  popViewControllerAnimated:YES];
+}
 
 
 - (IBAction)sureButtonClick:(UIButton *)sender {

@@ -146,7 +146,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人中心" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw1-eq-001">
                                         <rect key="frame" x="126" y="11" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.2196078431372549" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.031372550874948502" green="0.78431379795074463" blue="0.92549026012420654" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxz-r4-iIH">
@@ -310,22 +310,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWb-DR-dTs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="修改密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUA-MD-atq">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUA-MD-atq">
                                         <rect key="frame" x="126" y="11" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.21960784310000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.039215687662363052" green="0.59607845544815063" blue="0.71764707565307617" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-uu-29e">
-                                        <rect key="frame" x="20" y="13" width="16" height="18"/>
-                                        <state key="normal" image="fhico.png">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-uu-29e">
+                                        <rect key="frame" x="11" y="11" width="30" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" red="0.0" green="0.56470590829849243" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelBtnClick:" destination="4Vp-1A-bkw" eventType="touchUpInside" id="tW6-y6-o7i"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.043137254899999998" green="0.1215686275" blue="0.2156862745" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="cUA-MD-atq" secondAttribute="centerY" constant="0.5" id="0qw-Hb-eP7"/>
                                     <constraint firstAttribute="height" constant="44" id="2py-9F-jHf"/>
+                                    <constraint firstItem="rb3-uu-29e" firstAttribute="top" secondItem="yWb-DR-dTs" secondAttribute="top" constant="11" id="4DG-Ri-TcX"/>
+                                    <constraint firstAttribute="centerX" secondItem="cUA-MD-atq" secondAttribute="centerX" id="7zv-Ok-dVD"/>
+                                    <constraint firstItem="rb3-uu-29e" firstAttribute="leading" secondItem="yWb-DR-dTs" secondAttribute="leading" constant="11" id="nOo-4L-nTi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcu-Du-TD5">
