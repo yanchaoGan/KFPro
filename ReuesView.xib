@@ -13,7 +13,6 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YAQ-71-zoD">
                     <rect key="frame" x="12" y="10" width="35" height="24"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="MXM-gH-jxB"/>
                         <constraint firstAttribute="width" constant="35" id="ca9-Vr-HcX"/>
@@ -21,19 +20,16 @@
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="115" placeholderIntrinsicHeight="43" text="小小莫搜－细想打发－2去" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="115" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-0Q-JsQ">
                     <rect key="frame" x="45" y="0.0" width="115" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="56" placeholderIntrinsicHeight="43" text="[10:10}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfX-Y0-Jrn">
                     <rect key="frame" x="165" y="0.0" width="56" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xt1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5BM-WW-HkM">
                     <rect key="frame" x="245" y="11" width="18" height="21"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="eHZ-nl-UV5"/>
                         <constraint firstAttribute="width" constant="18" id="qDc-CJ-IrY"/>
@@ -41,7 +37,6 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xt2.png" translatesAutoresizingMaskIntoConstraints="NO" id="PnP-Me-zkP">
                     <rect key="frame" x="273" y="11" width="18" height="21"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="BZD-7p-cDt"/>
                         <constraint firstAttribute="width" constant="18" id="Uzu-gP-KNq"/>
@@ -49,7 +44,6 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-yB-5y9">
                     <rect key="frame" x="12" y="42" width="278" height="1"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.87058830261230469" green="0.93725496530532837" blue="0.96862751245498657" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="pKH-7X-FRr"/>
