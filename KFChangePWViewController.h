@@ -10,4 +10,10 @@
 
 @interface KFChangePWViewController : KFBaseViewController
 
+@property (weak, nonatomic) IBOutlet UIView *reallyBGView;
+
+
+
+
+
 @end

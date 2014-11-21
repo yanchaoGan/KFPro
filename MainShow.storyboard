@@ -392,13 +392,33 @@
                                             <constraint firstAttribute="centerY" secondItem="C2s-ZH-RTc" secondAttribute="centerY" id="zcG-1a-KLi"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz8-t4-Rrf">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz8-t4-Rrf">
                                         <rect key="frame" x="20" y="236" width="280" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxe-Pd-LDK">
+                                                <rect key="frame" x="0.0" y="1" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="确   认">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sureButtonClick:" destination="4Vp-1A-bkw" eventType="touchUpInside" id="WKT-de-XBb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.031372550874948502" green="0.76862752437591553" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Fxe-Pd-LDK" firstAttribute="leading" secondItem="Bz8-t4-Rrf" secondAttribute="leading" id="1af-HW-mfA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fxe-Pd-LDK" secondAttribute="trailing" id="L6a-RQ-gdx"/>
                                             <constraint firstAttribute="width" constant="280" id="aTD-on-IzK"/>
                                             <constraint firstAttribute="height" constant="45" id="uZD-6g-Fwq"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fxe-Pd-LDK" secondAttribute="bottom" id="wPz-TH-5AE"/>
+                                            <constraint firstItem="Fxe-Pd-LDK" firstAttribute="top" secondItem="Bz8-t4-Rrf" secondAttribute="top" constant="1" id="xju-j8-78m"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -415,7 +435,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yWb-DR-dTs" firstAttribute="leading" secondItem="Yfw-kh-5fw" secondAttribute="leading" id="Bid-m9-bUA"/>
                             <constraint firstItem="yWb-DR-dTs" firstAttribute="top" secondItem="JzN-Rq-OsW" secondAttribute="bottom" id="GMO-fG-h8X"/>
@@ -427,6 +447,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rOZ-G3-scc"/>
+                    <connections>
+                        <outlet property="reallyBGView" destination="Xcu-Du-TD5" id="CBT-Wu-pfL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ll-Az-di2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

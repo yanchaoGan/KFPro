@@ -27,7 +27,35 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    NSArray * viewArrs = self.reallyBGView.subviews;
+   
+    for (UIView * tem in viewArrs) {
+        [tem.layer setCornerRadius:5];
+    }
+    
+     
+     
+     
 }
+
+
+
+- (IBAction)sureButtonClick:(UIButton *)sender {
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
