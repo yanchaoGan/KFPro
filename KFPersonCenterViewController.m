@@ -40,6 +40,12 @@
 
 
 
+
+- (IBAction)logout:(UIButton *)sender {
+}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
