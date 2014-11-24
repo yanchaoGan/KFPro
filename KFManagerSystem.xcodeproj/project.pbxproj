@@ -103,8 +103,8 @@
 		A07857FE1A1B33DF00C3FF15 /* lb2_b.png in Resources */ = {isa = PBXBuildFile; fileRef = A07857FA1A1B33DF00C3FF15 /* lb2_b.png */; };
 		A078580A1A1B3F1800C3FF15 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858011A1B3F1800C3FF15 /* NSDate+convenience.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A078580B1A1B3F1800C3FF15 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858031A1B3F1800C3FF15 /* NSMutableArray+convenience.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A078580C1A1B3F1800C3FF15 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858051A1B3F1800C3FF15 /* UIColor+expanded.m */; };
-		A078580D1A1B3F1800C3FF15 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858071A1B3F1800C3FF15 /* UIView+convenience.m */; };
+		A078580C1A1B3F1800C3FF15 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858051A1B3F1800C3FF15 /* UIColor+expanded.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A078580D1A1B3F1800C3FF15 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858071A1B3F1800C3FF15 /* UIView+convenience.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A078580E1A1B3F1800C3FF15 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07858091A1B3F1800C3FF15 /* VRGCalendarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A08B8EF51A1C4B41009E9057 /* t1.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B8EF21A1C4B41009E9057 /* t1.png */; };
 		A08B8EF61A1C4B41009E9057 /* t2.png in Resources */ = {isa = PBXBuildFile; fileRef = A08B8EF31A1C4B41009E9057 /* t2.png */; };

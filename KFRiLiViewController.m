@@ -64,6 +64,18 @@
     
     // 在这里获取当月的 状态信息
     
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary];
+    
+    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+        
+        [calendarView  reDisplayViewUse:responseObject];
+        
+    } fail:^(NSError *err){
+    
+        [calendarView reDisplayViewUse:nil];
+        
+    } andHUBString:@"loading..."];
+    
 }
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date{
     

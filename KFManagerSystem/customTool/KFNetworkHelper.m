@@ -18,7 +18,22 @@
     
     [[AFHTTPRequestOperationManager  manager]  POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [MBProgressHUD hideHUD];
-        success(responseObject);
+        
+        NSString * state = [responseObject objectForKey:@"state"];
+        if ([state isEqualToString:@"1"]) {
+            
+            id result = [responseObject objectForKey:@"result"];
+            success(responseObject);
+            
+        }else{
+        
+            NSError * err = [NSError errorWithDomain:@"custom" code:5 userInfo:nil];
+            fail(err);
+        }
+        
+        
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideHUD];
         fail(error);

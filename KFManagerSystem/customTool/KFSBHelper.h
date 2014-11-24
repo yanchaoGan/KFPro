@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonDigest.h>
 
-#define SignKey @"KFManagerSystem"  
+
+
+#define SignKey @"KFManagerSystem"
+#define KServerUrl  @"www.baidu.com"
 
 typedef enum url{
     

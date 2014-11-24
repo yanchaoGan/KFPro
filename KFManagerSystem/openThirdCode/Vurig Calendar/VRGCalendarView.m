@@ -294,7 +294,7 @@
 #pragma mark - rilixianshi
 -(void)reDisplayViewUse:(NSDictionary *)data{
    
-     self.dataDic =data;
+    self.dataDic =data;
     if (data) {
         NSArray *arr =[data objectForKey:@"activeDaysList"];
         for (id num in arr) {

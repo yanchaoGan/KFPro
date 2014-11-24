@@ -104,7 +104,7 @@
 
     [operation setCompletionBlockWithSuccess:success failure:failure];
     operation.completionQueue = self.completionQueue;
-    operation.completionGroup = self.completionGroup;
+    operation.completionGroup = self.completionGroup; 
 
     return operation;
 }

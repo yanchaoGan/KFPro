@@ -319,6 +319,7 @@ forHTTPHeaderField:(NSString *)field
 
     NSMutableURLRequest *mutableRequest = [[NSMutableURLRequest alloc] initWithURL:url];
     mutableRequest.HTTPMethod = method;
+    mutableRequest.timeoutInterval = 20.0f; //gyc add
 
     for (NSString *keyPath in AFHTTPRequestSerializerObservedKeyPaths()) {
         if ([self.mutableObservedChangedKeyPaths containsObject:keyPath]) {
