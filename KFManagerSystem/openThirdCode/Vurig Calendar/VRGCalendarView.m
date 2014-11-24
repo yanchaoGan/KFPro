@@ -531,7 +531,7 @@
             NSString* previousMonthDayString=[previousmonth stringByAppendingFormat:@"-%02d",targetDate];
             
             
-            NSString *hex = (isSelectedDatePreviousMonth) ? @"0x383838" : @"aaaaaa";
+            NSString *hex = (isSelectedDatePreviousMonth) ? @"0x7e9cb4" : @"aaaaaa";//(isSelectedDatePreviousMonth) ? @"0x383838" : @"aaaaaa";
             CGContextSetFillColorWithColor(context,
                                            [UIColor colorWithHexString:hex].CGColor);
             
@@ -545,7 +545,7 @@
             NSString* nextMonthDayString=[nextmonth stringByAppendingFormat:@"-%02d",targetDate];
             
             
-            NSString *hex = (isSelectedDateNextMonth) ? @"0x383838" : @"aaaaaa";
+            NSString *hex = (isSelectedDateNextMonth) ? @"0x7e9cb4" : @"aaaaaa";
             CGContextSetFillColorWithColor(context,
                                            [UIColor colorWithHexString:hex].CGColor);
             
@@ -674,7 +674,7 @@
 
             
             
-            NSString *hex = (isSelectedDatePreviousMonth || isSelectedDateNextMonth) ? @"0xaaaaaa" : @"0x383838";
+            NSString *hex = (isSelectedDatePreviousMonth || isSelectedDateNextMonth) ? @"0x27c4ea" : @"0x7e9cb4";
             CGContextSetFillColorWithColor(context,
                                            [UIColor colorWithHexString:hex].CGColor);
             
