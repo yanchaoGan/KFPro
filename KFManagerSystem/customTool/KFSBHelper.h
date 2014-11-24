@@ -10,6 +10,8 @@
 #import <CommonCrypto/CommonDigest.h>
 
 
+static NSDate * calendarViewSelect = nil;
+
 
 #define SignKey @"KFManagerSystem"
 #define KServerUrl  @"www.baidu.com"

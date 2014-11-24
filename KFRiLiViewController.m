@@ -8,6 +8,8 @@
 
 #import "KFRiLiViewController.h"
 
+
+
 @interface KFRiLiViewController ()
 
 @end
@@ -80,6 +82,22 @@
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date{
     
     NSLog(@"%@",date);
+    
+    calendarViewSelect = date;
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeonedaydetail];
+    
+    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+        
+        
+        self.OneDayArr = responseObject;
+        [self.riliListTable reloadData];
+        
+        
+    } fail:^(NSError *error) {
+        
+    } andHUBString:@"Loading..."];
+    
+    
 }
 
 #pragma mark - tableView

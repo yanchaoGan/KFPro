@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSDate * calendarViewSelect;
+
 /// 日历
 @interface KFRiLiViewController : KFBaseViewController<VRGCalendarViewDelegate , UITableViewDelegate, UITableViewDataSource>
 

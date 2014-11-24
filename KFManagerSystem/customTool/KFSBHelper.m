@@ -8,6 +8,8 @@
 
 #import "KFSBHelper.h"
 
+extern NSDate * calendarViewSelect;
+
 @implementation KFSBHelper
 
 +(void)changeWindowRootVCToAfterLogin:(BOOL)afterlogin orToLoginVC:(BOOL)login{
@@ -146,6 +148,24 @@
                 
             }
                 break;
+            case urltypeonedaydetail:{
+            
+                URLTYPE = @"onedaydetail";
+                [paramas  setObject:URLTYPE forKey:@"urltype"];
+                
+                date = [self stringFromDate:calendarViewSelect];
+                 [paramas  setObject:date forKey:@"date"];
+                
+                NSString * time = [KFSBHelper getNowDate];
+                [paramas setObject:time forKey:@"time"];
+                
+                
+                NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,date,time]];
+                [paramas setObject:sign forKey:@"sign"];
+
+                
+                
+            }break;
                 
             default:
                 break;
