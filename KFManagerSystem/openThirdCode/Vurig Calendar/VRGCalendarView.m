@@ -482,8 +482,7 @@
     
     
     // gyc change add
-    NSArray *activeDaysList;
-    NSNumber *day;
+
     BOOL  isCurrentMonth = [KFSBHelper isCurrentMonthByDate:self.currentMonth]; // 是否是当前月份
     BOOL  isWeekend; // 是否周末 一个 日期字符串
     int  isEarly;
@@ -494,6 +493,7 @@
     NSString * planstart;
     UIImageView * sureImageView;
     UIImageView * planImageView;
+    CGFloat  minWH = (( kVRGCalendarViewDayWidth > kVRGCalendarViewDayHeight )? kVRGCalendarViewDayHeight : kVRGCalendarViewDayWidth);
 
     
     for (int i=0; i<numBlocks; i++) {
@@ -511,7 +511,7 @@
             CGContextFillPath(context);
             
             CGContextSetFillColorWithColor(context,
-                                           [UIColor whiteColor].CGColor);
+                                           [UIColor whiteColor].CGColor); // 文字颜色
         } else if (todayBlock==i) {
             CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
@@ -519,7 +519,7 @@
             CGContextFillPath(context);
             
             CGContextSetFillColorWithColor(context,
-                                           [UIColor whiteColor].CGColor);
+                                           [UIColor whiteColor].CGColor); // 文字颜色
         }
         
         // BOOL isCurrentMonth = NO;
@@ -627,17 +627,39 @@
                         if ([surestart isEqualToString:@"1"]) {
                         
                             if ([planstart isEqualToString:@"1"]) {
+                                sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
+                                planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
+                                sureImageView.contentMode = UIViewContentModeScaleAspectFit;
+                                planImageView.contentMode = UIViewContentModeScaleAspectFit;
+                                planImageView.transform = CGAffineTransformMakeRotation(M_PI);
+                                sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
+                                planImageView.frame = (CGRect){targetX + floor(minWH/3*2) ,targetY,floor(minWH/3),floor(minWH/3)};
+                                
+                                
+                                [self addSubview:sureImageView];
+                                [self addSubview:planImageView];
                                 
                                 
                             }else{
-                            
+                                
+                                sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
+                                sureImageView.contentMode = UIViewContentModeScaleAspectFit;
+                                sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
+                                [self addSubview:sureImageView];
+                                
                             }
                             
                         }else{
                             
                             if ([planstart isEqualToString:@"1"]) {
                                 
+                                planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
+                                planImageView.contentMode = UIViewContentModeScaleAspectFit;
+                                planImageView.frame = (CGRect){targetX ,targetY,floor(minWH/3),floor(minWH/3)};
+                                [self addSubview:planImageView];
+                                
                             }else{
+                                
                                 
                             }
                         }
