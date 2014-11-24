@@ -88,6 +88,7 @@
 		A06B18721A1F14B200F617B5 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18681A1F14B200F617B5 /* UIScrollView+Extension.m */; };
 		A06B18731A1F14B200F617B5 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B186A1A1F14B200F617B5 /* UIScrollView+MJRefresh.m */; };
 		A06B18741A1F14B200F617B5 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B186C1A1F14B200F617B5 /* UIView+Extension.m */; };
+		A07771D01A22C99800E4B983 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A07771CF1A22C99800E4B983 /* Base64.m */; };
 		A07857E51A1B1CE100C3FF15 /* MainShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07857E41A1B1CE100C3FF15 /* MainShow.storyboard */; };
 		A07857E81A1B2A0B00C3FF15 /* KFMainShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07857E71A1B2A0B00C3FF15 /* KFMainShowViewController.m */; };
 		A07857EB1A1B2A2F00C3FF15 /* KFRiLiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07857EA1A1B2A2F00C3FF15 /* KFRiLiViewController.m */; };
@@ -239,6 +240,8 @@
 		A06B186A1A1F14B200F617B5 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		A06B186B1A1F14B200F617B5 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A06B186C1A1F14B200F617B5 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		A07771CE1A22C99800E4B983 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		A07771CF1A22C99800E4B983 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		A07857E41A1B1CE100C3FF15 /* MainShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainShow.storyboard; sourceTree = SOURCE_ROOT; };
 		A07857E61A1B2A0B00C3FF15 /* KFMainShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFMainShowViewController.h; sourceTree = SOURCE_ROOT; };
 		A07857E71A1B2A0B00C3FF15 /* KFMainShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFMainShowViewController.m; sourceTree = SOURCE_ROOT; };
@@ -457,6 +460,7 @@
 		A03C25701A1AF157005A56B7 /* openThirdCode */ = {
 			isa = PBXGroup;
 			children = (
+				A07771CD1A22C99800E4B983 /* Base64 */,
 				A06B185C1A1F14B200F617B5 /* MJRefresh */,
 				A01F81131A1C92BB0020B25A /* UIKit+AFNetworking */,
 				A07857FF1A1B3F1800C3FF15 /* Vurig Calendar */,
@@ -587,6 +591,15 @@
 				A06B186C1A1F14B200F617B5 /* UIView+Extension.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		A07771CD1A22C99800E4B983 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				A07771CE1A22C99800E4B983 /* Base64.h */,
+				A07771CF1A22C99800E4B983 /* Base64.m */,
+			);
+			path = Base64;
 			sourceTree = "<group>";
 		};
 		A07857FF1A1B3F1800C3FF15 /* Vurig Calendar */ = {
@@ -755,6 +768,7 @@
 				A06B18721A1F14B200F617B5 /* UIScrollView+Extension.m in Sources */,
 				A01F812A1A1C92BB0020B25A /* UIProgressView+AFNetworking.m in Sources */,
 				A03C25EB1A1B1206005A56B7 /* DXAlertView.m in Sources */,
+				A07771D01A22C99800E4B983 /* Base64.m in Sources */,
 				A03C25871A1AF3CA005A56B7 /* AFHTTPRequestOperationManager.m in Sources */,
 				A02152531A1D99E4007A1C40 /* KFPersonCenterViewController.m in Sources */,
 				A078580D1A1B3F1800C3FF15 /* UIView+convenience.m in Sources */,
