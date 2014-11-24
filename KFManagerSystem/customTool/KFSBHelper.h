@@ -7,6 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonDigest.h>
+
+#define SignKey @"KFManagerSystem"  
+
+typedef enum url{
+    
+    urltypelogin = 100,
+    urltypemonthsummary,
+    urltypeonedaydetail,
+    urltypeplanlist,
+    urltypechangepassword
+    
+}URLTYPE;
 
 @interface KFSBHelper : NSObject
 
@@ -29,9 +42,34 @@
 +(BOOL)isNotEmptyArrObj:(id)obj; // 判断飞鞚数组
 
 
+
+
 +(NSDate *)dateFromString:(NSString *)dateString;
++(NSString *)stringFromDate:(NSDate *)date;
+
+
+
+
+/* 获取距离1970时间戳*/
++ (NSString *)getNowDate;
+
++(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype;
+
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,7 +101,15 @@ typedef enum {
 -(NSString *)dayOfWeekTypeByChinese;
 
 
+@end
 
+
+
+
+
+@interface NSString (MD5HexDigest)
+
+-(NSString *) md5HexDigest;
 
 @end
 

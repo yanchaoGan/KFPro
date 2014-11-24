@@ -99,8 +99,136 @@
     return destDate;
 }
 
++(NSString *)stringFromDate:(NSDate *)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];// HH:mm:ss zzz"];//
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    return destDateString;
+}
+
+
+// 获取unity 时间挫
++ (NSString *)getNowDate
+{
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a=[dat timeIntervalSince1970];
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", a];
+    return timeString;
+}
+
+
++(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype{
+    
+    NSMutableDictionary * paramas = [NSMutableDictionary dictionary];
+    
+    @synchronized(self){
+    
+        NSString * URLTYPE;
+         NSString * date = @"";
+        
+        switch (urltype) {
+            case urltypemonthsummary:
+            {
+                URLTYPE = @"monthsummary";
+                [paramas  setObject:URLTYPE forKey:@"urltype"];
+                
+                date = [self stringFromDate:[NSDate date]];
+                [paramas  setObject:date forKey:@"date"];
+                
+                NSString * time = [KFSBHelper getNowDate];
+                [paramas setObject:time forKey:@"time"];
+                
+                NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,date,time]];
+                
+                [paramas setObject:sign forKey:@"sign"];
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    return paramas;
+}
+
+
++(NSString *)getMd5SignStringByArr:(NSArray *)signArr{
+
+
+    NSString * sign = [NSString string];
+    
+    for (NSString * subStr in signArr) {
+
+       sign = [sign  stringByAppendingString:subStr];
+        
+    }
+    sign = [sign stringByAppendingString:SignKey];
+    sign = [sign md5HexDigest];
+    return sign;
+}
+
+
+
+
+
+
 
 @end
+
+
+
+
+
+@implementation NSString (MD5HexDigest)
+
+
+-(NSString *)md5HexDigest
+
+{
+    
+    const char *original_str = [self UTF8String];
+    
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    
+    CC_MD5(original_str, strlen(original_str), result);
+    
+    NSMutableString *hash = [NSMutableString string];
+    
+    for (int i = 0; i < 16; i++)
+        
+        [hash appendFormat:@"%02X", result[i]];
+    
+    return [hash lowercaseString];
+    
+}
+
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
