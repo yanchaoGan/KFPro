@@ -16,6 +16,10 @@
 
 @property(nonatomic,strong)NSDictionary * dataDic;
 
+@property(nonatomic,strong)NSArray * MonthDataArr;
+
+@property(nonatomic,strong)NSMutableArray * imageArr;
+
 @end
 
 #define  riliBlue [UIColor colorWithRed:0.6353 green:0.8510 blue:0.9804 alpha:1].CGColor
@@ -292,29 +296,19 @@
 }
 
 #pragma mark - rilixianshi
--(void)reDisplayViewUse:(NSDictionary *)data{
+-(void)reDisplayViewUse:(NSArray *)data{
    
-    self.dataDic =data;
-    if (data) {
-        NSArray *arr =[data objectForKey:@"activeDaysList"];
-        for (id num in arr) {
-            if ([num
-                isKindOfClass:[NSNumber class]]) {
-                //NSLog(@"num");
-            }else if ([num isKindOfClass:[NSString class]]){
-                //NSLog(@"string");
-            }
-            break;
-        }
-       
-    }
-     [self setNeedsDisplay];
+    self.MonthDataArr = data;
+    [self setNeedsDisplay];
 }
 
 
 #pragma mark - Drawing
 - (void)drawRect:(CGRect)rect
 {
+    
+    
+    
     int firstWeekDay = [self.currentMonth firstWeekDayInMonth]-1; //-1 because weekdays begin at 1, not 0
     
      [self setClearsContextBeforeDrawing: YES];
@@ -333,7 +327,7 @@
     
     CGRect rectangle = CGRectMake(0,0,self.frame.size.width,kVRGCalendarViewTopBarHeight);
     CGContextAddRect(context, rectangle);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor);  // gyc change 2014-11-24  white -> clear
     CGContextFillPath(context);
     
     //Arrows
@@ -363,6 +357,14 @@
                                    [UIColor blackColor].CGColor);
     CGContextFillPath(context);
     
+   
+    
+    // gyc add  周几 背景色
+    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-20,kVRGCalendarViewWidth,20});
+    CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x00385d"].CGColor);
+    CGContextFillPath(context);
+    
+    
     //Weekdays
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat=@"EEE";
@@ -371,13 +373,14 @@
     [weekdays moveObjectFromIndex:0 toIndex:6];
     
     CGContextSetFillColorWithColor(context,
-                                   [UIColor colorWithHexString:@"0x383838"].CGColor);
+                                   [UIColor colorWithHexString:@"0xb7d9eb"].CGColor); // gyc change
     for (int i =0; i<[weekdays count]; i++) {
         NSString *weekdayValue = (NSString *)[weekdays objectAtIndex:i];
         UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:12];
         [weekdayValue drawInRect:CGRectMake(i*(kVRGCalendarViewDayWidth+2), 40, kVRGCalendarViewDayWidth+2, 20) withFont:font lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
         
     }
+    
     
     int numRows = [self numRows];
     
@@ -387,7 +390,7 @@
     float gridHeight = numRows*(kVRGCalendarViewDayHeight+2)+1;
     CGRect rectangleGrid = CGRectMake(0,kVRGCalendarViewTopBarHeight,self.frame.size.width,gridHeight);
     CGContextAddRect(context, rectangleGrid);
-    CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xf3f3f3"].CGColor);
+    CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xa9c6d7"].CGColor);  // gyc change 0xf3f3f3 -> 0xa9c6d7
     //CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xff0000"].CGColor);
     CGContextFillPath(context);
     
@@ -477,21 +480,34 @@
     NSDateFormatter* monthdateFormatter=[[NSDateFormatter alloc] init];
     [monthdateFormatter setDateFormat:@"yyyy-MM"];
     
+    
+    // gyc change add
     NSArray *activeDaysList;
     NSNumber *day;
+    BOOL  isCurrentMonth = [KFSBHelper isCurrentMonthByDate:self.currentMonth]; // 是否是当前月份
+    BOOL  isWeekend; // 是否周末 一个 日期字符串
+    int  isEarly;
+    UIColor * drawColor = nil;
+    UIColor * textDrawColor;
+    NSString * everyDay;
+    NSString * surestart;
+    NSString * planstart;
+    UIImageView * sureImageView;
+    UIImageView * planImageView;
+
     
     for (int i=0; i<numBlocks; i++) {
         int targetDate = i;
         int targetColumn = i%7;
         int targetRow = i/7;
-        int targetX = targetColumn * (kVRGCalendarViewDayWidth+2);
-        int targetY = kVRGCalendarViewTopBarHeight + targetRow * (kVRGCalendarViewDayHeight+2);
+        int targetX = targetColumn * (kVRGCalendarViewDayWidth+2) ;
+        int targetY = kVRGCalendarViewTopBarHeight + targetRow * (kVRGCalendarViewDayHeight+2) +2;// gyc add +2
         
         //draw selected date
         if (selectedDate && i==selectedDateBlock) {
             CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
-            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x6070a0"].CGColor);
+            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x00385e"].CGColor); // gyc change  // 选中背景色
             CGContextFillPath(context);
             
             CGContextSetFillColorWithColor(context,
@@ -499,7 +515,7 @@
         } else if (todayBlock==i) {
             CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
-            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x909090"].CGColor);
+            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xa5113b"].CGColor);  // gyc change 当天的 背景色
             CGContextFillPath(context);
             
             CGContextSetFillColorWithColor(context,
@@ -540,45 +556,99 @@
             NSString* month=[monthdateFormatter stringFromDate:self.currentMonth];
             //NSLog(@"month is %@",month);
             NSString* currentMonthDayString=[month stringByAppendingFormat:@"-%02d",targetDate];
-            //NSLog(@"currentMonthDay is %@",currentMonthDayString);
+            NSLog(@"currentMonthDay is %@",currentMonthDayString);
             
-
-                if (self.dataDic) {
-                   
+            // gyc add 当前月份的 每一天
+            if (self.MonthDataArr) {
+                
+                // logic  判断当前日期是否是星期6 /7
+                isWeekend = [KFSBHelper isWeedendByString:currentMonthDayString];
+                
+                
+                if (isCurrentMonth) {
                     
-                    int dayNum = 0;//[SCShareFunc dayNumFormDateStr:currentMonthDayString];
+                    isEarly = [KFSBHelper isEarlyThanNowByString:currentMonthDayString];
                     
-                    day =[NSNumber numberWithInt:dayNum];
-                    
-                    activeDaysList =[self.dataDic objectForKey:@"activeDaysList"]; // 具体活跃天 lanse
-                    if ([activeDaysList containsObject:day]) {
-                        CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+1,kVRGCalendarViewDayHeight+1);
-                        CGContextAddRect(context, rectangleGrid);
-                        CGContextSetFillColorWithColor(context, riliBlue);
-                        CGContextFillPath(context);
-                    }
-                    activeDaysList =[self.dataDic objectForKey:@"alarmDaysList"]; // 具体警报天
-                    if ([activeDaysList containsObject:day]) {
-                        CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+1,kVRGCalendarViewDayHeight+1);
-                        CGContextAddRect(context, rectangleGrid);
-                        CGContextSetFillColorWithColor(context, riliYellow);
-                        CGContextFillPath(context);
+                    if (isEarly == 0) {
                         
-                        NSArray *  __activeDaysList =[self.dataDic objectForKey:@"adviceDaysList"]; //具体警报次数
-                        int len =[activeDaysList indexOfObject:day];
-                        int number =[[__activeDaysList objectAtIndex:len] intValue];
-                        if(number >3){
-                            CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+1,kVRGCalendarViewDayHeight+1);
-                            CGContextAddRect(context, rectangleGrid);
-                            CGContextSetFillColorWithColor(context, riliRed);
-                            CGContextFillPath(context);
+                        
+                    }else if (isEarly == 1){
+                        
+                        if (isWeekend) {
+                            drawColor = [UIColor colorWithHexString:@"0x8197a9"];
+                            
+                        }else{
+                            
                             
                         }
+                    
+                    }else{
                         
+                        if (isWeekend) {
+                            
+                             drawColor = [UIColor colorWithHexString:@"0x2c718d"];
+                        }else{
+                            
+                            drawColor = [UIColor colorWithRed:0.8980 green:0.9647 blue:0.9882 alpha:1];
+                        }
+                        
+                    
+                    }
+                
+                    
+                    
+                }else{
+                    
+                
+                    if (isWeekend) {
+                    
+                        drawColor = [UIColor colorWithHexString:@"0x8197a9"];
+                    }else{
+                    
+                        drawColor = [UIColor colorWithHexString:@"0xa9c6d7"];
                     }
                     
-                    
                 }
+                
+                
+                CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+1,kVRGCalendarViewDayHeight+1);
+                CGContextAddRect(context, rectangleGrid);
+                CGContextSetFillColorWithColor(context, drawColor.CGColor);
+                CGContextFillPath(context);
+                
+                
+                // 添加图片
+                for (NSDictionary * obj in self.MonthDataArr) {
+                    everyDay = [obj objectForKey:@"date"];
+                    if ([everyDay isEqualToString:currentMonthDayString]) {
+                        
+                        surestart = [obj objectForKey:@"surestart"];
+                        planstart = [obj objectForKey:@"planstart"];
+                        if ([surestart isEqualToString:@"1"]) {
+                        
+                            if ([planstart isEqualToString:@"1"]) {
+                                
+                                
+                            }else{
+                            
+                            }
+                            
+                        }else{
+                            
+                            if ([planstart isEqualToString:@"1"]) {
+                                
+                            }else{
+                                
+                            }
+                        }
+                    }
+                }
+
+            
+                
+                
+                    
+            }
 
             
             
@@ -588,10 +658,9 @@
             
         }
         
+        
         NSString *date = [NSString stringWithFormat:@"%i",targetDate];
-        
-        
-        [date drawInRect:CGRectMake(targetX, targetY+12, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17] lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
+        [date drawInRect:CGRectMake(targetX, targetY + kVRGCalendarViewDayHeight/3.0, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17] lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
     }
     
     
@@ -637,6 +706,9 @@
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillPath(context);
     }
+    
+    
+    [monthdateFormatter release];
 }
 
 #pragma mark - Draw image for animation
@@ -658,14 +730,18 @@
     if (self) {
         self.contentMode = UIViewContentModeTop;
         self.clipsToBounds=YES;
+        self.backgroundColor = [UIColor clearColor]; // gyc add 2014-11-24
         
         isAnimating=NO;
         self.labelCurrentMonth = [[[UILabel alloc] initWithFrame:CGRectMake(34, 0, kVRGCalendarViewWidth-68, 40)]autorelease];
         [self addSubview:labelCurrentMonth];
         labelCurrentMonth.backgroundColor=[UIColor whiteColor];
         labelCurrentMonth.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
-        labelCurrentMonth.textColor = [UIColor colorWithHexString:@"0x383838"];
+        labelCurrentMonth.textColor = [UIColor colorWithHexString:@"0x00385d"];// gyc change
         labelCurrentMonth.textAlignment = UITextAlignmentCenter;
+        
+        labelCurrentMonth.backgroundColor = [UIColor clearColor]; // gyc add 2014-11-24
+        self.imageArr = [NSMutableArray array];
         
         [self performSelector:@selector(reset) withObject:nil afterDelay:0.1]; //so delegate can be set after init and still get called on init
         //        [self reset];

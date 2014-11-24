@@ -59,6 +59,16 @@ typedef enum url{
 +(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype;
 
 
+
+
+// 是否是当前月份
++(BOOL)isCurrentMonthByDate:(NSDate *)date;
+
++(BOOL)isWeedendByString:(NSString *)dateString;
+
++(int)isEarlyThanNowByString:(NSString *)dateString;
+
+
 @end
 
 

@@ -173,11 +173,76 @@
 
 
 
+// 是否是当前月份
++(BOOL)isCurrentMonthByDate:(NSDate *)date{
+
+    BOOL is = NO;
+    
+    NSDate * now = [NSDate date];
+    NSString * nows = [self stringFromDate:now];
+    NSArray * nowarr = [nows componentsSeparatedByString:@"-"];
+    
+    NSString * dates = [self stringFromDate:date];
+    NSArray * datearr = [dates componentsSeparatedByString:@"-"];
+
+    if ([(NSString *)nowarr[0]  isEqualToString:datearr[0]] && [(NSString *)nowarr[1] isEqualToString:datearr[1]]) {
+        
+        is = YES;
+    }
+    return is;
+}
 
 
+
++(BOOL)isWeedendByString:(NSString *)dateString{
+
+    BOOL is = NO;
+    
+    NSDate * date = [self dateFromString:dateString];
+    
+    NSString  * week = [date dayOfWeekTypeByChinese];
+    if ([week isEqualToString:@"周六"] || [week isEqualToString:@"周日"]) {
+        is = YES;
+    }
+    
+    return is;
+}
+
++(int)isEarlyThanNowByString:(NSString *)dateString{
+
+    NSDate * now = [NSDate date];
+    
+    NSString * nows = [self stringFromDate:now];
+    now = [self dateFromString:nows];
+    
+    
+    NSDate * date = [self dateFromString:dateString];
+    
+    
+    int early = 0;
+    
+    NSTimeInterval interval =  [now timeIntervalSinceDate:date];
+    if (interval == 0) {
+        early = 0;
+    }else if (interval > 0){
+    
+        early = 1;
+    }else{
+    
+        early = -1;
+    }
+
+    return early;
+}
 
 
 @end
+
+
+
+
+
+
 
 
 

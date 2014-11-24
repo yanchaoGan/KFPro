@@ -71,7 +71,7 @@
 
 
 //gyc
--(void)reDisplayViewUse:(NSDictionary *)dataDic;
+-(void)reDisplayViewUse:(NSArray *)dataDic;
 
 
 
