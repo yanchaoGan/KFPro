@@ -83,8 +83,12 @@
     
     NSLog(@"%@",date);
     
-    [KFSBHelper setCalendarViewSelect:date];
+    // 先将tableview 上的 日期 刷新下
+    UILabel * header = (UILabel *)[self.riliListTable.tableHeaderView viewWithTag:100];
+    header.text = [KFSBHelper headerStringFromDate:date];
     
+    
+    [KFSBHelper setCalendarViewSelect:date];
     NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeonedaydetail];
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {

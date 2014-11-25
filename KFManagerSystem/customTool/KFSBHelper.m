@@ -111,6 +111,22 @@ extern NSDate * calendarViewSelect;
 }
 
 
++(NSString *)headerStringFromDate:(NSDate *)date{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
+    [dateFormatter setDateFormat:@"MM月dd日"];// HH:mm:ss zzz"];//
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    
+    NSString * week = [date dayOfWeekTypeByChinese];
+    
+    destDateString = [destDateString stringByAppendingString:[NSString stringWithFormat:@"  %@",week]];
+    
+    return destDateString;
+}
+
+
 // 获取unity 时间挫
 + (NSString *)getNowDate
 {

@@ -52,6 +52,8 @@ typedef enum url{
 +(NSDate *)dateFromString:(NSString *)dateString;
 +(NSString *)stringFromDate:(NSDate *)date;
 
++(NSString *)headerStringFromDate:(NSDate *)date;
+
 
 
 
