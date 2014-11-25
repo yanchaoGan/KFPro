@@ -66,7 +66,7 @@
     
     // 在这里获取当月的 状态信息
     
-    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary];
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary andOtherParamas:nil];
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
         
@@ -88,8 +88,8 @@
     header.text = [KFSBHelper headerStringFromDate:date];
     
     
-    [KFSBHelper setCalendarViewSelect:date];
-    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeonedaydetail];
+    
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeonedaydetail andOtherParamas:@{@"date":date}];
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
         

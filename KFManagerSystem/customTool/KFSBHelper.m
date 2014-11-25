@@ -137,7 +137,7 @@ extern NSDate * calendarViewSelect;
 }
 
 
-+(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype{
++(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype andOtherParamas:(id)futureObj{
     
     NSMutableDictionary * paramas = [NSMutableDictionary dictionary];
     
@@ -169,8 +169,10 @@ extern NSDate * calendarViewSelect;
                 URLTYPE = @"onedaydetail";
                 [paramas  setObject:URLTYPE forKey:@"urltype"];
                 
-                date = [self stringFromDate:calendarViewSelect];
-                 [paramas  setObject:date forKey:@"date"];
+                NSDate * passDate = [futureObj objectForKey:@"date"];
+                date = [self stringFromDate:passDate];
+                [paramas  setObject:date forKey:@"date"];
+                
                 
                 NSString * time = [KFSBHelper getNowDate];
                 [paramas setObject:time forKey:@"time"];

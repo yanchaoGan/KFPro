@@ -8,6 +8,7 @@
 
 #import "KFLoginViewController.h"
 
+
 @interface KFLoginViewController ()
 
 @end
@@ -41,7 +42,7 @@
     
     [self touchesBegan:nil withEvent:nil];
     
-    if (self.accountTextField.text.length == 0 || self.passwordTextField.text.length == 0) {
+    if (!([KFSBHelper isNotEmptyStringOfObj:self.accountTextField.text] && [KFSBHelper isNotEmptyStringOfObj:self.passwordTextField.text])) {
         
         DXAlertView * alertview = [[DXAlertView alloc] initWithTitle:nil contentText:@"账号密码非空!" leftButtonTitle:nil rightButtonTitle:nil];
     
@@ -55,8 +56,21 @@
 
 -(void)checkAccount:(id)future{
     
-//    [KFNetworkHelper postWithUrl:<#(NSString *)#> params:<#(NSDictionary *)#> success:<#^(id responseObject)success#> fail:<#^(NSError *error)fail#>]
+    
+//    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypelogin andOtherParamas:@{@"username":self.accountTextField.text,@"password":self.passwordTextField.text}];
+//    
+//    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+//        
+//        KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
+//         [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
+//        
+//    } fail:^(NSError *error) {
+//        NSLog(@"%@",error.userInfo);
+//    } andHUBString:@"Loading..."];
+    
+    
     [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
+   
 
 }
 

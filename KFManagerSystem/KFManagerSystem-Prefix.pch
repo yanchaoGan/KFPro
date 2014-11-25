@@ -37,6 +37,8 @@
 #import "KFReuseView.h"
 #import "KFUser.h"
 
+#import "KFAppDelegate.h"
+
 
 
 
@@ -47,3 +49,8 @@
 
 
 #endif
+
+
+
+#define KFDelegate   ((KFAppDelegate *)([UIApplication sharedApplication].delegate))
+

@@ -51,7 +51,7 @@ typedef enum url{
 
 +(NSDate *)dateFromString:(NSString *)dateString;
 +(NSString *)stringFromDate:(NSDate *)date;
-
+// use for tableview header
 +(NSString *)headerStringFromDate:(NSDate *)date;
 
 
@@ -60,7 +60,15 @@ typedef enum url{
 /* 获取距离1970时间戳*/
 + (NSString *)getNowDate;
 
-+(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype;
+/**
+ *  针对不同url 配置参数
+ *
+ *  @param urltype   接口类型
+ *  @param futureObj 需要你传的参数
+ *
+ *  @return 配置好的参数
+ */
++(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype  andOtherParamas:(id)futureObj;
 
 +(void)setCalendarViewSelect:(NSDate *)date;
 +(NSDate *)getCalendarViewSelect;
