@@ -256,6 +256,15 @@ extern NSDate * calendarViewSelect;
 }
 
 
++(void)setCalendarViewSelect:(NSDate *)date{
+
+    calendarViewSelect = date;
+}
++(NSDate *)getCalendarViewSelect{
+
+    return calendarViewSelect;
+}
+
 @end
 
 

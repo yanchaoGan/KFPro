@@ -60,6 +60,9 @@ typedef enum url{
 
 +(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype;
 
++(void)setCalendarViewSelect:(NSDate *)date;
++(NSDate *)getCalendarViewSelect;
+
 
 
 

@@ -673,6 +673,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = gychao;
 				TargetAttributes = {
+					A0134B251A19E2320089693C = {
+						DevelopmentTeam = 4P96EBY6EW;
+					};
 					A0134B491A19E2320089693C = {
 						TestTargetID = A0134B251A19E2320089693C;
 					};
@@ -956,11 +959,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KFManagerSystem/KFManagerSystem-Prefix.pch";
 				INFOPLIST_FILE = "KFManagerSystem/KFManagerSystem-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -970,11 +976,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KFManagerSystem/KFManagerSystem-Prefix.pch";
 				INFOPLIST_FILE = "KFManagerSystem/KFManagerSystem-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -83,7 +83,8 @@
     
     NSLog(@"%@",date);
     
-    calendarViewSelect = date;
+    [KFSBHelper setCalendarViewSelect:date];
+    
     NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeonedaydetail];
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
@@ -94,6 +95,9 @@
         
         
     } fail:^(NSError *error) {
+        
+        self.OneDayArr = nil;
+        [self.riliListTable reloadData];
         
     } andHUBString:@"Loading..."];
     
