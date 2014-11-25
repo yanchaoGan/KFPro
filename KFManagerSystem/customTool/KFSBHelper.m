@@ -147,6 +147,30 @@ extern NSDate * calendarViewSelect;
          NSString * date = @"";
         
         switch (urltype) {
+            case urltypelogin:{
+            
+                URLTYPE = @"login";
+                [paramas  setObject:URLTYPE forKey:@"urltype"];
+                
+                NSString * username = [futureObj objectForKey:@"username"];
+                [paramas setObject:username forKey:@"username"];
+                
+                NSString * password = [futureObj objectForKey:@"password"];
+                [paramas setObject:password forKey:@"password"];
+                
+                NSString * time = [KFSBHelper getNowDate];
+                [paramas setObject:time forKey:@"time"];
+                
+                
+                NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,username,password,time]];
+                [paramas setObject:sign forKey:@"sign"];
+
+                
+                
+                
+                
+            }break;
+                
             case urltypemonthsummary:
             {
                 URLTYPE = @"monthsummary";
