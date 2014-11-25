@@ -51,6 +51,9 @@ typedef enum url{
 
 +(NSDate *)dateFromString:(NSString *)dateString;
 +(NSString *)stringFromDate:(NSDate *)date;
+
++(NSString *)fullstringFromDate:(NSDate *)date;
+
 // use for tableview header
 +(NSString *)headerStringFromDate:(NSDate *)date;
 

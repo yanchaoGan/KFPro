@@ -39,3 +39,7 @@ UIKIT_EXTERN NSString *const MJRefreshHeaderTimeKey;
 
 UIKIT_EXTERN NSString *const MJRefreshContentOffset;
 extern NSString *const MJRefreshContentSize;
+
+
+// gyc add 上啦加载 time
+UIKIT_EXTERN NSString * const MJLoadMoreFooterTimeKey;

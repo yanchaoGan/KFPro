@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KFCommonTableViewCell.m"
-            timestampString = "438087443.188546"
+            filePath = "KFManagerSystem/customTool/KFSBHelper.m"
+            timestampString = "438607174.85046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-reDisplayUseData:byReuseIdentifier:"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "+getParamaByUrlType:andOtherParamas:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

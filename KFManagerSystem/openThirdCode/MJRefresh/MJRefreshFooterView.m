@@ -135,6 +135,12 @@
         {
             // 刷新完毕
             if (MJRefreshStateRefreshing == oldState) {
+                
+                // 保存加载时间  addGYC
+                [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:MJLoadMoreFooterTimeKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+
+                
                 self.arrowImage.transform = CGAffineTransformMakeRotation(M_PI);
                 [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
                     self.scrollView.mj_contentInsetBottom = self.scrollViewOriginalInset.bottom;

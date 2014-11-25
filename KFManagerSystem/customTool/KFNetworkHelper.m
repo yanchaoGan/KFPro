@@ -14,10 +14,10 @@
 
 +(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success fail:(FailBlock)fail andHUBString:(NSString *)hub{
     
-    [MBProgressHUD showMessage:hub toView:nil];
+//    [MBProgressHUD showMessage:hub toView:nil];
     
     [[AFHTTPRequestOperationManager  manager]  POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [MBProgressHUD hideHUD];
+//        [MBProgressHUD hideHUD];
         
         NSString * state = [responseObject objectForKey:@"state"];
         if ([state isEqualToString:@"1"]) {
@@ -35,7 +35,7 @@
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [MBProgressHUD hideHUD];
+//        [MBProgressHUD hideHUD];
         fail(error);
     }];
     

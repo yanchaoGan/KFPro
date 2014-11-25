@@ -111,6 +111,18 @@ extern NSDate * calendarViewSelect;
 }
 
 
++(NSString *)fullstringFromDate:(NSDate *)date{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];// HH:mm:ss zzz"];//
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    return destDateString;
+
+}
+
+
 +(NSString *)headerStringFromDate:(NSDate *)date{
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -144,7 +156,7 @@ extern NSDate * calendarViewSelect;
     @synchronized(self){
     
         NSString * URLTYPE;
-         NSString * date = @"";
+        NSString * date = @"";
         
         switch (urltype) {
             case urltypelogin:{
@@ -164,10 +176,6 @@ extern NSDate * calendarViewSelect;
                 
                 NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,username,password,time]];
                 [paramas setObject:sign forKey:@"sign"];
-
-                
-                
-                
                 
             }break;
                 
@@ -205,6 +213,43 @@ extern NSDate * calendarViewSelect;
                 NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,date,time]];
                 [paramas setObject:sign forKey:@"sign"];
 
+                
+                
+            }break;
+                
+            case urltypeplanlist:{
+            
+                URLTYPE = @"planList";
+                [paramas  setObject:URLTYPE forKey:@"urltype"];
+                
+                date = [futureObj objectForKey:@"date"];
+                [paramas setObject:date forKey:@"date"];
+                
+                
+                NSString * lastrefrshtime = [futureObj objectForKey:@"lastrefrshtime"];
+                [paramas setObject:lastrefrshtime forKey:@"lastrefrshtime"];
+                
+                
+                
+                NSString * lastloadmoretime = [futureObj objectForKey:@"lastloadmoretime"];
+                [paramas setObject:lastloadmoretime forKey:@"lastloadmoretime"];
+                
+                NSString * clientshowmaxday = [futureObj objectForKey:@"clientshowmaxday"];
+                [paramas setObject:clientshowmaxday forKey:@"clientshowmaxday"];
+                
+                NSString * clientshowminday = [futureObj objectForKey:@"clientshowminday"];
+                [paramas setObject:clientshowminday forKey:@"clientshowminday"];
+                
+                NSString * refreshdirection = [futureObj objectForKey:@"refreshdirection"];
+                [paramas setObject:refreshdirection forKey:@"refreshdirection"];
+                
+                
+                NSString * time = [KFSBHelper getNowDate];
+                [paramas setObject:time forKey:@"time"];
+                
+                NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,date,refreshdirection,time]];
+                [paramas setObject:sign forKey:@"sign"];
+        
                 
                 
             }break;

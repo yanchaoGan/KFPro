@@ -23,3 +23,7 @@ NSString *const MJRefreshHeaderTimeKey = @"MJRefreshHeaderView";
 
 NSString *const MJRefreshContentOffset = @"contentOffset";
 NSString *const MJRefreshContentSize = @"contentSize";
+
+
+
+NSString * const MJLoadMoreFooterTimeKey = @"MJLoadMoreFooterView";

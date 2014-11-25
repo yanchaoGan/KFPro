@@ -10,6 +10,8 @@
 
 @interface KFListViewController ()
 
+@property(nonatomic,strong)NSDate * nomalLoadDate;
+
 @end
 
 @implementation KFListViewController
@@ -48,6 +50,68 @@
     [self setupRefresh];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+  
+    
+    static  dispatch_once_t once;
+    dispatch_once(&once,^{
+    
+        self.nomalLoadDate = [NSDate date];
+        NSString * date = [KFSBHelper stringFromDate:[NSDate date]];
+        
+        NSString * lastrefrshtime   = @"1970-01-01 10:00:00";
+        NSString * lastloadmoretime = @"1970-01-01 10:00:00";
+        
+        NSString *  clientshowmaxday = @"1970-01-01";
+        NSString * clientshowminday = @"1970-01-01";
+        
+        NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeplanlist andOtherParamas:@{@"date":date,@"lastrefrshtime":lastrefrshtime,@"lastloadmoretime":lastloadmoretime,@"clientshowmaxday":clientshowmaxday,@"clientshowminday":clientshowminday,@"refreshdirection":@"normal"}];
+        
+        
+        [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+            
+            
+            if ([KFSBHelper isNotEmptyArrObj:responseObject]) {
+                
+                if (![KFSBHelper isNotEmptyArrObj:self.ListSouceArr]) {
+                    self.ListSouceArr = [NSMutableArray array];
+                }
+                
+                [self.ListSouceArr   addObjectsFromArray:responseObject];
+                [self sortListTableSoureArr];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.listTable  headerEndRefreshing];
+                    
+                    [self.listTable reloadData];
+                });
+                
+                
+            }else{
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.listTable  headerEndRefreshing];
+                    
+                });
+                
+            }
+
+        } fail:^(NSError *error) {
+            
+            
+        } andHUBString:@"Loading..."];
+ 
+        
+        
+    });
+    
+}
+
+
+#pragma mark - 集成刷新控件
+
 /**
  *  集成刷新控件
  */
@@ -56,7 +120,7 @@
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
     //    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     // dateKey用于存储刷新时间，可以保证不同界面拥有不同的刷新时间
-    [self.listTable addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"table"];
+    [self.listTable addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:nil];
 //#warning 自动刷新(一进入程序就下拉刷新)
 //    [self.tableView headerBeginRefreshing];
     
@@ -71,36 +135,181 @@
 - (void)headerRereshing
 {
     
-//    // 1.添加假数据
-//    for (int i = 0; i<5; i++) {
-//        [self.fakeData insertObject:MJRandomData atIndex:0];
-//    }
-//    
-//    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        // 刷新表格
-//        [self.tableView reloadData];
-//        
-//        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-//        [self.tableView headerEndRefreshing];
-//    });
+    
+    NSString  * cankaoDate = [[self.ListSouceArr firstObject] objectForKey:@"date"];
+    if (![KFSBHelper isNotEmptyStringOfObj:cankaoDate]) {
+        cankaoDate = [KFSBHelper  stringFromDate:[NSDate date]];
+    }
+    
+    
+    NSString * lastRT = [KFSBHelper fullstringFromDate: [[NSUserDefaults standardUserDefaults] objectForKey:MJRefreshHeaderTimeKey]];
+    if (![KFSBHelper isNotEmptyStringOfObj:lastRT]) {
+        lastRT = [KFSBHelper fullstringFromDate:self.nomalLoadDate];
+    }
+    
+    
+    NSString * lastLM = @"1970-01-01 10:00:00";
+    
+    NSString * CMD = [[self.ListSouceArr firstObject] objectForKey:@"date"];
+    if (![KFSBHelper isNotEmptyStringOfObj:CMD]) {
+        CMD = @"1970-01-01";
+    }
+    
+    NSString * CminD = [[self.ListSouceArr lastObject] objectForKey:@"date"];
+    if (![KFSBHelper isNotEmptyStringOfObj:CminD]) {
+        CminD = @"1970-01-01";
+    }
+    
+ 
+    
+    NSString * date = cankaoDate;
+    NSString * lastrefrshtime   = lastRT;
+    NSString * lastloadmoretime = lastLM;
+    NSString *  clientshowmaxday = CMD;
+    NSString * clientshowminday =  CminD;
+    
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeplanlist andOtherParamas:@{@"date":date,@"lastrefrshtime":lastrefrshtime,@"lastloadmoretime":lastloadmoretime,@"clientshowmaxday":clientshowmaxday,@"clientshowminday":clientshowminday,@"refreshdirection":@"refresh"}];
+    
+    
+    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+        
+        
+        if ([KFSBHelper isNotEmptyArrObj:responseObject]) {
+            
+            if (![KFSBHelper isNotEmptyArrObj:self.ListSouceArr]) {
+                self.ListSouceArr = [NSMutableArray array];
+            }
+            
+            [self.ListSouceArr   addObjectsFromArray:responseObject];
+            [self sortListTableSoureArr];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.listTable  headerEndRefreshing];
+               
+                [self.listTable reloadData];
+            });
+            
+            
+        }else{
+        
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.listTable  headerEndRefreshing];
+                
+            });
+            
+        }
+        
+    } fail:^(NSError *error) {
+        
+        [self.listTable headerEndRefreshing];
+        
+    } andHUBString:@"Loading..."];
+    
 }
 #pragma mark - 进入加载更多的状态
 - (void)footerRereshing
 {
-//    // 1.添加假数据
-//    for (int i = 0; i<5; i++) {
-//        [self.fakeData addObject:MJRandomData];
-//    }
-//    
-//    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        // 刷新表格
-//        [self.tableView reloadData];
-//        
-//        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-//        [self.tableView footerEndRefreshing];
-//    });
+
+    NSString  * cankaoDate = [[self.ListSouceArr lastObject] objectForKey:@"date"];
+    if (![KFSBHelper isNotEmptyStringOfObj:cankaoDate]) {
+        cankaoDate = [KFSBHelper  stringFromDate:[NSDate date]];
+    }
+    
+    
+    NSString * lastRT = @"1970-01-01 10:00:00";
+    
+    NSString * lastLM = [KFSBHelper fullstringFromDate: [[NSUserDefaults standardUserDefaults] objectForKey:MJLoadMoreFooterTimeKey]];
+    if (![KFSBHelper isNotEmptyStringOfObj:lastLM]) {
+        lastLM = [KFSBHelper fullstringFromDate:self.nomalLoadDate];
+    }
+
+    
+    NSString * CMD = [[self.ListSouceArr firstObject] objectForKey:@"date"];
+    if (![KFSBHelper isNotEmptyStringOfObj:CMD]) {
+        CMD = @"1970-01-01";
+    }
+    
+    NSString * CminD = [[self.ListSouceArr lastObject] objectForKey:@"date"];
+    if (![KFSBHelper isNotEmptyStringOfObj:CminD]) {
+        CminD = @"1970-01-01";
+    }
+    
+    
+    
+    NSString * date = cankaoDate;
+    NSString * lastrefrshtime   = lastRT;
+    NSString * lastloadmoretime = lastLM;
+    NSString *  clientshowmaxday = CMD;
+    NSString * clientshowminday =  CminD;
+    
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeplanlist andOtherParamas:@{@"date":date,@"lastrefrshtime":lastrefrshtime,@"lastloadmoretime":lastloadmoretime,@"clientshowmaxday":clientshowmaxday,@"clientshowminday":clientshowminday,@"refreshdirection":@"downmore"}];
+    
+    
+    
+    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+        
+        if ([KFSBHelper isNotEmptyArrObj:responseObject]) {
+            
+            if (![KFSBHelper isNotEmptyArrObj:self.ListSouceArr]) {
+                self.ListSouceArr = [NSMutableArray array];
+            }
+            
+            [self.ListSouceArr   addObjectsFromArray:responseObject];
+            [self sortListTableSoureArr];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.listTable  footerEndRefreshing];
+                
+                [self.listTable reloadData];
+            });
+            
+            
+        }else{
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.listTable  footerEndRefreshing];
+                
+            });
+            
+        }
+        
+    } fail:^(NSError *error) {
+        
+        [self.listTable headerEndRefreshing];
+        
+    } andHUBString:@"Loading..."];
+
+}
+
+
+-(void)sortListTableSoureArr{
+    
+    __block  NSString * o1 , *o2;
+    NSArray * sortarr = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO comparator:^NSComparisonResult(id obj1, id obj2) {
+        
+         o1 = obj1;
+         o2 = obj2;
+        
+      NSComparisonResult result =  [o1 compare:o2 options:NSNumericSearch];
+        
+        if (result == NSOrderedSame) {
+            return NSOrderedSame;
+        }else if (result == NSOrderedAscending){
+        
+            return NSOrderedAscending;
+            
+        }else if (result == NSOrderedDescending){
+        
+            return NSOrderedDescending
+            ;
+        }
+        
+        return NSOrderedSame;
+        
+    }]];
+    
+  self.ListSouceArr = [NSMutableArray arrayWithArray:[self.ListSouceArr  sortedArrayUsingDescriptors:sortarr]];
+    
 }
 
 

@@ -39,6 +39,7 @@
 
 #import "KFAppDelegate.h"
 #import "MJRefresh.h"
+#import "MJRefreshConst.h"
 
 
 
