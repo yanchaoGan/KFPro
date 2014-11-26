@@ -58,6 +58,7 @@
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="92I-K5-OVe">
                                                 <rect key="frame" x="59" y="8" width="208" height="41"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="7dY-gj-bMw"/>
                                                     <constraint firstAttribute="width" constant="208" id="Dzv-Vp-AhX"/>
@@ -70,6 +71,7 @@
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7B-Wu-ukm">
                                                 <rect key="frame" x="59" y="64" width="208" height="44"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="bRi-zn-Xew"/>
                                                     <constraint firstAttribute="width" constant="208" id="kxA-cl-bFL"/>
