@@ -10,4 +10,14 @@
 
 @interface KFPersonCenterViewController : KFBaseViewController
 
+
+
+@property (weak, nonatomic) IBOutlet UIView *userPhotoBG;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *userPhoto;
+
+
+
+
 @end

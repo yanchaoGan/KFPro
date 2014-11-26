@@ -48,6 +48,22 @@
 
 
 
+- (IBAction)photoClick:(UITapGestureRecognizer *)sender {
+
+    
+    UIActionSheet* actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"请选择文件来源"
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"照相机",@"摄像机",@"本地相簿",@"本地视频",nil];
+    [actionSheet showInView:self.view];
+
+}
+
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
