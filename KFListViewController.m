@@ -312,6 +312,19 @@
     
 }
 
+#pragma mark - 控制cell 行数 限制, 始终删除 最后的 多的行数
+#define  KMAXCELLNUM 500
+
+-(void)setListSouceArr:(NSMutableArray *)ListSouceArr{
+
+    if (ListSouceArr.count > KMAXCELLNUM) {
+        [ListSouceArr removeObjectsInRange:NSMakeRange(KMAXCELLNUM, ListSouceArr.count - KMAXCELLNUM)];
+    }
+    
+    _ListSouceArr = ListSouceArr;
+}
+
+
 
 #pragma mark - TableView
 
