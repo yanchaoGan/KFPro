@@ -87,6 +87,12 @@ typedef enum url{
 +(int)isEarlyThanNowByString:(NSString *)dateString;
 
 
+
+
+
++(void)simpleAlertTitle:(NSString *)title message:(NSString *)message cancel:(NSString *)cancel;
+
+
 @end
 
 

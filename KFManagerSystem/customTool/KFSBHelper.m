@@ -352,6 +352,13 @@ extern NSDate * calendarViewSelect;
     return calendarViewSelect;
 }
 
+
+
++(void)simpleAlertTitle:(NSString *)title message:(NSString *)message cancel:(NSString *)cancel{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 @end
 
 
