@@ -39,8 +39,10 @@
     }
     
     
-
+    
     self.riliListTable.tableHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"Header" owner:nil options:nil] lastObject];
+    UILabel * header = (UILabel *)[self.riliListTable.tableHeaderView viewWithTag:100];
+    header.text = [KFSBHelper headerStringFromDate:[NSDate date]];
     
     
     
