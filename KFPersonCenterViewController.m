@@ -42,6 +42,8 @@
 
 
 - (IBAction)logout:(UIButton *)sender {
+    
+    [KFSBHelper changeWindowRootVCToAfterLogin:NO orToLoginVC:YES];
 }
 
 
