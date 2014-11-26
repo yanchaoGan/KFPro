@@ -8,7 +8,7 @@
 
 #import "KFPersonCenterViewController.h"
 
-@interface KFPersonCenterViewController ()
+@interface KFPersonCenterViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
 
@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    [self.userPhotoBG.layer  setCornerRadius:CGRectGetWidth(self.userPhotoBG.bounds)/2.0];
+    [self.userPhoto.layer  setCornerRadius:CGRectGetWidth(self.userPhoto.bounds)/2.0];
+    
 }
 
 
