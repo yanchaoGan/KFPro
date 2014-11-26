@@ -81,7 +81,6 @@
 		A03C25EB1A1B1206005A56B7 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A03C25E61A1B1206005A56B7 /* DXAlertView.m */; };
 		A0453FF01A25E2EB005D99D4 /* yunpng.png in Resources */ = {isa = PBXBuildFile; fileRef = A0453FEF1A25E2EB005D99D4 /* yunpng.png */; };
 		A0453FF41A25E381005D99D4 /* KFChangePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0453FF21A25E381005D99D4 /* KFChangePhotoViewController.m */; };
-		A0453FF51A25E381005D99D4 /* KFChangePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0453FF31A25E381005D99D4 /* KFChangePhotoViewController.xib */; };
 		A06B185B1A1F127700F617B5 /* KFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B185A1A1F127700F617B5 /* KFUser.m */; };
 		A06B186D1A1F14B200F617B5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A06B185D1A1F14B200F617B5 /* MJRefresh.bundle */; };
 		A06B186E1A1F14B200F617B5 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18601A1F14B200F617B5 /* MJRefreshBaseView.m */; };
@@ -230,7 +229,6 @@
 		A0453FEF1A25E2EB005D99D4 /* yunpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yunpng.png; sourceTree = "<group>"; };
 		A0453FF11A25E381005D99D4 /* KFChangePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFChangePhotoViewController.h; sourceTree = SOURCE_ROOT; };
 		A0453FF21A25E381005D99D4 /* KFChangePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFChangePhotoViewController.m; sourceTree = SOURCE_ROOT; };
-		A0453FF31A25E381005D99D4 /* KFChangePhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KFChangePhotoViewController.xib; sourceTree = SOURCE_ROOT; };
 		A06B18591A1F127700F617B5 /* KFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUser.h; sourceTree = "<group>"; };
 		A06B185A1A1F127700F617B5 /* KFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUser.m; sourceTree = "<group>"; };
 		A06B185D1A1F14B200F617B5 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -468,7 +466,6 @@
 				A02152551A1D99F2007A1C40 /* KFChangePWViewController.m */,
 				A0453FF11A25E381005D99D4 /* KFChangePhotoViewController.h */,
 				A0453FF21A25E381005D99D4 /* KFChangePhotoViewController.m */,
-				A0453FF31A25E381005D99D4 /* KFChangePhotoViewController.xib */,
 			);
 			name = PersonCenter;
 			path = ../../../../demo/demo/demo/PersonCenter;
@@ -756,7 +753,6 @@
 				A0134B701A19E5CE0089693C /* 个人中心.png in Resources */,
 				A08B8F001A1C7415009E9057 /* PaiQiCell.xib in Resources */,
 				A03C25E91A1B1206005A56B7 /* btn_close_selected.png in Resources */,
-				A0453FF51A25E381005D99D4 /* KFChangePhotoViewController.xib in Resources */,
 				A07857FB1A1B33DF00C3FF15 /* lb1_a.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
