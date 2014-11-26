@@ -275,7 +275,7 @@
         
     } fail:^(NSError *error) {
         
-        [self.listTable headerEndRefreshing];
+        [self.listTable footerEndRefreshing];
         
     } andHUBString:@"Loading..."];
 
