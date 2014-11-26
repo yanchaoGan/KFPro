@@ -79,6 +79,7 @@
 		A03C25E91A1B1206005A56B7 /* btn_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A03C25E31A1B1206005A56B7 /* btn_close_selected.png */; };
 		A03C25EA1A1B1206005A56B7 /* btn_close_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A03C25E41A1B1206005A56B7 /* btn_close_selected@2x.png */; };
 		A03C25EB1A1B1206005A56B7 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A03C25E61A1B1206005A56B7 /* DXAlertView.m */; };
+		A0453FF01A25E2EB005D99D4 /* yunpng.png in Resources */ = {isa = PBXBuildFile; fileRef = A0453FEF1A25E2EB005D99D4 /* yunpng.png */; };
 		A06B185B1A1F127700F617B5 /* KFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B185A1A1F127700F617B5 /* KFUser.m */; };
 		A06B186D1A1F14B200F617B5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A06B185D1A1F14B200F617B5 /* MJRefresh.bundle */; };
 		A06B186E1A1F14B200F617B5 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18601A1F14B200F617B5 /* MJRefreshBaseView.m */; };
@@ -224,6 +225,7 @@
 		A03C25E41A1B1206005A56B7 /* btn_close_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_selected@2x.png"; sourceTree = "<group>"; };
 		A03C25E51A1B1206005A56B7 /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
 		A03C25E61A1B1206005A56B7 /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
+		A0453FEF1A25E2EB005D99D4 /* yunpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yunpng.png; sourceTree = "<group>"; };
 		A06B18591A1F127700F617B5 /* KFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUser.h; sourceTree = "<group>"; };
 		A06B185A1A1F127700F617B5 /* KFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUser.m; sourceTree = "<group>"; };
 		A06B185D1A1F14B200F617B5 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 		A0134B681A19E5CE0089693C /* 开服排期执行系统jpg */ = {
 			isa = PBXGroup;
 			children = (
+				A0453FEF1A25E2EB005D99D4 /* yunpng.png */,
 				A021524A1A1D8D0D007A1C40 /* ico2.png */,
 				A02152411A1D8B8C007A1C40 /* txbg.png */,
 				A021523F1A1D85FD007A1C40 /* fhico.png */,
@@ -727,6 +730,7 @@
 				A02152581A1DA0CA007A1C40 /* Header.xib in Resources */,
 				A03C25EA1A1B1206005A56B7 /* btn_close_selected@2x.png in Resources */,
 				A03C259F1A1AFA54005A56B7 /* MBProgressHUD.bundle in Resources */,
+				A0453FF01A25E2EB005D99D4 /* yunpng.png in Resources */,
 				A07857E51A1B1CE100C3FF15 /* MainShow.storyboard in Resources */,
 				A08B8EF71A1C4B41009E9057 /* t3.png in Resources */,
 				A0134B741A19E5CE0089693C /* 登录.png in Resources */,
