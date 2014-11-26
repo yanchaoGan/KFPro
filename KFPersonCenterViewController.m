@@ -104,11 +104,8 @@
                 
                 self.photoPicker = [[UIImagePickerController alloc] init];
                 self.photoPicker.delegate = self;
-                self.photoPicker.allowsEditing = YES;
+                self.photoPicker.allowsEditing = NO;
                 self.photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                //            [self presentModalViewController:imagePicker animated:YES];
-                
-//                UIView * cameraOverlayView = [UIView ]
                 
                 [self presentViewController: self.photoPicker animated:YES completion:nil];
                 
@@ -136,16 +133,18 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-//    if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeImage]) {
-//        UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
-//        [self performSelector:@selector(saveImage:)  withObject:img afterDelay:0.5];
-//    }
-//    else if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeMovie]) {
-//        NSString *videoPath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
-//        self.fileData = [NSData dataWithContentsOfFile:videoPath];
-//    }
-    //    [picker dismissModalViewControllerAnimated:YES];
-    [picker dismissViewControllerAnimated:YES completion:nil];
+
+    
+    UIImage * oriimage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    
+     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    
+    
+    
+   
 }
 
 
