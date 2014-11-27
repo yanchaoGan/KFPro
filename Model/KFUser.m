@@ -23,4 +23,54 @@
     return obj;
 }
 
+
+#pragma mark - base64
+
+-(void)setUesrname:(NSString *)useName{
+    
+    _username = [[useName base64EncodedString] copy];
+}
+
+-(NSString *)uesrname{
+    
+    return [_username base64DecodedString];
+}
+
+-(void)setUserpass:(NSString *)userpass1{
+    
+    _password = [[userpass1 base64EncodedString] copy];
+}
+
+-(NSString *)userpass{
+    
+    return [_password base64DecodedString];
+}
+
+
+
+#pragma mark - @protocol NSCoding
+
+- (void)encodeWithCoder:(NSCoder *)enCoder
+{
+    [enCoder encodeObject:_username forKey:@"uesrname"];
+    [enCoder encodeObject:_password forKey:@"userpass"];
+    [enCoder encodeObject:_nickname forKey:@"nickname"];
+    [enCoder encodeObject:_userphoto forKey:@"userphoto"];
+   
+
+}
+
+-(id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super init]) {
+        _username = [decoder decodeObjectForKey:@"uesrname"];
+        _password = [decoder decodeObjectForKey:@"userpass"];
+        _nickname = [decoder decodeObjectForKey:@"nickname"];
+        _userphoto = [decoder decodeObjectForKey:@"userphoto"];
+    }
+    return self;
+    
+    
+}
+
 @end

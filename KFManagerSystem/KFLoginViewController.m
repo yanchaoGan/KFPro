@@ -34,6 +34,12 @@
     
     [self.LoginBtn setBackgroundImage:newImage forState:UIControlStateNormal];
     
+    KFDelegate.loginUser = [KFSBHelper account];
+    if (KFDelegate.loginUser) {
+        self.accountTextField.text =  KFDelegate.loginUser.username;
+        self.passwordTextField.text = KFDelegate.loginUser.password;
+    }
+    
     
     
 }
@@ -61,7 +67,10 @@
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
         
+        
         KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
+        [KFSBHelper saveAccount:KFDelegate.loginUser];
+        
          [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
         
     } fail:^(NSError *error) {

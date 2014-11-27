@@ -427,6 +427,47 @@ extern NSDate * calendarViewSelect;
     [alert show];
 }
 
+
+
+
+
+
++ (BOOL)saveAccount:(KFUser *)account
+{
+    // 获取doc的目录
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    // 拼接保存的路径
+    NSString *filePath = [docPath stringByAppendingPathComponent:@"HDSDK.data"];
+    
+    // 存储输入的用户信息
+    return  [NSKeyedArchiver archiveRootObject:account toFile:filePath];
+    
+}
+
++ (KFUser *)account
+{
+    
+    // 获取doc的目录
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    // 拼接保存的路径
+    NSString *filePath = [docPath stringByAppendingPathComponent:@"HDSDK.data"];
+    
+    // 获取用户存储信息
+    KFUser *account = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    
+    return account;
+}
+
+
+
+
+
+
+
+
+
+
+
 @end
 
 

@@ -20,6 +20,11 @@
 #import "DXAlertView.h"
 #import "MBProgressHUD+NJ.h"
 
+
+#import "UIKit+AFNetworking.h"
+#import "Base64.h"
+#import "KFUser.h"
+
 #import "KFNetworkHelper.h"
 #import "KFSBHelper.h"
 #import "UIColor+expanded.h"
@@ -35,7 +40,8 @@
 
 #import "KFListTableViewCell.h"
 #import "KFReuseView.h"
-#import "KFUser.h"
+
+
 
 #import "KFAppDelegate.h"
 #import "MJRefresh.h"
@@ -45,7 +51,7 @@
 
 
 
-#import "UIKit+AFNetworking.h"
+
 
 
 

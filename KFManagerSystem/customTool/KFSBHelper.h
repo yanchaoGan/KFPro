@@ -110,6 +110,20 @@ typedef enum url{
 
 
 
+/**
+ *  存储数据
+ *
+ *  @param account 需要存的对象
+ *
+ *  @return 是否存储成功
+ */
++ (BOOL)saveAccount:(KFUser *)account;
+/**
+ *  获取存储的账号对象
+ *
+ */
++ (KFUser *)account;
+
 
 
 @end
