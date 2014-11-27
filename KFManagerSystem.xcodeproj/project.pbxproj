@@ -117,6 +117,7 @@
 		A08B8F001A1C7415009E9057 /* PaiQiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B8EFF1A1C7415009E9057 /* PaiQiCell.xib */; };
 		A08B8F011A1C7415009E9057 /* PaiQiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B8EFF1A1C7415009E9057 /* PaiQiCell.xib */; };
 		A0965D631A1B763100341834 /* KFCalendarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0965D621A1B763100341834 /* KFCalendarContainerView.m */; };
+		A0C3CC6E1A26F73300E48992 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C3CC6D1A26F73300E48992 /* VPImageCropperViewController.m */; };
 		A0F079101A2454980057A2A0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F0790D1A2454980057A2A0 /* UIScrollView+MJExtension.m */; };
 		A0F079111A2454980057A2A0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F0790F1A2454980057A2A0 /* UIView+MJExtension.m */; };
 /* End PBXBuildFile section */
@@ -282,6 +283,8 @@
 		A08B8EFF1A1C7415009E9057 /* PaiQiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaiQiCell.xib; sourceTree = SOURCE_ROOT; };
 		A0965D611A1B763100341834 /* KFCalendarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFCalendarContainerView.h; sourceTree = SOURCE_ROOT; };
 		A0965D621A1B763100341834 /* KFCalendarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFCalendarContainerView.m; sourceTree = SOURCE_ROOT; };
+		A0C3CC6C1A26F73300E48992 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		A0C3CC6D1A26F73300E48992 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		A0F0790C1A2454980057A2A0 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
 		A0F0790D1A2454980057A2A0 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
 		A0F0790E1A2454980057A2A0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
@@ -474,6 +477,7 @@
 		A03C25701A1AF157005A56B7 /* openThirdCode */ = {
 			isa = PBXGroup;
 			children = (
+				A0C3CC6B1A26F73300E48992 /* VPImageCropper */,
 				A07771CD1A22C99800E4B983 /* Base64 */,
 				A06B185C1A1F14B200F617B5 /* MJRefresh */,
 				A01F81131A1C92BB0020B25A /* UIKit+AFNetworking */,
@@ -631,6 +635,15 @@
 				A07858091A1B3F1800C3FF15 /* VRGCalendarView.m */,
 			);
 			path = "Vurig Calendar";
+			sourceTree = "<group>";
+		};
+		A0C3CC6B1A26F73300E48992 /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				A0C3CC6C1A26F73300E48992 /* VPImageCropperViewController.h */,
+				A0C3CC6D1A26F73300E48992 /* VPImageCropperViewController.m */,
+			);
+			path = VPImageCropper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -791,6 +804,7 @@
 				A03C25EB1A1B1206005A56B7 /* DXAlertView.m in Sources */,
 				A07771D01A22C99800E4B983 /* Base64.m in Sources */,
 				A03C25871A1AF3CA005A56B7 /* AFHTTPRequestOperationManager.m in Sources */,
+				A0C3CC6E1A26F73300E48992 /* VPImageCropperViewController.m in Sources */,
 				A02152531A1D99E4007A1C40 /* KFPersonCenterViewController.m in Sources */,
 				A078580D1A1B3F1800C3FF15 /* UIView+convenience.m in Sources */,
 				A07857EB1A1B2A2F00C3FF15 /* KFRiLiViewController.m in Sources */,

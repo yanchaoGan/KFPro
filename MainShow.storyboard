@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Ql-rq-Hol">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Ql-rq-Hol">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -311,6 +311,57 @@
             </objects>
             <point key="canvasLocation" x="2655" y="97"/>
         </scene>
+        <!--Change Photo View Controller-->
+        <scene sceneID="7ks-ph-QX8">
+            <objects>
+                <viewController id="2up-Hc-OpT" customClass="KFChangePhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="da6-9e-b3W"/>
+                        <viewControllerLayoutGuide type="bottom" id="zAE-Pd-A6I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zJi-Em-JBe">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtu-7R-IfV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="移动和缩放" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzg-nn-86s">
+                                        <rect key="frame" x="118" y="11" width="85" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.031372550870000002" green="0.78431379800000001" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbD-gR-WrF">
+                                        <rect key="frame" x="20" y="13" width="16" height="18"/>
+                                        <state key="normal" image="fhico.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnClick:" destination="ONb-Bp-x36" eventType="touchUpInside" id="ZaS-UI-QvA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.1215686275" blue="0.2156862745" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="C9d-tc-DtG"/>
+                                    <constraint firstAttribute="centerX" secondItem="Qzg-nn-86s" secondAttribute="centerX" id="gwy-G8-aeS"/>
+                                    <constraint firstAttribute="centerY" secondItem="Qzg-nn-86s" secondAttribute="centerY" constant="0.5" id="pvX-KQ-aZ5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xtu-7R-IfV" secondAttribute="trailing" id="ANx-4d-gI4"/>
+                            <constraint firstItem="xtu-7R-IfV" firstAttribute="leading" secondItem="zJi-Em-JBe" secondAttribute="leading" id="RH9-5A-K6u"/>
+                            <constraint firstItem="xtu-7R-IfV" firstAttribute="top" secondItem="da6-9e-b3W" secondAttribute="bottom" id="bLL-22-spP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RMn-YJ-iwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2663" y="848"/>
+        </scene>
         <!--ChangePW View Controller-->
         <scene sceneID="PMO-nl-qDZ">
             <objects>
@@ -586,7 +637,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQQ-uA-vn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2894" y="-607"/>
+            <point key="canvasLocation" x="2570" y="-607"/>
         </scene>
         <!--Ri Li View Controller-->
         <scene sceneID="sws-1k-Nb6">
@@ -725,9 +776,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eB-hP-uoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2534" y="-607"/>
+            <point key="canvasLocation" x="2210" y="-607"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="PtY-uS-kMX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5Ql-rq-Hol" sceneMemberID="viewController">
