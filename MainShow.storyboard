@@ -418,13 +418,23 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1O-cM-Vej">
+                                                <rect key="frame" x="104" y="8" width="163" height="29"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.39215689897537231" green="0.66274511814117432" blue="0.74901962280273438" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="W1O-cM-Vej" secondAttribute="trailing" constant="13" id="Fk8-pM-awS"/>
                                             <constraint firstAttribute="centerY" secondItem="6Ku-3P-CGt" secondAttribute="centerY" id="HvA-6c-MTF"/>
+                                            <constraint firstAttribute="centerX" secondItem="W1O-cM-Vej" secondAttribute="centerX" constant="-45.5" id="NjH-wv-gWa"/>
                                             <constraint firstItem="6Ku-3P-CGt" firstAttribute="leading" secondItem="yMC-2J-61d" secondAttribute="leading" constant="14" id="Oms-Na-KdH"/>
                                             <constraint firstAttribute="height" constant="45" id="a6F-2t-VPd"/>
                                             <constraint firstAttribute="width" constant="280" id="aU1-TB-6to"/>
+                                            <constraint firstItem="W1O-cM-Vej" firstAttribute="top" secondItem="yMC-2J-61d" secondAttribute="top" constant="8" id="bOd-7z-cdI"/>
+                                            <constraint firstAttribute="bottom" secondItem="W1O-cM-Vej" secondAttribute="bottom" constant="8" id="uO6-Up-l1u"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMI-h9-ong">
@@ -436,12 +446,22 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVX-2c-1Ak">
+                                                <rect key="frame" x="109" y="8" width="163" height="29"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.39215689897537231" green="0.66274511814117432" blue="0.75294125080108643" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="HZe-MT-eWM"/>
                                             <constraint firstAttribute="width" constant="280" id="MiT-Yz-o8F"/>
+                                            <constraint firstAttribute="bottom" secondItem="hVX-2c-1Ak" secondAttribute="bottom" constant="8" id="ThZ-a1-ffH"/>
+                                            <constraint firstAttribute="trailing" secondItem="hVX-2c-1Ak" secondAttribute="trailing" constant="8" id="VyG-T9-TBC"/>
+                                            <constraint firstItem="hVX-2c-1Ak" firstAttribute="top" secondItem="TMI-h9-ong" secondAttribute="top" constant="8" id="g1R-Rg-per"/>
                                             <constraint firstItem="Rul-OX-9tv" firstAttribute="leading" secondItem="TMI-h9-ong" secondAttribute="leading" constant="10" id="hul-yy-KYH"/>
+                                            <constraint firstAttribute="centerX" secondItem="hVX-2c-1Ak" secondAttribute="centerX" constant="-50.5" id="pwU-kc-ffj"/>
                                             <constraint firstAttribute="centerY" secondItem="Rul-OX-9tv" secondAttribute="centerY" id="x5S-el-OGC"/>
                                         </constraints>
                                     </view>
@@ -454,10 +474,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXM-aW-GF8">
+                                                <rect key="frame" x="109" y="8" width="163" height="29"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.39215689897537231" green="0.66274511814117432" blue="0.74901962280273438" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="iXM-aW-GF8" secondAttribute="bottom" constant="8" id="JSu-dS-I8N"/>
+                                            <constraint firstAttribute="trailing" secondItem="iXM-aW-GF8" secondAttribute="trailing" constant="8" id="JpK-Tb-kOr"/>
                                             <constraint firstItem="C2s-ZH-RTc" firstAttribute="leading" secondItem="ANj-Nn-mtz" secondAttribute="leading" constant="9" id="NsA-L3-i4X"/>
+                                            <constraint firstItem="iXM-aW-GF8" firstAttribute="top" secondItem="ANj-Nn-mtz" secondAttribute="top" constant="8" id="OC3-el-J2f"/>
+                                            <constraint firstAttribute="centerX" secondItem="iXM-aW-GF8" secondAttribute="centerX" constant="-50.5" id="ZfU-Bq-hTA"/>
                                             <constraint firstAttribute="height" constant="45" id="fVd-to-KI4"/>
                                             <constraint firstAttribute="width" constant="280" id="kOM-gt-YZj"/>
                                             <constraint firstAttribute="centerY" secondItem="C2s-ZH-RTc" secondAttribute="centerY" id="zcG-1a-KLi"/>
