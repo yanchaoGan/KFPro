@@ -181,7 +181,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号:zhangtaohua" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if8-KU-5cc">
-                                        <rect key="frame" x="116" y="62" width="137" height="20"/>
+                                        <rect key="frame" x="134" y="62" width="137" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -268,18 +268,18 @@
                                 <constraints>
                                     <constraint firstItem="oah-xo-TyJ" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="101" id="1kO-zu-E6U"/>
                                     <constraint firstItem="VUb-Kc-FtX" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="149" id="54F-L9-Xyt"/>
-                                    <constraint firstAttribute="centerX" secondItem="cjT-3H-OMu" secondAttribute="centerX" constant="9" id="7wW-0w-m01"/>
+                                    <constraint firstItem="if8-KU-5cc" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="62" id="Bk4-YK-nxH"/>
+                                    <constraint firstAttribute="centerX" secondItem="cjT-3H-OMu" secondAttribute="centerX" constant="9" id="Do2-Pd-yar"/>
                                     <constraint firstAttribute="centerX" secondItem="eyA-sa-4GK" secondAttribute="centerX" constant="113.5" id="E06-oM-WCy"/>
                                     <constraint firstAttribute="centerX" secondItem="VUb-Kc-FtX" secondAttribute="centerX" id="EhV-sA-xvf"/>
                                     <constraint firstItem="eyA-sa-4GK" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="114" id="Gdu-bK-nFp"/>
                                     <constraint firstItem="ym2-pb-yZZ" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="11" id="Hhu-EH-4Vz"/>
                                     <constraint firstAttribute="centerX" secondItem="oah-xo-TyJ" secondAttribute="centerX" constant="-21.5" id="JQH-V6-H3O"/>
-                                    <constraint firstItem="if8-KU-5cc" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="62" id="JUa-Dv-DGz"/>
                                     <constraint firstItem="2Js-2e-PMH" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="229" id="Nog-ZR-Ods"/>
-                                    <constraint firstAttribute="centerX" secondItem="if8-KU-5cc" secondAttribute="centerX" constant="-24" id="dgh-WH-aQh"/>
+                                    <constraint firstItem="if8-KU-5cc" firstAttribute="leading" secondItem="cjT-3H-OMu" secondAttribute="leading" id="RlX-Zf-Bgw"/>
                                     <constraint firstAttribute="centerX" secondItem="2Js-2e-PMH" secondAttribute="centerX" id="fvz-Hl-Gxw"/>
                                     <constraint firstAttribute="centerX" secondItem="Vg1-RC-oc5" secondAttribute="centerX" id="lzw-RY-f3N"/>
-                                    <constraint firstItem="cjT-3H-OMu" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="33" id="phx-VB-ZqM"/>
+                                    <constraint firstItem="cjT-3H-OMu" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="33" id="pmX-UD-5ZS"/>
                                     <constraint firstAttribute="centerX" secondItem="ym2-pb-yZZ" secondAttribute="centerX" constant="107" id="u4S-OB-YS9"/>
                                     <constraint firstItem="Vg1-RC-oc5" firstAttribute="top" secondItem="gOR-P7-LpV" secondAttribute="top" constant="95" id="ydh-Ia-eGl"/>
                                 </constraints>
