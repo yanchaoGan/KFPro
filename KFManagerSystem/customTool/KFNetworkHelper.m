@@ -40,5 +40,30 @@
     }];
     
 }
++(void)postFileWithUrl:(NSString *)url filePath:(NSString *)filePath params:(NSDictionary *)params success:(SuccessBlock)success   fail:(FailBlock)fail andHUBString:(NSString *)hub{
+    
+    [MBProgressHUD showMessage:hub toView:nil];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  
+    NSURL *filePathUrl = [NSURL fileURLWithPath:filePath];
+    
+    [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileURL:filePathUrl name:@"image" error:nil];
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+         [MBProgressHUD hideHUD];
+        NSLog(@"Success: %@", responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD hideHUD];
+        NSLog(@"Error: %@", error);
+    }];
+
+
+}
+
 
 @end

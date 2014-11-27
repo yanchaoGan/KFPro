@@ -203,8 +203,11 @@
         self.userPhoto.image = selfPhoto;
         
         // 接下来 将 图片 传递给 服务器作为图片保存
-        
-        
+        [KFNetworkHelper postFileWithUrl:KServerUrl filePath:imageFilePath params:nil success:^(id responseObject) {
+            
+        } fail:^(NSError *error) {
+            
+        } andHUBString:@"头像上传..."];
     }else{
     
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -217,6 +220,9 @@
             self.userPhoto.image = selfPhoto;
         }else{
         
+            // 从网络下载图片
+            KFUser * user = KFDelegate.loginUser;
+            [self.userPhoto  setImageWithURL:[NSURL URLWithString:user.userphoto] placeholderImage:nil];
         }
     
         

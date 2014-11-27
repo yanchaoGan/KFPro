@@ -19,4 +19,8 @@ typedef void (^FailBlock)(NSError *error);
 
 +(void)postWithUrl:(NSString *)url params:(NSDictionary *)params  success:(SuccessBlock)success   fail:(FailBlock)fail andHUBString:(NSString *)hub;
 
+
+
++(void)postFileWithUrl:(NSString *)url filePath:(NSString *)filePath params:(NSDictionary *)params success:(SuccessBlock)success   fail:(FailBlock)fail andHUBString:(NSString *)hub;
+
 @end
