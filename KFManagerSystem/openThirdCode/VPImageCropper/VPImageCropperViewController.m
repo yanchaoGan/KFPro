@@ -90,9 +90,9 @@
     self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.overlayView];
     
-    self.ratioView = [[UIImageView alloc] initWithFrame:self.cropFrame];
-    [(UIImageView *)self.ratioView  setContentMode:UIViewContentModeScaleAspectFit];
-    [(UIImageView *)self.ratioView  setImage:[UIImage imageNamed:@"yunpng"]];
+    self.ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
+//    [(UIImageView *)self.ratioView  setContentMode:UIViewContentModeScaleAspectFit];
+//    [(UIImageView *)self.ratioView  setImage:[UIImage imageNamed:@"yunpng"]];
     self.ratioView.layer.borderColor = [UIColor redColor].CGColor;
     self.ratioView.layer.borderWidth = 1.0f;
     self.ratioView.autoresizingMask = UIViewAutoresizingNone;
@@ -105,7 +105,7 @@
     UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50.0f, 100, 50)];
     cancelBtn.backgroundColor = [UIColor blackColor];
     cancelBtn.titleLabel.textColor = [UIColor whiteColor];
-    [cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [cancelBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
     [cancelBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [cancelBtn.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
@@ -117,7 +117,7 @@
     UIButton *confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100.0f, self.view.frame.size.height - 50.0f, 100, 50)];
     confirmBtn.backgroundColor = [UIColor blackColor];
     confirmBtn.titleLabel.textColor = [UIColor whiteColor];
-    [confirmBtn setTitle:@"OK" forState:UIControlStateNormal];
+    [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [confirmBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
     [confirmBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
     confirmBtn.titleLabel.textColor = [UIColor whiteColor];
@@ -247,7 +247,7 @@
     
 
     // GYC ADD
-    if ((newFrame.origin.x + newFrame.size.width ) < (self.cropFrame.origin.x + self.cropFrame.size.width)) {
+    if (newFrame.origin.x < self.cropFrame.origin.x  && (newFrame.origin.x + newFrame.size.width ) < (self.cropFrame.origin.x + self.cropFrame.size.width)) {
         
         newFrame.origin.x = self.cropFrame.origin.x + self.cropFrame.size.width - newFrame.size.width;
     }
