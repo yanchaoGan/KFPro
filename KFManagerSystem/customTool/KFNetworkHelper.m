@@ -21,10 +21,18 @@
     [[AFHTTPRequestOperationManager  manager]  POST:urlstring parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        [MBProgressHUD hideHUD];
         
+
+        responseObject = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:nil];
+        
         NSString * state = [responseObject objectForKey:@"state"];
         if ([state isEqualToString:@"1"]) {
             
             id result = [responseObject objectForKey:@"result"];
+            result = [NSJSONSerialization JSONObjectWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+            
+            if (DEBUG) {
+                NSLog(@"服务器返回数据是 %@",result);
+            }
             success(result);
             
         }else{
@@ -65,6 +73,10 @@
         if ([state isEqualToString:@"1"]) {
             
             id result = [responseObject objectForKey:@"result"];
+             result = [NSJSONSerialization JSONObjectWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+            if (DEBUG) {
+                NSLog(@"服务器返回数据是 %@",result);
+            }
             success(result);
             
         }else{

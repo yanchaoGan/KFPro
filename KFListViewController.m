@@ -31,19 +31,7 @@
     // Do any additional setup after loading the view.
     
 
-    self.ListSouceArr =[NSMutableArray arrayWithArray: @[@{@"date":@"2014-11-20",@"info":@[@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"1"}]},
-  
-        
     
-       @{@"date":@"2014-11-20",@"info":@[@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"2"}]},
-                                                         
-      
-  
-  @{@"date":@"2014-11-20",@"info":@[@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"3"},@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"3"},@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"3"},@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"3"},@{@"appicon": @"www.baidu.com",@"appdescribe":@"appdescribe",@"appstarttime":@"10:55",@"apptype":@"3"}]}
-                                                         ]
-         
-                        
-                        ];
     
     
     // 2.集成刷新控件

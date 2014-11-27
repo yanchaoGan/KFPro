@@ -109,6 +109,9 @@ typedef enum url{
 +(void)simpleAlertTitle:(NSString *)title message:(NSString *)message cancel:(NSString *)cancel;
 
 
+
+
+
 @end
 
 

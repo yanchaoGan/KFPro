@@ -311,6 +311,18 @@ extern NSDate * calendarViewSelect;
     }else if ([urltype isEqualToString:@"onedaydetail"]){
         
         urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
+        
+    }else if ([urltype isEqualToString:@"planList"]){
+    
+        urlstring =@"http://192.168.0.118:8080/GamePlan/xml/week.do";
+        
+    }else if ([urltype isEqualToString:@"changepassword"]){
+    
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
+        
+    }else if ([urltype isEqualToString:@"changeuserphoto"]){
+    
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
     }
     
     return urlstring;
