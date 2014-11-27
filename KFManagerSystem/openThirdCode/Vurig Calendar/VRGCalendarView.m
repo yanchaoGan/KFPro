@@ -360,7 +360,7 @@
    
     
     // gyc add  周几 背景色
-    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-20,kVRGCalendarViewWidth,20});
+    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-25,kVRGCalendarViewWidth,25});
     CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x00385d"].CGColor);
     CGContextFillPath(context);
     
