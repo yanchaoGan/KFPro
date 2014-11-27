@@ -145,7 +145,7 @@
     
     [picker dismissViewControllerAnimated:YES completion:^{
         
-        VPImageCropperViewController *imgCropperVC = [[VPImageCropperViewController alloc] initWithImage:oriimage cropFrame:CGRectMake(100, 100.0f, 100, 100) limitScaleRatio:3.0];
+        VPImageCropperViewController *imgCropperVC = [[VPImageCropperViewController alloc] initWithImage:oriimage cropFrame:CGRectMake((CGRectGetWidth(self.view.bounds) -100 )/2, (CGRectGetHeight(self.view.bounds) - 100)/2, 100, 100) limitScaleRatio:3.0];
         imgCropperVC.delegate = self;
         [self presentViewController:imgCropperVC animated:YES completion:^{
             // TO DO
