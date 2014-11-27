@@ -68,7 +68,7 @@
 //        NSLog(@"%@",error.userInfo);
 //    } andHUBString:@"Loading..."];
     
-    
+    KFDelegate.loginUser = [KFUser fillUseDic:@{@"username":@"zhangtao",@"nickname":@"你好"}];
     [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
    
 

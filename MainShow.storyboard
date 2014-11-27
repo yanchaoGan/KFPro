@@ -298,8 +298,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Lk-oV-Iix"/>
                     <connections>
+                        <outlet property="nicknamelabel" destination="cjT-3H-OMu" id="snv-qr-g2H"/>
                         <outlet property="userPhoto" destination="pbf-ej-rZq" id="byR-HS-PvQ"/>
                         <outlet property="userPhotoBG" destination="ym2-pb-yZZ" id="rRZ-qs-BnU"/>
+                        <outlet property="usernamelabel" destination="if8-KU-5cc" id="pQW-mb-dgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YL3-4G-txN" userLabel="First Responder" sceneMemberID="firstResponder"/>

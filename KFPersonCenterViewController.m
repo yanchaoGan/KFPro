@@ -37,6 +37,10 @@
     
     [self  saveImage:nil];
     
+    KFUser * user = KFDelegate.loginUser;
+    self.nicknamelabel.text = user.nickname;
+    self.usernamelabel.text = [NSString stringWithFormat:@"账号: %@",user.username];
+    
 }
 
 

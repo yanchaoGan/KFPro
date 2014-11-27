@@ -19,5 +19,10 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UILabel *nicknamelabel;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *usernamelabel;
+
 
 @end
