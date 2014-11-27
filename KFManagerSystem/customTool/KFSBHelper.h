@@ -74,6 +74,21 @@ typedef enum url{
  */
 +(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype  andOtherParamas:(id)futureObj;
 
+
+/**
+ *  根据 参数接口类型 返回相应的 url 
+   这是因为 后台 不能 统一成 接口
+ *
+ *  @param param
+ *
+ *  @return
+ */
++(NSString *)getUrlStringByParama:(NSMutableDictionary *)param;
+
+
+
+
+
 +(void)setCalendarViewSelect:(NSDate *)date;
 +(NSDate *)getCalendarViewSelect;
 

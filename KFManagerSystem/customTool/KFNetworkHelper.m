@@ -16,14 +16,16 @@
     
 //    [MBProgressHUD showMessage:hub toView:nil];
     
-    [[AFHTTPRequestOperationManager  manager]  POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString * urlstring = [KFSBHelper getUrlStringByParama:(NSMutableDictionary *)params];
+    
+    [[AFHTTPRequestOperationManager  manager]  POST:urlstring parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        [MBProgressHUD hideHUD];
         
         NSString * state = [responseObject objectForKey:@"state"];
         if ([state isEqualToString:@"1"]) {
             
             id result = [responseObject objectForKey:@"result"];
-            success(responseObject);
+            success(result);
             
         }else{
         
@@ -44,11 +46,13 @@
     
     [MBProgressHUD showMessage:hub toView:nil];
     
+     NSString * urlstring = [KFSBHelper getUrlStringByParama:(NSMutableDictionary *)params];
+    
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  
     NSURL *filePathUrl = [NSURL fileURLWithPath:filePath];
     
-    [manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manager POST:urlstring parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileURL:filePathUrl name:@"image" error:nil];
         
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -56,10 +60,26 @@
          [MBProgressHUD hideHUD];
         NSLog(@"Success: %@", responseObject);
         
+        
+        NSString * state = [responseObject objectForKey:@"state"];
+        if ([state isEqualToString:@"1"]) {
+            
+            id result = [responseObject objectForKey:@"result"];
+            success(result);
+            
+        }else{
+            
+            NSError * err = [NSError errorWithDomain:@"custom" code:5 userInfo:nil];
+            fail(err);
+        }
+        
+
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         [MBProgressHUD hideHUD];
         NSLog(@"Error: %@", error);
+         fail(error);
     }];
 
 

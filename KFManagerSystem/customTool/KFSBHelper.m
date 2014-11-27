@@ -295,6 +295,29 @@ extern NSDate * calendarViewSelect;
     return paramas;
 }
 
++(NSString *)getUrlStringByParama:(NSMutableDictionary *)param{
+
+    NSString * urltype = [param objectForKey:@"urltype"];
+    NSString * urlstring = nil;
+    
+    if ([urltype  isEqualToString:@"login"]) {
+        
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/login.do";
+    
+    }else if ([urltype isEqualToString:@"monthsummary"]){
+    
+          urlstring = @"http://192.168.0.118:8080/GamePlan/xml/calendar.do";
+    
+    }else if ([urltype isEqualToString:@"onedaydetail"]){
+        
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
+    }
+    
+    return urlstring;
+}
+
+
+
 
 +(NSString *)getMd5SignStringByArr:(NSArray *)signArr{
 
