@@ -8,7 +8,7 @@
 
 #import "KFPersonCenterViewController.h"
 
-@interface KFPersonCenterViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface KFPersonCenterViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,VPImageCropperDelegate>
 
 
 @property(nonatomic,strong)UIImagePickerController * photoPicker;
@@ -34,6 +34,8 @@
 
     [self.userPhotoBG.layer  setCornerRadius:CGRectGetWidth(self.userPhotoBG.bounds)/2.0];
     [self.userPhoto.layer  setCornerRadius:CGRectGetWidth(self.userPhoto.bounds)/2.0];
+    
+    [self  saveImage:nil];
     
 }
 
@@ -137,8 +139,15 @@
     
     UIImage * oriimage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    
-     [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+        VPImageCropperViewController *imgCropperVC = [[VPImageCropperViewController alloc] initWithImage:oriimage cropFrame:CGRectMake(100, 100.0f, 100, 100) limitScaleRatio:3.0];
+        imgCropperVC.delegate = self;
+        [self presentViewController:imgCropperVC animated:YES completion:^{
+            // TO DO
+        }];
+
+    }];
     
     
     
@@ -149,27 +158,70 @@
 
 
 
+#pragma mark - 第三方
+- (void)imageCropper:(VPImageCropperViewController *)cropperViewController didFinished:(UIImage *)editedImage{
+    
+    [self saveImage:editedImage];
+    
+    [cropperViewController dismissViewControllerAnimated:YES completion:^{
+    }];
+    
+}
+- (void)imageCropperDidCancel:(VPImageCropperViewController *)cropperViewController{
+
+
+    [cropperViewController dismissViewControllerAnimated:YES completion:^{
+    }];
+    
+}
+
+
+
+
 - (void)saveImage:(UIImage *)image {
     //    NSLog(@"保存头像！");
     //    [userPhotoButton setImage:image forState:UIControlStateNormal];
-    BOOL success;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
-    NSLog(@"imageFile->>%@",imageFilePath);
-    success = [fileManager fileExistsAtPath:imageFilePath];
-    if(success) {
-        success = [fileManager removeItemAtPath:imageFilePath error:&error];
+    if (image != nil) {
+        
+        BOOL success;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
+        NSLog(@"imageFile->>%@",imageFilePath);
+        success = [fileManager fileExistsAtPath:imageFilePath];
+        if(success) {
+            success = [fileManager removeItemAtPath:imageFilePath error:&error];
+        }
+        //    UIImage *smallImage=[self scaleFromImage:image toSize:CGSizeMake(80.0f, 80.0f)];//将图片尺寸改为80*80
+        UIImage *smallImage = [self thumbnailWithImageWithoutScale:image size:CGSizeMake(93, 93)];
+        [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
+        UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
+        self.userPhoto.image = selfPhoto;
+        
+        // 接下来 将 图片 传递给 服务器作为图片保存
+        
+        
+    }else{
+    
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
+        NSLog(@"imageFile->>%@",imageFilePath);
+        UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
+
+        if (selfPhoto) {
+            self.userPhoto.image = selfPhoto;
+        }else{
+        
+        }
+    
+        
     }
-    //    UIImage *smallImage=[self scaleFromImage:image toSize:CGSizeMake(80.0f, 80.0f)];//将图片尺寸改为80*80
-    UIImage *smallImage = [self thumbnailWithImageWithoutScale:image size:CGSizeMake(93, 93)];
-    [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
-    UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
- 
-    self.userPhoto.image = selfPhoto;
+
 }
 
 // 改变图像的尺寸，方便上传服务器 // desprice
