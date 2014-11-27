@@ -33,7 +33,6 @@
     
     
     [self.LoginBtn setBackgroundImage:newImage forState:UIControlStateNormal];
-    
     KFDelegate.loginUser = [KFSBHelper account];
     if (KFDelegate.loginUser) {
         self.accountTextField.text =  KFDelegate.loginUser.username;

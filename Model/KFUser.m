@@ -18,7 +18,7 @@
     obj.nickname = [dataDic objectForKey:@"nickname"];
     obj.userphoto = [dataDic objectForKey:@"userphoto"];
     obj.password = [dataDic objectForKey:@"password"];
-    
+    obj.userid = [dataDic objectForKey:@"userid"];
     
     return obj;
 }
@@ -56,6 +56,7 @@
     [enCoder encodeObject:_password forKey:@"userpass"];
     [enCoder encodeObject:_nickname forKey:@"nickname"];
     [enCoder encodeObject:_userphoto forKey:@"userphoto"];
+    [enCoder encodeObject:_userid forKey:@"userid"];
    
 
 }
@@ -67,6 +68,7 @@
         _password = [decoder decodeObjectForKey:@"userpass"];
         _nickname = [decoder decodeObjectForKey:@"nickname"];
         _userphoto = [decoder decodeObjectForKey:@"userphoto"];
+        _userid = [decoder decodeObjectForKey:@"userid"];
     }
     return self;
     

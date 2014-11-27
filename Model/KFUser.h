@@ -15,6 +15,7 @@
 @property (nonatomic,strong)NSString * nickname;
 @property (nonatomic,strong)NSString * userphoto;
 @property (nonatomic,strong)NSString * password;
+@property (nonatomic,strong)NSString * userid; // uuid
 
 
 
