@@ -14,6 +14,16 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UITextField *origntextfield;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *newtextfield;
+
+@property (weak, nonatomic) IBOutlet UITextField *verfytextfield;
+
+
+
+
 
 
 @end

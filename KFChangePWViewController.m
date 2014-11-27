@@ -40,6 +40,9 @@
      
 }
 
+
+#pragma mark - btnclick
+
 - (IBAction)cancelBtnClick:(UIButton *)sender {
     
     [self.navigationController  popViewControllerAnimated:YES];
@@ -47,6 +50,39 @@
 
 
 - (IBAction)sureButtonClick:(UIButton *)sender {
+    
+    KFUser * user = KFDelegate.loginUser;
+
+    if ([self.origntextfield.text  isEqualToString:user.password]) {
+        
+    }else{
+    
+        [KFSBHelper simpleAlertTitle:nil message:@"原密码错误" cancel:@"取消"];
+    
+        return;
+    }
+    
+    if ([KFSBHelper isNotEmptyStringOfObj:self.newtextfield.text] && [KFSBHelper isNotEmptyStringOfObj:self.verfytextfield.text] && [self.newtextfield.text isEqualToString:self.verfytextfield.text]) {
+        
+    }else{
+        
+        [KFSBHelper simpleAlertTitle:nil message:@"请确认新密码" cancel:@"取消"];
+        return;
+    }
+    
+    
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypechangepassword andOtherParamas:@{@"userid":user.userid}];
+    
+    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+        
+        KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
+        [KFSBHelper saveAccount:KFDelegate.loginUser];
+        
+    } fail:^(NSError *error) {
+        
+    } andHUBString:@"修改密码..."];
+    
+    
 }
 
 

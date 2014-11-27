@@ -547,7 +547,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="rOZ-G3-scc"/>
                     <connections>
+                        <outlet property="newtextfield" destination="hVX-2c-1Ak" id="s6U-9c-lyT"/>
+                        <outlet property="origntextfield" destination="W1O-cM-Vej" id="bGJ-7K-vAy"/>
                         <outlet property="reallyBGView" destination="Xcu-Du-TD5" id="CBT-Wu-pfL"/>
+                        <outlet property="verfytextfield" destination="iXM-aW-GF8" id="I1e-ug-HcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ll-Az-di2" userLabel="First Responder" sceneMemberID="firstResponder"/>
