@@ -22,7 +22,8 @@ typedef enum url{
     urltypemonthsummary,
     urltypeonedaydetail,
     urltypeplanlist,
-    urltypechangepassword
+    urltypechangepassword,  // 修改密码
+    urltypechangeuserphoto  // 上传头像
     
 }URLTYPE;
 

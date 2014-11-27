@@ -254,6 +254,39 @@ extern NSDate * calendarViewSelect;
                 
             }break;
                 
+            case urltypechangepassword:{
+            
+                URLTYPE = @"changepassword";
+                [paramas  setObject:URLTYPE forKey:@"urltype"];
+                
+                NSString * userid = [futureObj objectForKey:@"userid"];
+                [paramas setObject:userid forKey:@"userid"];
+                
+                NSString * password = [futureObj objectForKey:@"password"];
+                [paramas setObject:@"password" forKey:@"password"];
+                
+                NSString * time = [KFSBHelper getNowDate];
+                [paramas setObject:time forKey:@"time"];
+                
+                NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,userid,password,time]];
+                [paramas setObject:sign forKey:@"sign"];
+            }break;
+            case urltypechangeuserphoto:{
+            
+                URLTYPE = @"changeuserphoto";
+                [paramas  setObject:URLTYPE forKey:@"urltype"];
+                
+                NSString * userid = [futureObj objectForKey:@"userid"];
+                [paramas setObject:userid forKey:@"userid"];
+                
+                NSString * time = [KFSBHelper getNowDate];
+                [paramas setObject:time forKey:@"time"];
+                
+                NSString * sign = [KFSBHelper  getMd5SignStringByArr:@[URLTYPE,userid,time]];
+                [paramas setObject:sign forKey:@"sign"];
+                
+            }break;
+                
             default:
                 break;
         }
