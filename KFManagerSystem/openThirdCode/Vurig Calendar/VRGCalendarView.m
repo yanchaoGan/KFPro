@@ -313,6 +313,15 @@
     
      [self setClearsContextBeforeDrawing: YES];
     
+    for (UIView * subView in self.subviews) {
+        if (subView == self.labelCurrentMonth || subView == self.animationView_A || subView == animationView_B) {
+        }else{
+        
+            [subView removeFromSuperview];
+        }
+    }
+    
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM yyyy"];
     labelCurrentMonth.text = [formatter stringFromDate:self.currentMonth];
