@@ -13,13 +13,14 @@
 
 
 +(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success fail:(FailBlock)fail andHUBString:(NSString *)hub{
-    
-//    [MBProgressHUD showMessage:hub toView:nil];
+
+    [MBProgressHUD  hideHUD];
+    [MBProgressHUD showMessage:hub toView:nil];
     
     NSString * urlstring = [KFSBHelper getUrlStringByParama:(NSMutableDictionary *)params];
     
     [[AFHTTPRequestOperationManager  manager]  POST:urlstring parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideHUD];
         
 
         responseObject = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:nil];
@@ -45,13 +46,13 @@
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        [MBProgressHUD hideHUD];
+        [MBProgressHUD hideHUD];
         fail(error);
     }];
     
 }
 +(void)postFileWithUrl:(NSString *)url filePath:(NSString *)filePath params:(NSDictionary *)params success:(SuccessBlock)success   fail:(FailBlock)fail andHUBString:(NSString *)hub{
-    
+     [MBProgressHUD  hideHUD];
     [MBProgressHUD showMessage:hub toView:nil];
     
      NSString * urlstring = [KFSBHelper getUrlStringByParama:(NSMutableDictionary *)params];
