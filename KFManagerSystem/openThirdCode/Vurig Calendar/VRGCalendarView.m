@@ -491,6 +491,8 @@
     
     
     // gyc change add
+    
+    CGContextSetBlendMode(context, kCGBlendModeOverlay);
 
     BOOL  isCurrentMonth = [KFSBHelper isCurrentMonthByDate:self.currentMonth]; // 是否是当前月份
     BOOL  isWeekend; // 是否周末 一个 日期字符串

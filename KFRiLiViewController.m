@@ -44,11 +44,6 @@
     UILabel * header = (UILabel *)[self.riliListTable.tableHeaderView viewWithTag:100];
     header.text = [KFSBHelper headerStringFromDate:[NSDate date]];
     
-    
-    
-    
-    
-    self.OneDayArr = [NSMutableArray arrayWithArray: @[@{@"appicon":@"http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&word=%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87%E5%BA%93&pn=0&spn=0&di=168579042720&rn=1&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2023996564%2C2004746460&os=1196979400%2C637688747&adpicid=0&ln=1000&fr=ala2%2Cala2&sme=0&cg=&objurl=http%3A%2F%2Fa2.att.hudong.com%2F63%2F84%2F28300542054762137180843808654.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fp7rtwg_z%26e3Bkwthj_z%26e3Bv54AzdH3F9m9m9dAzdH3F8_z%26e3Bip4s%3Fr61%3Dz7p7_pi74kf",@"appdescribe":@"小小魔兽一曲",@"appstarttime":@"10:00",@"apptype":@"1"},@{@"appicon":@"http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&word=%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87%E5%BA%93&pn=0&spn=0&di=168579042720&rn=1&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2023996564%2C2004746460&os=1196979400%2C637688747&adpicid=0&ln=1000&fr=ala2%2Cala2&sme=0&cg=&objurl=http%3A%2F%2Fa2.att.hudong.com%2F63%2F84%2F28300542054762137180843808654.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fp7rtwg_z%26e3Bkwthj_z%26e3Bv54AzdH3F9m9m9dAzdH3F8_z%26e3Bip4s%3Fr61%3Dz7p7_pi74kf",@"appdescribe":@"小小魔兽一曲",@"appstarttime":@"10:00",@"apptype":@"2"},@{@"appicon":@"http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&word=%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87%E5%BA%93&pn=0&spn=0&di=168579042720&rn=1&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2023996564%2C2004746460&os=1196979400%2C637688747&adpicid=0&ln=1000&fr=ala2%2Cala2&sme=0&cg=&objurl=http%3A%2F%2Fa2.att.hudong.com%2F63%2F84%2F28300542054762137180843808654.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fp7rtwg_z%26e3Bkwthj_z%26e3Bv54AzdH3F9m9m9dAzdH3F8_z%26e3Bip4s%3Fr61%3Dz7p7_pi74kf",@"appdescribe":@"小小魔兽一曲",@"appstarttime":@"10:00",@"apptype":@"3"},@{@"appicon":@"http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&word=%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87%E5%BA%93&pn=0&spn=0&di=168579042720&rn=1&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2023996564%2C2004746460&os=1196979400%2C637688747&adpicid=0&ln=1000&fr=ala2%2Cala2&sme=0&cg=&objurl=http%3A%2F%2Fa2.att.hudong.com%2F63%2F84%2F28300542054762137180843808654.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fp7rtwg_z%26e3Bkwthj_z%26e3Bv54AzdH3F9m9m9dAzdH3F8_z%26e3Bip4s%3Fr61%3Dz7p7_pi74kf",@"appdescribe":@"小小魔兽一曲",@"appstarttime":@"10:00",@"apptype":@"2"},@{@"appicon":@"http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&word=%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87%E5%BA%93&pn=0&spn=0&di=168579042720&rn=1&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2023996564%2C2004746460&os=1196979400%2C637688747&adpicid=0&ln=1000&fr=ala2%2Cala2&sme=0&cg=&objurl=http%3A%2F%2Fa2.att.hudong.com%2F63%2F84%2F28300542054762137180843808654.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fp7rtwg_z%26e3Bkwthj_z%26e3Bv54AzdH3F9m9m9dAzdH3F8_z%26e3Bip4s%3Fr61%3Dz7p7_pi74kf",@"appdescribe":@"小小魔兽一曲",@"appstarttime":@"10:00",@"apptype":@"1"}]];
 
 }
 
@@ -68,17 +63,17 @@
     
     // 在这里获取当月的 状态信息
     
-//    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary andOtherParamas:nil];
-//    
-//    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
-//        
-//        [calendarView  reDisplayViewUse:responseObject];
-//        
-//    } fail:^(NSError *err){
-//    
-//        [calendarView reDisplayViewUse:nil];
-//        
-//    } andHUBString:@"loading..."];
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary andOtherParamas:nil];
+    
+    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+        
+        [calendarView  reDisplayViewUse:responseObject];
+        
+    } fail:^(NSError *err){
+    
+        [calendarView reDisplayViewUse:nil];
+        
+    } andHUBString:@"loading..."];
     
 }
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date{
