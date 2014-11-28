@@ -227,7 +227,7 @@
         
     }
     
-    return NO;
+    return YES;
     
 }
 
@@ -235,15 +235,18 @@
 //输入框编辑完成以后，将视图恢复到原始状态
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
-    //    (iOSAfterSystem(7)?(self.navigationController.navigationBar.bounds.size.height):0)
     
-    ((KFLoginViewController *)self).BigFixBGTopconstraint.constant = 0;
-    [((KFLoginViewController *)self).view updateConstraintsIfNeeded];
     
-//    self.view.frame =CGRectMake(0,self.view.frame.origin.y + self.keyBoardTotalEdgeY,self.view.frame.size.width, self.view.frame.size.height);
+    if ([self isMemberOfClass:[KFLoginViewController class]]) {
+        ((KFLoginViewController *)self).BigFixBGTopconstraint.constant = 0;
+        [((KFLoginViewController *)self).view updateConstraintsIfNeeded];
     
-    self.keyBoardEdgeY = 0;
-    self.keyBoardTotalEdgeY = 0;
+
+    
+        self.keyBoardEdgeY = 0;
+        self.keyBoardTotalEdgeY = 0;
+         
+     }
 }
 
 

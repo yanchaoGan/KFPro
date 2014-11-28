@@ -207,6 +207,7 @@
         self.userPhoto.image = selfPhoto;
         
         // 接下来 将 图片 传递给 服务器作为图片保存
+        
         NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypechangeuserphoto andOtherParamas:[NSMutableDictionary dictionaryWithDictionary:@{@"userid":KFDelegate.loginUser.userid}]];
         [KFNetworkHelper postFileWithUrl:KServerUrl filePath:imageFilePath params:MP success:^(id responseObject) {
         

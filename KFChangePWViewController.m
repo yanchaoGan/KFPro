@@ -71,14 +71,18 @@
     }
     
     
-    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypechangepassword andOtherParamas:@{@"userid":user.userid}];
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypechangepassword andOtherParamas:@{@"userid":user.userid,@"password":self.newtextfield.text}];
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
         
         KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
         [KFSBHelper saveAccount:KFDelegate.loginUser];
+        [KFSBHelper simpleAlertTitle:nil message:@"修改密码成功" cancel:@"确定"];
+        
         
     } fail:^(NSError *error) {
+        
+        [KFSBHelper simpleAlertTitle:nil message:@"修改密码失败" cancel:@"确定"];
         
     } andHUBString:@"修改密码..."];
     
@@ -90,7 +94,11 @@
 
 
 
-
+#pragma mark - UITextfield delegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 

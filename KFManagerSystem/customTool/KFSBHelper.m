@@ -151,9 +151,11 @@ extern NSDate * calendarViewSelect;
 
 +(NSMutableDictionary *)getParamaByUrlType:(URLTYPE)urltype andOtherParamas:(id)futureObj{
     
-    NSMutableDictionary * paramas = [NSMutableDictionary dictionary];
     
     @synchronized(self){
+        
+        NSMutableDictionary * paramas = [NSMutableDictionary dictionary];
+
     
         NSString * URLTYPE;
         NSString * date = @"";
@@ -263,7 +265,7 @@ extern NSDate * calendarViewSelect;
                 [paramas setObject:userid forKey:@"userid"];
                 
                 NSString * password = [futureObj objectForKey:@"password"];
-                [paramas setObject:@"password" forKey:@"password"];
+                [paramas setObject:password forKey:@"password"];
                 
                 NSString * time = [KFSBHelper getNowDate];
                 [paramas setObject:time forKey:@"time"];
@@ -290,9 +292,11 @@ extern NSDate * calendarViewSelect;
             default:
                 break;
         }
+        
+         return paramas;
     }
     
-    return paramas;
+   
 }
 
 +(NSString *)getUrlStringByParama:(NSMutableDictionary *)param{
@@ -318,11 +322,11 @@ extern NSDate * calendarViewSelect;
         
     }else if ([urltype isEqualToString:@"changepassword"]){
     
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/edit.do";
         
     }else if ([urltype isEqualToString:@"changeuserphoto"]){
     
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/login.do";
     }
     
     return urlstring;
