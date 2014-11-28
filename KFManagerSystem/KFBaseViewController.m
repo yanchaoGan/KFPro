@@ -97,13 +97,28 @@
         if ([self isMemberOfClass:[KFLoginViewController class]]) {
             
            textField =  ((((KFLoginViewController *)self).accountTextField.isFirstResponder == YES)?((KFLoginViewController *)self).accountTextField:((KFLoginViewController *)self).passwordTextField);
+        }else if ([self isMemberOfClass:[KFChangePWViewController class]]){
+        
+            textField = (((KFChangePWViewController *)self).origntextfield.isFirstResponder == YES)?(((KFChangePWViewController *)self).origntextfield):(((KFChangePWViewController *)self).newtextfield.isFirstResponder == YES ? (((KFChangePWViewController *)self).newtextfield):((KFChangePWViewController *)self).verfytextfield);
         }
       
         
-        CGRect frame = [textField.superview convertRect:textField.frame toView:((KFLoginViewController *)self).BigAutoFixBG];
-        int offset = frame.origin.y + frame.size.height  - (((KFLoginViewController *)self).BigAutoFixBG.frame.size.height + fabs((((KFLoginViewController *)self).BigAutoFixBG.frame.origin.y > 0? 0 :self.view.frame.origin.y)) - keyHeight);
+        CGRect frame;
+        int offset ;
         
-        ;
+        if ([self isMemberOfClass:[KFLoginViewController class]]) {
+            
+            frame   = [textField.superview convertRect:textField.frame toView:((KFLoginViewController *)self).BigAutoFixBG];
+            offset = frame.origin.y + frame.size.height  - (((KFLoginViewController *)self).BigAutoFixBG.frame.size.height + fabs((((KFLoginViewController *)self).BigAutoFixBG.frame.origin.y > 0? 0 :self.view.frame.origin.y)) - keyHeight);
+
+        }else if ([self isMemberOfClass:[KFChangePWViewController class]]){
+        
+            frame   = [textField.superview convertRect:textField.frame toView:((KFChangePWViewController *)self).reallyBGView];
+            offset = frame.origin.y + frame.size.height  - (((KFChangePWViewController *)self).reallyBGView.frame.size.height + fabs((((KFChangePWViewController *)self).reallyBGView.frame.origin.y > 0? 0 :self.view.frame.origin.y)) - keyHeight);
+            
+        }
+        
+        
         
         NSTimeInterval duration = [[notice.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
         
@@ -117,13 +132,20 @@
             
             self.keyBoardTotalEdgeY = self.keyBoardEdgeY + offset +10;
             self.keyBoardEdgeY = offset +10;
-            //NSLog(@"做了偏移，总偏移亮是 : %f",self.keyBoardTotalEdgeY);
+          
+            if ([self isMemberOfClass:[KFLoginViewController class]]) {
+               
+                
+                ((KFLoginViewController *)self).BigFixBGTopconstraint.constant -= self.keyBoardEdgeY;
+                
+                [((KFLoginViewController *)self).view updateConstraintsIfNeeded];
+            }else if ([self isMemberOfClass:[KFChangePWViewController class]]){
             
-            ((KFLoginViewController *)self).BigFixBGTopconstraint.constant -= self.keyBoardEdgeY;
+                
+                ((KFChangePWViewController *)self).reallyBGConstraint.constant -= self.keyBoardEdgeY;
+            }
             
-            [((KFLoginViewController *)self).view updateConstraintsIfNeeded];
             
-//            self.view.frame = CGRectMake(0.0f,self.view.frame.origin.y - self.keyBoardEdgeY, self.view.frame.size.width, self.view.frame.size.height);
         }
         
         
@@ -140,6 +162,13 @@
      
         [((KFLoginViewController *)self).accountTextField resignFirstResponder];
         [((KFLoginViewController *)self).passwordTextField resignFirstResponder];
+    }else if ([self isMemberOfClass:[KFChangePWViewController class]]){
+    
+      
+        [((KFChangePWViewController *)self).origntextfield resignFirstResponder];
+        [((KFChangePWViewController *)self).newtextfield resignFirstResponder];
+        [((KFChangePWViewController *)self).verfytextfield resignFirstResponder];
+        
     }
 
 }
@@ -225,6 +254,10 @@
             
         }
         
+    }else if([self isMemberOfClass:[KFChangePWViewController class]]){
+    
+        [textField resignFirstResponder];
+        return YES;
     }
     
     return YES;
@@ -243,10 +276,16 @@
     
 
     
-        self.keyBoardEdgeY = 0;
-        self.keyBoardTotalEdgeY = 0;
+       
          
-     }
+    }else if ([self isMemberOfClass:[KFChangePWViewController class]]){
+        
+        
+        ((KFChangePWViewController *)self).reallyBGConstraint.constant = 0;
+    }
+    
+    self.keyBoardEdgeY = 0;
+    self.keyBoardTotalEdgeY = 0;
 }
 
 

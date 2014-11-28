@@ -423,6 +423,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="4Vp-1A-bkw" id="Ep5-5i-rHt"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.39215689897537231" green="0.66274511814117432" blue="0.74901962280273438" alpha="1" colorSpace="deviceRGB"/>
@@ -451,6 +454,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="4Vp-1A-bkw" id="gDo-5i-XL3"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.39215689897537231" green="0.66274511814117432" blue="0.75294125080108643" alpha="1" colorSpace="deviceRGB"/>
@@ -552,6 +558,7 @@
                     <connections>
                         <outlet property="newtextfield" destination="hVX-2c-1Ak" id="s6U-9c-lyT"/>
                         <outlet property="origntextfield" destination="W1O-cM-Vej" id="bGJ-7K-vAy"/>
+                        <outlet property="reallyBGConstraint" destination="V6a-uX-TA1" id="e0m-aI-ewZ"/>
                         <outlet property="reallyBGView" destination="Xcu-Du-TD5" id="CBT-Wu-pfL"/>
                         <outlet property="verfytextfield" destination="iXM-aW-GF8" id="I1e-ug-HcC"/>
                     </connections>

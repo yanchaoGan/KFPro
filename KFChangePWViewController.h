@@ -24,6 +24,10 @@
 
 
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *reallyBGConstraint;
+
+
+
 
 
 @end
