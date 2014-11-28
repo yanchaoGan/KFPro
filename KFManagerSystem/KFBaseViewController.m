@@ -35,7 +35,7 @@
     
     [super viewWillAppear:animated];
     
-    if ([self isMemberOfClass:[KFLoginViewController class]]) {
+    if ([self isMemberOfClass:[KFLoginViewController class]] || [self isMemberOfClass:[KFChangePWViewController class]]) {
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 
