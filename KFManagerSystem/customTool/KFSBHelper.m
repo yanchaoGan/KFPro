@@ -326,7 +326,7 @@ extern NSDate * calendarViewSelect;
         
     }else if ([urltype isEqualToString:@"changeuserphoto"]){
     
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/login.do";
+        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/edit.do";
     }
     
     return urlstring;

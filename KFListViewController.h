@@ -17,7 +17,6 @@
 
 @property(nonatomic,strong)NSMutableArray * ListSouceArr;
 
-
 @property (weak, nonatomic) IBOutlet UITableView *listTable;
 
 
