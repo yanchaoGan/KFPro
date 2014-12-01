@@ -60,9 +60,10 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSURL *filePathUrl = [NSURL fileURLWithPath:filePath];
+    NSString * fileName = [filePath lastPathComponent];
     
 AFHTTPRequestOperation * af=    [manager POST:urlstring parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-      BOOL success =  [formData appendPartWithFileURL:filePathUrl name:@"photoimage" fileName:@"photoimage" mimeType:@"image/png" error:nil];
+      BOOL success =  [formData appendPartWithFileURL:filePathUrl name:@"fileName" fileName:fileName mimeType:@"image/jpg" error:nil];
         NSLog(@"filepath is %d",success);
         
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {

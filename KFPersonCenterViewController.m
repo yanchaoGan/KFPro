@@ -211,7 +211,9 @@
         NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypechangeuserphoto andOtherParamas:[NSMutableDictionary dictionaryWithDictionary:@{@"userid":KFDelegate.loginUser.userid}]];
         [KFNetworkHelper postFileWithUrl:KServerUrl filePath:imageFilePath params:MP success:^(id responseObject) {
         
-            KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
+            NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:responseObject];
+            [dic setObject:KFDelegate.loginUser.password forKey:@"password"];
+            KFDelegate.loginUser = [KFUser fillUseDic:dic];
             [KFSBHelper saveAccount:KFDelegate.loginUser];
             
             
