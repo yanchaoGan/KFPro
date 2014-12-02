@@ -37,6 +37,12 @@
     if (KFDelegate.loginUser) {
         self.accountTextField.text =  KFDelegate.loginUser.username;
         self.passwordTextField.text = KFDelegate.loginUser.password;
+    }else{
+    
+        if (DEBUG) {
+            self.accountTextField.text = @"sianxiang";
+            self.passwordTextField.text = @"111111";
+        }
     }
     
     
