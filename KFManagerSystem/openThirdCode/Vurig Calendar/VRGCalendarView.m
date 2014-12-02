@@ -494,11 +494,10 @@
     
     CGContextSetBlendMode(context, kCGBlendModeNormal);
 
-    BOOL  isCurrentMonth = [KFSBHelper isCurrentMonthByDate:self.currentMonth]; // 是否是当前月份
+
     BOOL  isWeekend; // 是否周末 一个 日期字符串
     int  isEarly;
     UIColor * drawColor = nil;
-    UIColor * textDrawColor;
     NSString * everyDay;
     NSString * surestart;
     NSString * planstart;
