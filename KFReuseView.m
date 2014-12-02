@@ -64,6 +64,27 @@
             
           
             
+            // gyc add 2014-12-2 根据不同计划判定颜色  // 需要服务器添加的字段
+            UIColor * textcolor = [UIColor colorWithHexString:@"0x00385d"];
+            result = [tem objectForKey:@"surestart"];
+            if ([result isEqualToString:@"1"]) {
+                
+            }
+            result = [tem objectForKey:@"notstart"];
+            if ([result isEqualToString:@"1"]) {
+                textcolor = [UIColor colorWithHexString:@"0x8197a9"];
+            }
+            result = [tem objectForKey:@"planstart"];
+            if ([result isEqualToString:@"1"]) {
+                textcolor = [UIColor colorWithHexString:@"0xa5113b"];
+            }
+            
+            self.appDesc.textColor  = textcolor;
+            self.appStart.textColor = textcolor;
+            // end add
+
+            
+            
             result = [tem objectForKey:@"apptype"];
             switch ([result intValue]) {
                 case 1:
