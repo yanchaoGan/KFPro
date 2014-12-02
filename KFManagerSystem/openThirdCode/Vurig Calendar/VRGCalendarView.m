@@ -492,7 +492,7 @@
     
     // gyc change add
     
-    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
 
 
     BOOL  isWeekend; // 是否周末 一个 日期字符串
@@ -568,18 +568,16 @@
             
             NSLog(@"currentMonthDay is %@",currentMonthDayString);
             
+            // logic  判断当前日期是否是星期6 /7
+            isWeekend = [KFSBHelper isWeedendByString:currentMonthDayString];
+            isEarly = [KFSBHelper isEarlyThanNowByString:currentMonthDayString];
+            
             // gyc add 当前月份的 每一天
             if (todayBlock == i  || (selectedDate && i==selectedDateBlock)){
             
             }else
             {
-                
-                // logic  判断当前日期是否是星期6 /7
-                isWeekend = [KFSBHelper isWeedendByString:currentMonthDayString];
-           
-                
-                isEarly = [KFSBHelper isEarlyThanNowByString:currentMonthDayString];
-                
+    
                 if (isEarly == 0) {
                     
                     drawColor = [UIColor colorWithRed:0.6549 green:0.0392 blue:0.2353 alpha:1];
@@ -611,7 +609,6 @@
                 CGContextAddRect(context, rectangleGrid);
                 CGContextSetFillColorWithColor(context, drawColor.CGColor);
                 CGContextFillPath(context);
-                
                 
                 //  原先 添加图片位置
                 
@@ -665,20 +662,34 @@
                 }
             }
 
-   
+            
+            
             // 设置文字颜色
-            NSString *hex = (isSelectedDatePreviousMonth || isSelectedDateNextMonth) ? @"0x27c4ea" : @"0x7e9cb4";
+            NSString * string = [KFSBHelper stringFromDate:[NSDate date]];
+            NSArray * arr =  [string componentsSeparatedByString:@"-"];
+            int  isEarlyMoth = [currentMonthDayString  isEarlyThanOtherDateString:[NSString stringWithFormat:@"%@-%@-%@",arr[0],arr[1],@"01"]];
+         
+            NSString *hex = (isEarlyMoth == 1)?((isWeekend)?@"0x647d91":@"0x7e9cb4"):((isEarly ==1)?(isWeekend?@"0x647d91":@"0x7e9cb4"):(isEarly ==0 ?@"0xfed5df":(isWeekend?@"0x0993b3":@"0x00698b"))); //(isSelectedDatePreviousMonth || isSelectedDateNextMonth) ? (@"0x27c4ea"): @"0x647d91";
+//            hex = @"0x647d91";
             CGContextSetFillColorWithColor(context,
                                            [UIColor colorWithHexString:hex].CGColor);
             
         }
         
         
+        
+        
+        
+        
+        
+        
+        
+        
         NSString *date = [NSString stringWithFormat:@"%i",targetDate];
         [date drawInRect:CGRectMake(targetX, targetY + kVRGCalendarViewDayHeight/3.0, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17] lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
     }
     
-    CGContextClosePath(context);
+    
     
     //Draw markings
     if (!self.markedDates || isSelectedDatePreviousMonth || isSelectedDateNextMonth) return;

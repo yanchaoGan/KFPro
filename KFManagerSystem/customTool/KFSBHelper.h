@@ -184,6 +184,14 @@ typedef enum {
 @interface NSString (MD5HexDigest)
 
 -(NSString *) md5HexDigest;
+
+/**
+ *  当前时间 比 otherstr 时间 早
+ *
+ *  @param otherStr
+ *
+ *  @return  0/1/-1
+ */
 -(int)isEarlyThanOtherDateString:(NSString *)otherStr;
 
 @end
