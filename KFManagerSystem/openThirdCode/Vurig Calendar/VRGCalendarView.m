@@ -307,7 +307,9 @@
 - (void)drawRect:(CGRect)rect
 {
     
-    
+    /**
+     *  在这里 将 世纪显示width -5 
+     */
     
     int firstWeekDay = [self.currentMonth firstWeekDayInMonth]-1; //-1 because weekdays begin at 1, not 0
     
@@ -369,7 +371,7 @@
    
     
     // gyc add  周几 背景色
-    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-25,kVRGCalendarViewWidth,25});
+    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-25,kVRGCalendarViewWidth -5,25});
     CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x00385d"].CGColor);
     CGContextFillPath(context);
     
@@ -397,7 +399,7 @@
     
     //Grid background
     float gridHeight = numRows*(kVRGCalendarViewDayHeight+2)+1;
-    CGRect rectangleGrid = CGRectMake(0,kVRGCalendarViewTopBarHeight,self.frame.size.width,gridHeight);
+    CGRect rectangleGrid = CGRectMake(0,kVRGCalendarViewTopBarHeight,self.frame.size.width -5,gridHeight);
     CGContextAddRect(context, rectangleGrid);
     CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xa9c6d7"].CGColor);  // gyc change 0xf3f3f3 -> 0xa9c6d7
     //CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xff0000"].CGColor);
@@ -407,7 +409,7 @@
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, 0, kVRGCalendarViewTopBarHeight+1);
-    CGContextAddLineToPoint(context, kVRGCalendarViewWidth, kVRGCalendarViewTopBarHeight+1);
+    CGContextAddLineToPoint(context, kVRGCalendarViewWidth -5, kVRGCalendarViewTopBarHeight+1);
     for (int i = 1; i<7; i++) {
         CGContextMoveToPoint(context, i*(kVRGCalendarViewDayWidth+1)+i*1-1, kVRGCalendarViewTopBarHeight);
         CGContextAddLineToPoint(context, i*(kVRGCalendarViewDayWidth+1)+i*1-1, kVRGCalendarViewTopBarHeight+gridHeight);
@@ -415,7 +417,7 @@
         if (i>numRows-1) continue;
         //rows
         CGContextMoveToPoint(context, 0, kVRGCalendarViewTopBarHeight+i*(kVRGCalendarViewDayHeight+1)+i*1+1);
-        CGContextAddLineToPoint(context, kVRGCalendarViewWidth, kVRGCalendarViewTopBarHeight+i*(kVRGCalendarViewDayHeight+1)+i*1+1);
+        CGContextAddLineToPoint(context, kVRGCalendarViewWidth -5, kVRGCalendarViewTopBarHeight+i*(kVRGCalendarViewDayHeight+1)+i*1+1);
     }
     
     CGContextStrokePath(context);
@@ -504,6 +506,8 @@
     UIImageView * sureImageView;
     UIImageView * planImageView;
     CGFloat  minWH = (( kVRGCalendarViewDayWidth > kVRGCalendarViewDayHeight )? kVRGCalendarViewDayHeight : kVRGCalendarViewDayWidth);
+    
+    CGFloat lastWidth;
 
     for (int i=0; i<numBlocks; i++) {
         int targetDate = i;
@@ -514,7 +518,11 @@
         
         //draw selected date
         if (selectedDate && i==selectedDateBlock) {
-            CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
+            
+            lastWidth = kVRGCalendarViewDayWidth+2;
+
+    
+            CGRect rectangleGrid = CGRectMake(targetX,targetY,lastWidth,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
             CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x00385e"].CGColor); // gyc change  // 选中背景色
             CGContextFillPath(context);
@@ -522,7 +530,11 @@
             CGContextSetFillColorWithColor(context,
                                            [UIColor whiteColor].CGColor); // 文字颜色
         } else if (todayBlock==i) {
-            CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
+            
+            
+            lastWidth = kVRGCalendarViewDayWidth+2;
+
+            CGRect rectangleGrid = CGRectMake(targetX,targetY,lastWidth,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
             CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.6549 green:0.0392 blue:0.2353 alpha:1].CGColor);  // gyc change 当天的 背景色
             CGContextFillPath(context);
@@ -605,7 +617,10 @@
                 }
               
                 
-                CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+1,kVRGCalendarViewDayHeight+1);
+                
+                lastWidth = kVRGCalendarViewDayWidth+1;
+
+                CGRect rectangleGrid = CGRectMake(targetX,targetY,lastWidth,kVRGCalendarViewDayHeight+1);
                 CGContextAddRect(context, rectangleGrid);
                 CGContextSetFillColorWithColor(context, drawColor.CGColor);
                 CGContextFillPath(context);
@@ -664,7 +679,7 @@
 
             
             
-            // 设置文字颜色
+            // 设置文字颜色  就是这个月份 01 - 31 的时间
             NSString * string = [KFSBHelper stringFromDate:[NSDate date]];
             NSArray * arr =  [string componentsSeparatedByString:@"-"];
             int  isEarlyMoth = [currentMonthDayString  isEarlyThanOtherDateString:[NSString stringWithFormat:@"%@-%@-%@",arr[0],arr[1],@"01"]];

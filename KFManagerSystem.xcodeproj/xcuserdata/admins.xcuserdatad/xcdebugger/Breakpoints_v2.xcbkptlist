@@ -7,14 +7,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
-            ignoreCount = "23"
+            ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFManagerSystem/openThirdCode/Vurig Calendar/VRGCalendarView.m"
-            timestampString = "439205878.353867"
+            timestampString = "439207218.512987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "671"
-            endingLineNumber = "671"
+            startingLineNumber = "525"
+            endingLineNumber = "525"
             landmarkName = "-drawRect:"
             landmarkType = "5">
          </BreakpointContent>
