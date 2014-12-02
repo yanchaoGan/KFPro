@@ -129,7 +129,7 @@
 {
     
     
-    NSString  * cankaoDate = [[self.ListSouceArr firstObject] objectForKey:@"date"];
+    NSString  * cankaoDate = self.maxDateDay;
     if (![KFSBHelper isNotEmptyStringOfObj:cankaoDate]) {
         cankaoDate = [KFSBHelper  stringFromDate:[NSDate date]];
     }
@@ -203,7 +203,7 @@
 - (void)footerRereshing
 {
 
-    NSString  * cankaoDate = [[self.ListSouceArr lastObject] objectForKey:@"date"];
+    NSString  * cankaoDate =  self.minDateDay;
     if (![KFSBHelper isNotEmptyStringOfObj:cankaoDate]) {
         cankaoDate = [KFSBHelper  stringFromDate:[NSDate date]];
     }

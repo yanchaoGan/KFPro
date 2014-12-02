@@ -18,9 +18,10 @@
     [MBProgressHUD showMessage:hub toView:nil];
     
     NSString * urlstring = [KFSBHelper getUrlStringByParama:(NSMutableDictionary *)params];
-    
-    NSLog(@"\n\n\n 喔传给服务器数据是 %@ \n\n\n",params);
-    
+    if (DEBUG) {
+         NSLog(@"\n\n\n 喔传给服务器数据是 %@ \n\n\n",params);
+    }
+   
     [[AFHTTPRequestOperationManager  manager]  POST:urlstring parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [MBProgressHUD hideHUD];
         
@@ -34,7 +35,7 @@
             result = [NSJSONSerialization JSONObjectWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
             
             if (DEBUG) {
-                NSLog(@"服务器返回数据是 %@",result);
+                NSLog(@"\n\n\n服务器返回数据是 %@\n\n\n",result);
             }
             success(result);
             
@@ -50,6 +51,9 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideHUD];
         fail(error);
+        if (DEBUG) {
+            NSLog(@"request error %@",error);
+        }
     }];
     
 }
