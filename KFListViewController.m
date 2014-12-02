@@ -309,6 +309,7 @@
         [ListSouceArr removeObjectsInRange:NSMakeRange(KMAXCELLNUM, ListSouceArr.count - KMAXCELLNUM)];
     }
     
+    
     _ListSouceArr = ListSouceArr;
 }
 

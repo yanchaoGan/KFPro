@@ -62,22 +62,22 @@
 -(void)checkAccount:(id)future{
     
     
-    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypelogin andOtherParamas:@{@"username":self.accountTextField.text,@"password":self.passwordTextField.text}];
+//    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypelogin andOtherParamas:@{@"username":self.accountTextField.text,@"password":self.passwordTextField.text}];
+//    
+//    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
+//        
+//        
+//        KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
+//        [KFSBHelper saveAccount:KFDelegate.loginUser];
+//        
+//         [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
+//        
+//    } fail:^(NSError *error) {
+//        NSLog(@"%@",error.userInfo);
+//    } andHUBString:@"Loading..."];
     
-    [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
-        
-        
-        KFDelegate.loginUser = [KFUser fillUseDic:responseObject];
-        [KFSBHelper saveAccount:KFDelegate.loginUser];
-        
-         [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
-        
-    } fail:^(NSError *error) {
-        NSLog(@"%@",error.userInfo);
-    } andHUBString:@"Loading..."];
-    
-//    KFDelegate.loginUser = [KFUser fillUseDic:@{@"username":@"zhangtao",@"nickname":@"你好",@"userid":@"001"}];
-//    [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
+    KFDelegate.loginUser = [KFUser fillUseDic:@{@"username":@"zhangtao",@"nickname":@"你好",@"userid":@"001"}];
+    [KFSBHelper  changeWindowRootVCToAfterLogin:YES orToLoginVC:NO];
    
 
 }

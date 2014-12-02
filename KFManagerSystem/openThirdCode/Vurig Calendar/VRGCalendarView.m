@@ -492,7 +492,7 @@
     
     // gyc change add
     
-    CGContextSetBlendMode(context, kCGBlendModeOverlay);
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
 
     BOOL  isCurrentMonth = [KFSBHelper isCurrentMonthByDate:self.currentMonth]; // 是否是当前月份
     BOOL  isWeekend; // 是否周末 一个 日期字符串
@@ -506,7 +506,6 @@
     UIImageView * planImageView;
     CGFloat  minWH = (( kVRGCalendarViewDayWidth > kVRGCalendarViewDayHeight )? kVRGCalendarViewDayHeight : kVRGCalendarViewDayWidth);
 
-    
     for (int i=0; i<numBlocks; i++) {
         int targetDate = i;
         int targetColumn = i%7;
@@ -526,7 +525,7 @@
         } else if (todayBlock==i) {
             CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
-            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xa5113b"].CGColor);  // gyc change 当天的 背景色
+            CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.6549 green:0.0392 blue:0.2353 alpha:1].CGColor);  // gyc change 当天的 背景色
             CGContextFillPath(context);
             
             CGContextSetFillColorWithColor(context,
@@ -567,10 +566,14 @@
             NSString* month=[monthdateFormatter stringFromDate:self.currentMonth];
             //NSLog(@"month is %@",month);
             NSString* currentMonthDayString=[month stringByAppendingFormat:@"-%02d",targetDate];
+            
             NSLog(@"currentMonthDay is %@",currentMonthDayString);
             
             // gyc add 当前月份的 每一天
-            if (self.MonthDataArr) {
+            if (todayBlock == i  || (selectedDate && i==selectedDateBlock)){
+            
+            }else
+            {
                 
                 // logic  判断当前日期是否是星期6 /7
                 isWeekend = [KFSBHelper isWeedendByString:currentMonthDayString];
@@ -582,6 +585,7 @@
                     
                     if (isEarly == 0) {
                         
+                        drawColor = [UIColor colorWithRed:0.6549 green:0.0392 blue:0.2353 alpha:1];
                         
                     }else if (isEarly == 1){
                         
@@ -590,32 +594,32 @@
                             
                         }else{
                             
-                            
+                            drawColor = [UIColor colorWithHexString:@"0xa9c6d7"];
                         }
-                    
+                        
                     }else{
                         
                         if (isWeekend) {
                             
-                             drawColor = [UIColor colorWithHexString:@"0x2c718d"];
+                            drawColor = [UIColor colorWithHexString:@"0x2c718d"];
                         }else{
                             
                             drawColor = [UIColor colorWithRed:0.8980 green:0.9647 blue:0.9882 alpha:1];
                         }
                         
-                    
+                        
                     }
-                
+                    
                     
                     
                 }else{
                     
-                
-                    if (isWeekend) {
                     
+                    if (isWeekend) {
+                        
                         drawColor = [UIColor colorWithHexString:@"0x8197a9"];
                     }else{
-                    
+                        
                         drawColor = [UIColor colorWithHexString:@"0xa9c6d7"];
                     }
                     
@@ -628,63 +632,63 @@
                 CGContextFillPath(context);
                 
                 
-                // 添加图片
-                for (NSDictionary * obj in self.MonthDataArr) {
-                    everyDay = [obj objectForKey:@"date"];
-                    if ([everyDay isEqualToString:currentMonthDayString]) {
+                
+                
+                
+                //  原先 添加图片位置
+                
+            }
+            // 添加图片
+            for (NSDictionary * obj in self.MonthDataArr) {
+                everyDay = [obj objectForKey:@"date"];
+                if ([everyDay isEqualToString:currentMonthDayString]) {
+                    
+                    surestart = [obj objectForKey:@"surestart"];
+                    planstart = [obj objectForKey:@"planstart"];
+                    if ([surestart isEqualToString:@"1"]) {
                         
-                        surestart = [obj objectForKey:@"surestart"];
-                        planstart = [obj objectForKey:@"planstart"];
-                        if ([surestart isEqualToString:@"1"]) {
-                        
-                            if ([planstart isEqualToString:@"1"]) {
-                                sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
-                                planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
-                                sureImageView.contentMode = UIViewContentModeScaleAspectFit;
-                                planImageView.contentMode = UIViewContentModeScaleAspectFit;
-                                planImageView.transform = CGAffineTransformMakeRotation(M_PI);
-                                sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
-                                planImageView.frame = (CGRect){targetX + floor(minWH/3*2) ,targetY,floor(minWH/3),floor(minWH/3)};
-                                
-                                
-                                [self addSubview:sureImageView];
-                                [self addSubview:planImageView];
-                                
-                                
-                            }else{
-                                
-                                sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
-                                sureImageView.contentMode = UIViewContentModeScaleAspectFit;
-                                sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
-                                [self addSubview:sureImageView];
-                                
-                            }
+                        if ([planstart isEqualToString:@"1"]) {
+                            sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
+                            planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
+                            sureImageView.contentMode = UIViewContentModeScaleAspectFit;
+                            planImageView.contentMode = UIViewContentModeScaleAspectFit;
+                            planImageView.transform = CGAffineTransformMakeRotation(M_PI);
+                            sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
+                            planImageView.frame = (CGRect){targetX + floor(minWH/3*2) ,targetY,floor(minWH/3),floor(minWH/3)};
+                            
+                            
+                            [self addSubview:sureImageView];
+                            [self addSubview:planImageView];
+                            
                             
                         }else{
                             
-                            if ([planstart isEqualToString:@"1"]) {
-                                
-                                planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
-                                planImageView.contentMode = UIViewContentModeScaleAspectFit;
-                                planImageView.frame = (CGRect){targetX ,targetY,floor(minWH/3),floor(minWH/3)};
-                                [self addSubview:planImageView];
-                                
-                            }else{
-                                
-                                
-                            }
+                            sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
+                            sureImageView.contentMode = UIViewContentModeScaleAspectFit;
+                            sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
+                            [self addSubview:sureImageView];
+                            
+                        }
+                        
+                    }else{
+                        
+                        if ([planstart isEqualToString:@"1"]) {
+                            
+                            planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
+                            planImageView.contentMode = UIViewContentModeScaleAspectFit;
+                            planImageView.frame = (CGRect){targetX ,targetY,floor(minWH/3),floor(minWH/3)};
+                            [self addSubview:planImageView];
+                            
+                        }else{
+                            
+                            
                         }
                     }
                 }
-
-            
-                
-                
-                    
             }
 
-            
-            
+   
+            // 设置文字颜色
             NSString *hex = (isSelectedDatePreviousMonth || isSelectedDateNextMonth) ? @"0x27c4ea" : @"0x7e9cb4";
             CGContextSetFillColorWithColor(context,
                                            [UIColor colorWithHexString:hex].CGColor);
@@ -695,7 +699,6 @@
         NSString *date = [NSString stringWithFormat:@"%i",targetDate];
         [date drawInRect:CGRectMake(targetX, targetY + kVRGCalendarViewDayHeight/3.0, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17] lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
     }
-    
     
     //    CGContextClosePath(context);
     
