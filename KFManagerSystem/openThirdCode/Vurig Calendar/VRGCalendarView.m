@@ -492,7 +492,7 @@
     
     // gyc change add
     
-    CGContextSetBlendMode(context, kCGBlendModeCopy);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
 
     BOOL  isCurrentMonth = [KFSBHelper isCurrentMonthByDate:self.currentMonth]; // 是否是当前月份
     BOOL  isWeekend; // 是否周末 一个 日期字符串
@@ -577,62 +577,41 @@
                 
                 // logic  判断当前日期是否是星期6 /7
                 isWeekend = [KFSBHelper isWeedendByString:currentMonthDayString];
+           
                 
+                isEarly = [KFSBHelper isEarlyThanNowByString:currentMonthDayString];
                 
-                if (isCurrentMonth) {
+                if (isEarly == 0) {
                     
-                    isEarly = [KFSBHelper isEarlyThanNowByString:currentMonthDayString];
+                    drawColor = [UIColor colorWithRed:0.6549 green:0.0392 blue:0.2353 alpha:1];
                     
-                    if (isEarly == 0) {
-                        
-                        drawColor = [UIColor colorWithRed:0.6549 green:0.0392 blue:0.2353 alpha:1];
-                        
-                    }else if (isEarly == 1){
-                        
-                        if (isWeekend) {
-                            drawColor = [UIColor colorWithHexString:@"0x8197a9"];
-                            
-                        }else{
-                            
-                            drawColor = [UIColor colorWithHexString:@"0xa9c6d7"];
-                        }
-                        
-                    }else{
-                        
-                        if (isWeekend) {
-                            
-                            drawColor = [UIColor colorWithHexString:@"0x2c718d"];
-                        }else{
-                            
-                            drawColor = [UIColor colorWithRed:0.8980 green:0.9647 blue:0.9882 alpha:1];
-                        }
-                        
-                        
-                    }
-                    
-                    
-                    
-                }else{
-                    
+                }else if (isEarly == 1){
                     
                     if (isWeekend) {
-                        
                         drawColor = [UIColor colorWithHexString:@"0x8197a9"];
+                        
                     }else{
                         
                         drawColor = [UIColor colorWithHexString:@"0xa9c6d7"];
                     }
                     
+                }else{
+                    
+                    if (isWeekend) {
+                        
+                        drawColor = [UIColor colorWithHexString:@"0x2c718d"];
+                    }else{
+                        
+                        drawColor = [UIColor colorWithRed:0.8980 green:0.9647 blue:0.9882 alpha:1];
+                    }
+    
                 }
-                
+              
                 
                 CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+1,kVRGCalendarViewDayHeight+1);
                 CGContextAddRect(context, rectangleGrid);
                 CGContextSetFillColorWithColor(context, drawColor.CGColor);
                 CGContextFillPath(context);
-                
-                
-                
                 
                 
                 //  原先 添加图片位置
@@ -700,7 +679,7 @@
         [date drawInRect:CGRectMake(targetX, targetY + kVRGCalendarViewDayHeight/3.0, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight) withFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17] lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
     }
     
-    //    CGContextClosePath(context);
+    CGContextClosePath(context);
     
     //Draw markings
     if (!self.markedDates || isSelectedDatePreviousMonth || isSelectedDateNextMonth) return;
