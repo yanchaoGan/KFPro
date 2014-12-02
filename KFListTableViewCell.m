@@ -45,6 +45,56 @@
             NSString * date1 = [dic objectForKey:@"date"];
             
             
+            // gyc add 2014-12-2 改变各种背景色
+            int iseary = [KFSBHelper isEarlyThanNowByString:date1];
+            BOOL isWeekend = [KFSBHelper isWeedendByString:date1];
+            if (iseary == 0) {
+                self.riqiBG.backgroundColor = [UIColor colorWithHexString:@"0xa5113b"];
+                self.jihaoLabel.textColor = [UIColor colorWithHexString:@"0xffffff"];
+                self.jiyueLabel.textColor = [UIColor colorWithHexString:@"0xffffff"];
+                self.zhoujiLabel.textColor = [UIColor colorWithHexString:@"0xffffff"];
+                self.reuseViewBG.backgroundColor = [UIColor colorWithHexString:@"0xffffff"];
+            }else if (iseary == 1){
+            
+                if (isWeekend) {
+                    
+                    self.riqiBG.backgroundColor = [UIColor colorWithHexString:@"0x00385d"];
+                    self.jihaoLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.jiyueLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.zhoujiLabel.textColor = [UIColor colorWithHexString:@"0x27c4ea"];
+                    self.reuseViewBG.backgroundColor = [UIColor colorWithHexString:@"0xe9f5fb"];
+                    
+                }else{
+                    
+                    self.riqiBG.backgroundColor = [UIColor colorWithHexString:@"0x00698b"];
+                    self.jihaoLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.jiyueLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.zhoujiLabel.textColor = [UIColor colorWithHexString:@"0x27c4ea"];
+                    self.reuseViewBG.backgroundColor = [UIColor colorWithHexString:@"0xe9f5fb"];
+                }
+
+            }else if (iseary == -1){
+            
+                if (isWeekend) {
+                    
+                    self.riqiBG.backgroundColor = [UIColor colorWithHexString:@"0x00385d"];
+                    self.jihaoLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.jiyueLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.zhoujiLabel.textColor = [UIColor colorWithHexString:@"0x27c4ea"];
+                    self.reuseViewBG.backgroundColor = [UIColor colorWithHexString:@"0xe9f5fb"];
+                    
+                }else{
+                    
+                    self.riqiBG.backgroundColor = [UIColor colorWithHexString:@"0x00698b"];
+                    self.jihaoLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.jiyueLabel.textColor = [UIColor colorWithHexString:@"0xc2dfef"];
+                    self.zhoujiLabel.textColor = [UIColor colorWithHexString:@"0x27c4ea"];
+                    self.reuseViewBG.backgroundColor = [UIColor colorWithHexString:@"0xe9f5fb"];
+                }
+            }
+            // end add
+            
+            
             NSDate * date = [KFSBHelper dateFromString:date1];
             NSString * oneDay = [date dayOfWeekTypeByChinese];
             self.zhoujiLabel.text = oneDay;
