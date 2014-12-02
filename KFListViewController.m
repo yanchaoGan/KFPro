@@ -73,7 +73,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.listTable  headerEndRefreshing];
                     
-                    [self.listTable reloadData];
+                    [self tableviewReloadData];
                 });
                 
                 
@@ -174,7 +174,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.listTable  headerEndRefreshing];
                
-                [self.listTable reloadData];
+                [self tableviewReloadData];
             });
             
             
@@ -248,7 +248,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.listTable  footerEndRefreshing];
                 
-                [self.listTable reloadData];
+                [self tableviewReloadData];
             });
             
             
@@ -313,6 +313,24 @@
     _ListSouceArr = ListSouceArr;
 }
 
+
+-(void)tableviewReloadData{
+
+    [self.listTable  reloadData];
+    
+    
+    static dispatch_once_t once;
+    dispatch_once(&once,^{
+    
+        int row = [self.listTable numberOfRowsInSection:0];
+        if (row) {
+            NSIndexPath * index  = [NSIndexPath indexPathForRow:ceil(row/2) inSection:0];
+            [self.listTable  scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        }
+    });
+    
+    
+}
 
 
 #pragma mark - TableView

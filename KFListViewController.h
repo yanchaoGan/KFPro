@@ -20,4 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *listTable;
 
 
+
+-(void)tableviewReloadData;
+
 @end
