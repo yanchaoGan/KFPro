@@ -19,6 +19,8 @@
     
     NSString * urlstring = [KFSBHelper getUrlStringByParama:(NSMutableDictionary *)params];
     
+    NSLog(@"\n\n\n 喔传给服务器数据是 %@ \n\n\n",params);
+    
     [[AFHTTPRequestOperationManager  manager]  POST:urlstring parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [MBProgressHUD hideHUD];
         

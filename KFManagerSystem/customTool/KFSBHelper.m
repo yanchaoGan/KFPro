@@ -507,6 +507,30 @@ extern NSDate * calendarViewSelect;
     
 }
 
+-(int)isEarlyThanOtherDateString:(NSString *)otherStr{
+    
+    NSDate * now = [KFSBHelper dateFromString:self];
+    
+    NSDate * date = [KFSBHelper dateFromString:otherStr];
+    
+    
+    int early = 0;
+    
+    NSTimeInterval interval =  [now timeIntervalSinceDate:date];
+    if (interval == 0) {
+        early = 0;
+    }else if (interval > 0){
+        
+        early = -1;
+    }else{
+        
+        early = 1;
+    }
+    
+    return early;
+
+}
+
 
 @end
 

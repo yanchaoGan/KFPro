@@ -66,16 +66,16 @@
             
             
             KFReuseView * reuseView = nil;
-            
+         
             for (int j = 0; j< info.count; j++) {
+                
+               
                 
                 reuseView = [_ReuseableArr lastObject];
                 [_ReuseableArr removeLastObject];
                 
                 if (reuseView == nil) {
                     reuseView = [[[NSBundle mainBundle] loadNibNamed:@"ReuesView" owner:nil options:nil] lastObject];
-                    
-                  
                 }
 
                 // 讲reusleview 放在背景上

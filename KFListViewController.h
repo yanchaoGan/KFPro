@@ -22,5 +22,6 @@
 
 
 -(void)tableviewReloadData;
+-(void)addObjectsFromArray:(NSMutableArray *)arr;
 
 @end

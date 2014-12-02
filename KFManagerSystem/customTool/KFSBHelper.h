@@ -106,6 +106,8 @@ typedef enum url{
 
 
 
+
+
 +(void)simpleAlertTitle:(NSString *)title message:(NSString *)message cancel:(NSString *)cancel;
 
 
@@ -180,6 +182,7 @@ typedef enum {
 @interface NSString (MD5HexDigest)
 
 -(NSString *) md5HexDigest;
+-(int)isEarlyThanOtherDateString:(NSString *)otherStr;
 
 @end
 

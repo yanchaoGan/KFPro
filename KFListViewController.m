@@ -12,6 +12,11 @@
 
 @property(nonatomic,strong)NSDate * nomalLoadDate;
 
+// gyc add 2014-12-2 保存原始数据
+@property(nonatomic,strong)NSString * maxDateDay;
+@property(nonatomic,strong)NSString * minDateDay;
+
+
 @end
 
 @implementation KFListViewController
@@ -64,10 +69,10 @@
             if ([KFSBHelper isNotEmptyArrObj:responseObject]) {
                 
                 if (![KFSBHelper isNotEmptyArrObj:self.ListSouceArr]) {
-                    self.ListSouceArr = [NSMutableArray array];
+                   _ListSouceArr = [NSMutableArray array];
                 }
                 
-                [self.ListSouceArr   addObjectsFromArray:responseObject];
+                [self   addObjectsFromArray:responseObject];
                 [self sortListTableSoureArr];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -138,12 +143,12 @@
     
     NSString * lastLM = @"1970-01-01 10:00:00";
     
-    NSString * CMD = [[self.ListSouceArr firstObject] objectForKey:@"date"];
+    NSString * CMD = self.maxDateDay; //gyc change 2014-12-2 [[self.ListSouceArr firstObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CMD]) {
         CMD = @"1970-01-01";
     }
     
-    NSString * CminD = [[self.ListSouceArr lastObject] objectForKey:@"date"];
+    NSString * CminD = self.minDateDay;//gyc change 2014-12-2 [[self.ListSouceArr lastObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CminD]) {
         CminD = @"1970-01-01";
     }
@@ -165,10 +170,10 @@
         if ([KFSBHelper isNotEmptyArrObj:responseObject]) {
             
             if (![KFSBHelper isNotEmptyArrObj:self.ListSouceArr]) {
-                self.ListSouceArr = [NSMutableArray array];
+                _ListSouceArr = [NSMutableArray array];
             }
             
-            [self.ListSouceArr   addObjectsFromArray:responseObject];
+            [self   addObjectsFromArray:responseObject];
             [self sortListTableSoureArr];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -212,12 +217,12 @@
     }
 
     
-    NSString * CMD = [[self.ListSouceArr firstObject] objectForKey:@"date"];
+    NSString * CMD = self.maxDateDay; //gyc change 2014-12-2 [[self.ListSouceArr firstObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CMD]) {
         CMD = @"1970-01-01";
     }
     
-    NSString * CminD = [[self.ListSouceArr lastObject] objectForKey:@"date"];
+    NSString * CminD = self.minDateDay; //gyc change 2014-12-2  [[self.ListSouceArr lastObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CminD]) {
         CminD = @"1970-01-01";
     }
@@ -239,10 +244,10 @@
         if ([KFSBHelper isNotEmptyArrObj:responseObject]) {
             
             if (![KFSBHelper isNotEmptyArrObj:self.ListSouceArr]) {
-                self.ListSouceArr = [NSMutableArray array];
+               _ListSouceArr = [NSMutableArray array];
             }
             
-            [self.ListSouceArr   addObjectsFromArray:responseObject];
+            [self   addObjectsFromArray:responseObject];
             [self sortListTableSoureArr];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -310,10 +315,86 @@
     }
     
     
+    // gyc add 2014-12-2 在这里记录下 最大最小时间
+    if (!self.maxDateDay) {
+        self.maxDateDay = @"1970-11-11";
+    }
+    NSString * maxDay = [[ListSouceArr firstObject] objectForKey:@"date"];
+    int early = [maxDay isEarlyThanOtherDateString:self.maxDateDay];
+    if (early == 0) {
+    }else if (early == 1){
+    }else{
+        self.maxDateDay = maxDay;
+    }
+    
+    
+    if (!self.minDateDay) {
+        self.minDateDay = @"1970-01-01";
+    }
+    static dispatch_once_t once;
+    dispatch_once(&once,^{
+        self.minDateDay = [[ListSouceArr lastObject] objectForKey:@"date"];
+    });
+    
+    NSString * minday = [[ListSouceArr lastObject] objectForKey:@"date"];
+    int early1 = [minday isEarlyThanOtherDateString:self.minDateDay];
+    if (early1 == 0) {
+    }else if (early1 == 1){
+        self.minDateDay = minday;
+    }else{
+    }
+
+   
+    //end add
+    
+    // 2014-12-2 gyc add 将字典中的 所有删除状态的 appdelete 为 "1" 的 全部去除掉,
+    NSDictionary * result;
+    NSMutableArray * info;
+    NSMutableDictionary * appInfo;
+    
+    for (int i = 0; i < ListSouceArr.count;) {
+        result = ListSouceArr[i];
+        info = result[@"info"];
+       
+        if ([KFSBHelper isNotEmptyArrObj:info]) {
+            
+            BOOL allDelete = YES;
+            
+            for (int j = 0 ; j< info.count; ) {
+                appInfo = info[j];
+                if ([appInfo[@"appdelete"] isEqualToString:@"0"]) {
+                    allDelete = NO;
+                    j++;
+                }else{
+                    
+                    [info removeObject:appInfo];
+                }
+            }
+            
+            
+            
+            if (allDelete) {
+                [ListSouceArr removeObject:result];
+                
+            }else{
+                
+                i++;
+            }
+
+        }
+        else{
+        
+            
+            [ListSouceArr removeObject:result];
+        }
+        
+    }
+    // end add
     _ListSouceArr = ListSouceArr;
 }
 
 
+#pragma mark - 为了刷新而添加
 -(void)tableviewReloadData{
 
     [self.listTable  reloadData];
@@ -331,7 +412,35 @@
     
     
 }
+-(void)addObjectsFromArray:(NSMutableArray *)arr{
 
+    // 将 listtableview 中的数据 和 arr 中重复的 删除掉
+    NSDictionary * resultSource;
+    NSString * dateS;
+    NSString * dateD;
+    for (int i = 0; i < self.ListSouceArr.count; ) {
+        resultSource = self.ListSouceArr[i];
+        dateS = resultSource[@"date"];
+        
+        BOOL haveSame = NO;
+        for (NSDictionary * resulstD in arr) {
+            dateD = resulstD[@"date"];
+            if ([dateS isEqualToString:dateD]) {
+                haveSame = YES;
+                break;
+            }
+        }
+        if (haveSame) {
+            [self.ListSouceArr removeObject:resultSource];
+        }else{
+        
+            i++;
+        }
+  
+    }
+    
+    [self.ListSouceArr  addObjectsFromArray:arr];
+}
 
 #pragma mark - TableView
 
