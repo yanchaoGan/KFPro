@@ -104,6 +104,8 @@ typedef enum url{
 
 
 
++(BOOL)isAfterNowThanOneMonth:(NSString *)oherday;
+
 
 
 

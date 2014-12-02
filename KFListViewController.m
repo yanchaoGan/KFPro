@@ -153,6 +153,13 @@
         CminD = @"1970-01-01";
     }
     
+    // gyc add 2014-12-2 当刷新日期超过现在 一个月就提示 返回
+    if ([KFSBHelper  isAfterNowThanOneMonth:self.maxDateDay]) {
+        [KFSBHelper simpleAlertTitle:nil message:@"刷新最多可查看一个月的数据" cancel:@"ok"];
+        [self.listTable  headerEndRefreshing];
+        return;
+    }
+    //
  
     
     NSString * date = cankaoDate;
@@ -227,6 +234,14 @@
         CminD = @"1970-01-01";
     }
     
+    
+    // gyc add 2014-12-2 当刷新日期超过现在 一个月就提示 返回
+    if ([KFSBHelper  isAfterNowThanOneMonth:self.minDateDay]) {
+        [KFSBHelper simpleAlertTitle:nil message:@"加载最多可查看一个月的数据" cancel:@"ok"];
+        [self.listTable  headerEndRefreshing];
+        return;
+    }
+    //
     
     
     NSString * date = cankaoDate;

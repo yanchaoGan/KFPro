@@ -415,6 +415,25 @@ extern NSDate * calendarViewSelect;
 }
 
 
++(BOOL)isAfterNowThanOneMonth:(NSString *)oherday{
+    
+    NSDate * now = [NSDate date];
+    NSString * nows = [self stringFromDate:now];
+    now = [self dateFromString:nows];
+    
+    NSDate * date = [self dateFromString:oherday];
+    BOOL early = NO;
+    
+    NSTimeInterval interval =  [now timeIntervalSinceDate:date];
+    if (fabs(interval) > (30 * 24 * 60 * 60)) {
+        early = YES;
+    }
+    return early;
+    
+
+}
+
+
 +(void)setCalendarViewSelect:(NSDate *)date{
 
     calendarViewSelect = date;
