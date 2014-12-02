@@ -48,7 +48,6 @@
 }
 
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -74,6 +73,14 @@
         [calendarView reDisplayViewUse:nil];
         
     } andHUBString:@"loading..."];
+    
+    
+    static dispatch_once_t once;
+    dispatch_once(&once,^{
+    
+        [self calendarView:calendarView dateSelected:[NSDate date]];
+    });
+    
     
 }
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date{
