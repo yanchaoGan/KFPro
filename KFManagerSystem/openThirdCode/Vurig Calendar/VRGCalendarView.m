@@ -18,7 +18,7 @@
 
 @property(nonatomic,strong)NSArray * MonthDataArr;
 
-@property(nonatomic,strong)NSMutableArray * imageArr;
+
 
 @end
 
@@ -308,7 +308,7 @@
 {
     
     /**
-     *  在这里 将 世纪显示width -5 
+     *  在这里 将 世纪显示width -7
      */
     
     int firstWeekDay = [self.currentMonth firstWeekDayInMonth]-1; //-1 because weekdays begin at 1, not 0
@@ -327,9 +327,10 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM yyyy"];
     labelCurrentMonth.text = [formatter stringFromDate:self.currentMonth];
-    [labelCurrentMonth sizeToFit];
-    labelCurrentMonth.frameX = roundf(self.frame.size.width/2 - labelCurrentMonth.frameWidth/2);
-    labelCurrentMonth.frameY = 10;
+    // gyc 2014-12-3 
+//    [labelCurrentMonth sizeToFit];
+//    labelCurrentMonth.frameX = roundf(self.frame.size.width/2 - labelCurrentMonth.frameWidth/2);
+//    labelCurrentMonth.frameY = 10;
     [formatter release];
     [currentMonth firstWeekDayInMonth];
     
@@ -371,7 +372,7 @@
    
     
     // gyc add  周几 背景色
-    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-25,kVRGCalendarViewWidth -5,25});
+    CGContextAddRect(context, (CGRect){0,kVRGCalendarViewTopBarHeight-25,kVRGCalendarViewWidth -7,25});
     CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x00385d"].CGColor);
     CGContextFillPath(context);
     
@@ -399,7 +400,7 @@
     
     //Grid background
     float gridHeight = numRows*(kVRGCalendarViewDayHeight+2)+1;
-    CGRect rectangleGrid = CGRectMake(0,kVRGCalendarViewTopBarHeight,self.frame.size.width -5,gridHeight);
+    CGRect rectangleGrid = CGRectMake(0,kVRGCalendarViewTopBarHeight,self.frame.size.width -7,gridHeight);
     CGContextAddRect(context, rectangleGrid);
     CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xa9c6d7"].CGColor);  // gyc change 0xf3f3f3 -> 0xa9c6d7
     //CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xff0000"].CGColor);
@@ -409,7 +410,7 @@
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, 0, kVRGCalendarViewTopBarHeight+1);
-    CGContextAddLineToPoint(context, kVRGCalendarViewWidth -5, kVRGCalendarViewTopBarHeight+1);
+    CGContextAddLineToPoint(context, kVRGCalendarViewWidth -7, kVRGCalendarViewTopBarHeight+1);
     for (int i = 1; i<7; i++) {
         CGContextMoveToPoint(context, i*(kVRGCalendarViewDayWidth+1)+i*1-1, kVRGCalendarViewTopBarHeight);
         CGContextAddLineToPoint(context, i*(kVRGCalendarViewDayWidth+1)+i*1-1, kVRGCalendarViewTopBarHeight+gridHeight);
@@ -417,7 +418,7 @@
         if (i>numRows-1) continue;
         //rows
         CGContextMoveToPoint(context, 0, kVRGCalendarViewTopBarHeight+i*(kVRGCalendarViewDayHeight+1)+i*1+1);
-        CGContextAddLineToPoint(context, kVRGCalendarViewWidth -5, kVRGCalendarViewTopBarHeight+i*(kVRGCalendarViewDayHeight+1)+i*1+1);
+        CGContextAddLineToPoint(context, kVRGCalendarViewWidth -7, kVRGCalendarViewTopBarHeight+i*(kVRGCalendarViewDayHeight+1)+i*1+1);
     }
     
     CGContextStrokePath(context);
@@ -578,7 +579,7 @@
             //NSLog(@"month is %@",month);
             NSString* currentMonthDayString=[month stringByAppendingFormat:@"-%02d",targetDate];
             
-            NSLog(@"currentMonthDay is %@",currentMonthDayString);
+//            NSLog(@"currentMonthDay is %@",currentMonthDayString);
             
             // logic  判断当前日期是否是星期6 /7
             isWeekend = [KFSBHelper isWeedendByString:currentMonthDayString];
@@ -775,16 +776,19 @@
         isAnimating=NO;
         self.labelCurrentMonth = [[[UILabel alloc] initWithFrame:CGRectMake(34, 0, kVRGCalendarViewWidth-68, 40)]autorelease];
         [self addSubview:labelCurrentMonth];
-        labelCurrentMonth.backgroundColor=[UIColor whiteColor];
+        
+        labelCurrentMonth.backgroundColor=[UIColor clearColor];
         labelCurrentMonth.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
         labelCurrentMonth.textColor = [UIColor colorWithHexString:@"0x00385d"];// gyc change
-        labelCurrentMonth.textAlignment = UITextAlignmentCenter;
+        labelCurrentMonth.textAlignment = NSTextAlignmentCenter;
         
         labelCurrentMonth.backgroundColor = [UIColor clearColor]; // gyc add 2014-11-24
-        self.imageArr = [NSMutableArray array];
+
         
         [self performSelector:@selector(reset) withObject:nil afterDelay:0.1]; //so delegate can be set after init and still get called on init
         //        [self reset];
+        
+     
     }
     return self;
 }

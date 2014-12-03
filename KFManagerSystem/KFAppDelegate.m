@@ -14,6 +14,8 @@
 {
     // Override point for customization after application launch.
     
+   
+    
     // Required
     #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
         if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
@@ -45,7 +47,10 @@
     
     return YES;
 }
+-(void)rcode:(int)ircode  tags:(NSSet *)tags  ailas:(NSString *)alias{
 
+    NSLog(@" %d  \n %@ \n %@",ircode,tags,alias);
+}
 
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -81,6 +86,8 @@
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Required
     [APService registerDeviceToken:deviceToken];
+    
+     [APService setTags:[NSSet setWithObject:@"tag1"] alias:nil callbackSelector:@selector(rcode: tags: ailas:) object:self];
 }
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {

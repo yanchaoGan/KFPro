@@ -41,8 +41,8 @@
     
     
     self.riliListTable.tableHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"Header" owner:nil options:nil] lastObject];
-    UILabel * header = (UILabel *)[self.riliListTable.tableHeaderView viewWithTag:100];
-    header.text = [KFSBHelper headerStringFromDate:[NSDate date]];
+//    UILabel * header = (UILabel *)[self.riliListTable.tableHeaderView viewWithTag:100];
+//    header.text = [KFSBHelper headerStringFromDate:[NSDate date]];
     
 
 }
@@ -62,7 +62,12 @@
     
     // 在这里获取当月的 状态信息
     
-    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary andOtherParamas:nil];
+    NSDate * current = calendarView.currentMonth;
+    if (DEBUG) {
+        NSLog(@"日期当前选择为 %@",current);
+    }
+    
+    NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypemonthsummary andOtherParamas:@{@"date":current}];
     
     [KFNetworkHelper postWithUrl:KServerUrl params:MP success:^(id responseObject) {
         
