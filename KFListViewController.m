@@ -242,8 +242,7 @@
         return;
     }
     //
-    
-    
+       
     NSString * date = cankaoDate;
     NSString * lastrefrshtime   = lastRT;
     NSString * lastloadmoretime = lastLM;

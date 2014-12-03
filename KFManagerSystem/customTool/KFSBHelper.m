@@ -96,6 +96,11 @@ extern NSDate * calendarViewSelect;
 
 +(NSDate *)dateFromString:(NSString *)dateString{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    //gyc 2014-12-3 gmt
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:timeZone];
+    
     [dateFormatter setDateFormat: @"yyyy-MM-dd"];// HH:mm:ss"];
     NSDate *destDate= [dateFormatter dateFromString:dateString];
     return destDate;
@@ -103,6 +108,11 @@ extern NSDate * calendarViewSelect;
 
 +(NSString *)stringFromDate:(NSDate *)date{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    //gyc 2014-12-3 gmt
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:timeZone];
+    
     //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];// HH:mm:ss zzz"];//
     
@@ -114,6 +124,10 @@ extern NSDate * calendarViewSelect;
 +(NSString *)fullstringFromDate:(NSDate *)date{
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //gyc 2014-12-3 gmt
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:timeZone];
+    
     //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];// HH:mm:ss zzz"];//
     
@@ -126,6 +140,10 @@ extern NSDate * calendarViewSelect;
 +(NSString *)headerStringFromDate:(NSDate *)date{
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //gyc 2014-12-3 gmt
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:timeZone];
+    
     //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息。
     [dateFormatter setDateFormat:@"MM月dd日"];// HH:mm:ss zzz"];//
     
@@ -186,7 +204,8 @@ extern NSDate * calendarViewSelect;
                 URLTYPE = @"monthsummary";
                 [paramas  setObject:URLTYPE forKey:@"urltype"];
                 
-                date = [self stringFromDate:[NSDate date]];
+            
+                date = [self stringFromDate:[futureObj objectForKey:@"date"]];
                 [paramas  setObject:date forKey:@"date"];
                 
                 NSString * time = [KFSBHelper getNowDate];
@@ -584,8 +603,8 @@ extern NSDate * calendarViewSelect;
  */
 -(NSString*)dayOfWeek{
     NSDateFormatter *fmtter =[[NSDateFormatter alloc] init] ;
-//    [fmtter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] ];
-//    [fmtter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    [fmtter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] ];
+    [fmtter setTimeZone:[NSTimeZone  timeZoneForSecondsFromGMT:0]];
     [fmtter setDateFormat:@"EEE"];
     return [fmtter stringFromDate:self];
 }

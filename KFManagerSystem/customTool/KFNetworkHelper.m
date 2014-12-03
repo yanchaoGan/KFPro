@@ -14,6 +14,14 @@
 
 +(void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(SuccessBlock)success fail:(FailBlock)fail andHUBString:(NSString *)hub{
 
+    if (DEBUG) {
+        
+        success(nil);
+        return;
+    }
+   
+    
+    
     [MBProgressHUD  hideHUD];
     [MBProgressHUD showMessage:hub toView:nil];
     

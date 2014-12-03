@@ -35,6 +35,12 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *comps = [gregorian components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit fromDate:self.currentMonth];
     [comps setDay:date];
+    
+    // gyc  add 中国区  2014-12-2
+    NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [gregorian setTimeZone:gmt];
+    // gyc
+    
     self.selectedDate = [gregorian dateFromComponents:comps];
     
     
