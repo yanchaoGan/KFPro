@@ -650,8 +650,8 @@
                             sureImageView.contentMode = UIViewContentModeScaleAspectFit;
                             planImageView.contentMode = UIViewContentModeScaleAspectFit;
                             planImageView.transform = CGAffineTransformMakeRotation(M_PI);
-                            sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
-                            planImageView.frame = (CGRect){targetX + floor(minWH/3*2) ,targetY,floor(minWH/3),floor(minWH/3)};
+                            sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/2),floor(minWH/2)};
+                            planImageView.frame = (CGRect){targetX +floor(minWH/2) ,targetY,floor(minWH/2),floor(minWH/2)};
                             
                             
                             [self addSubview:sureImageView];
@@ -662,7 +662,7 @@
                             
                             sureImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"k.png"]] autorelease];
                             sureImageView.contentMode = UIViewContentModeScaleAspectFit;
-                            sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/3),floor(minWH/3)};
+                            sureImageView.frame = (CGRect){targetX,targetY,floor(minWH/2),floor(minWH/2)};
                             [self addSubview:sureImageView];
                             
                         }
@@ -673,7 +673,7 @@
                             
                             planImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xin.png"]] autorelease];
                             planImageView.contentMode = UIViewContentModeScaleAspectFit;
-                            planImageView.frame = (CGRect){targetX ,targetY,floor(minWH/3),floor(minWH/3)};
+                            planImageView.frame = (CGRect){targetX ,targetY,floor(minWH/2),floor(minWH/2)};
                             [self addSubview:planImageView];
                             
                         }else{
