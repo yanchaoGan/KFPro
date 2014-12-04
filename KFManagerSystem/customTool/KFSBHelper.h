@@ -203,3 +203,11 @@ typedef enum {
 
 @end
 
+
+
+@interface UIButton (hotpoint)
+
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event;
+@end
+
