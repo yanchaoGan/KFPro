@@ -54,8 +54,6 @@
         }
         
         
-        
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideHUD];
         fail(error);
