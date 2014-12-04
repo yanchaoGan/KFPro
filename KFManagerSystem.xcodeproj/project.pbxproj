@@ -605,24 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				A07857E41A1B1CE100C3FF15 /* MainShow.storyboard */,
-				A07857E61A1B2A0B00C3FF15 /* KFMainShowViewController.h */,
-				A07857E71A1B2A0B00C3FF15 /* KFMainShowViewController.m */,
-				A07857E91A1B2A2F00C3FF15 /* KFRiLiViewController.h */,
-				A07857EA1A1B2A2F00C3FF15 /* KFRiLiViewController.m */,
-				A07857EC1A1B2A3B00C3FF15 /* KFListViewController.h */,
-				A07857ED1A1B2A3B00C3FF15 /* KFListViewController.m */,
-				A0965D611A1B763100341834 /* KFCalendarContainerView.h */,
-				A0965D621A1B763100341834 /* KFCalendarContainerView.m */,
-				A08B8EFC1A1C7291009E9057 /* KFCommonTableViewCell.h */,
-				A08B8EFD1A1C7291009E9057 /* KFCommonTableViewCell.m */,
-				A08B8EFF1A1C7415009E9057 /* PaiQiCell.xib */,
-				A02152571A1DA0CA007A1C40 /* Header.xib */,
-				A021524C1A1D98EE007A1C40 /* KFListTableViewCell.h */,
-				A021524D1A1D98EE007A1C40 /* KFListTableViewCell.m */,
-				A021524E1A1D98EE007A1C40 /* KFListTableViewCell.xib */,
-				A021525B1A1DB4E5007A1C40 /* KFReuseView.h */,
-				A021525C1A1DB4E5007A1C40 /* KFReuseView.m */,
-				A02152591A1DB0A4007A1C40 /* ReuesView.xib */,
+				A068AD271A3063F4004F3A03 /* coreOP */,
 				A06B18581A1F124700F617B5 /* Model */,
 				A02152431A1D8C19007A1C40 /* PersonCenter */,
 			);
@@ -644,6 +627,31 @@
 				A04E1A581A2EEF7E00508AB5 /* libPushSDK.a */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		A068AD271A3063F4004F3A03 /* coreOP */ = {
+			isa = PBXGroup;
+			children = (
+				A07857E61A1B2A0B00C3FF15 /* KFMainShowViewController.h */,
+				A07857E71A1B2A0B00C3FF15 /* KFMainShowViewController.m */,
+				A07857E91A1B2A2F00C3FF15 /* KFRiLiViewController.h */,
+				A07857EA1A1B2A2F00C3FF15 /* KFRiLiViewController.m */,
+				A07857EC1A1B2A3B00C3FF15 /* KFListViewController.h */,
+				A07857ED1A1B2A3B00C3FF15 /* KFListViewController.m */,
+				A0965D611A1B763100341834 /* KFCalendarContainerView.h */,
+				A0965D621A1B763100341834 /* KFCalendarContainerView.m */,
+				A08B8EFC1A1C7291009E9057 /* KFCommonTableViewCell.h */,
+				A08B8EFD1A1C7291009E9057 /* KFCommonTableViewCell.m */,
+				A08B8EFF1A1C7415009E9057 /* PaiQiCell.xib */,
+				A02152571A1DA0CA007A1C40 /* Header.xib */,
+				A021524C1A1D98EE007A1C40 /* KFListTableViewCell.h */,
+				A021524D1A1D98EE007A1C40 /* KFListTableViewCell.m */,
+				A021524E1A1D98EE007A1C40 /* KFListTableViewCell.xib */,
+				A021525B1A1DB4E5007A1C40 /* KFReuseView.h */,
+				A021525C1A1DB4E5007A1C40 /* KFReuseView.m */,
+				A02152591A1DB0A4007A1C40 /* ReuesView.xib */,
+			);
+			name = coreOP;
 			sourceTree = "<group>";
 		};
 		A06B18581A1F124700F617B5 /* Model */ = {
