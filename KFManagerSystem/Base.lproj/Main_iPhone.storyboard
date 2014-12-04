@@ -98,10 +98,10 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKQ-yv-T6x">
-                                        <rect key="frame" x="20" y="292" width="280" height="45"/>
+                                        <rect key="frame" x="25" y="292" width="269" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="04h-P8-xyP"/>
+                                            <constraint firstAttribute="width" constant="269" id="04h-P8-xyP"/>
                                             <constraint firstAttribute="height" constant="45" id="pt5-Dc-1kf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -118,7 +118,7 @@
                                     <constraint firstItem="kav-Tj-YrX" firstAttribute="top" secondItem="6ph-YR-3FZ" secondAttribute="top" constant="104" id="KVu-BC-H6V"/>
                                     <constraint firstAttribute="centerX" secondItem="kav-Tj-YrX" secondAttribute="centerX" id="Myu-ht-Hmv"/>
                                     <constraint firstItem="42H-us-sU2" firstAttribute="top" secondItem="kav-Tj-YrX" secondAttribute="bottom" constant="14" id="Rol-LP-NOF"/>
-                                    <constraint firstItem="kav-Tj-YrX" firstAttribute="leading" secondItem="EKQ-yv-T6x" secondAttribute="leading" id="t1A-Id-Cak"/>
+                                    <constraint firstItem="kav-Tj-YrX" firstAttribute="leading" secondItem="EKQ-yv-T6x" secondAttribute="leading" constant="-5" id="t1A-Id-Cak"/>
                                     <constraint firstItem="42H-us-sU2" firstAttribute="leading" secondItem="kav-Tj-YrX" secondAttribute="leading" id="zHU-U1-Tpv"/>
                                 </constraints>
                             </view>
