@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="GlJ-J8-cha">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="DW8-so-cya">
+            <objects>
+                <viewController id="GlJ-J8-cha" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BER-bl-ZE4"/>
+                        <viewControllerLayoutGuide type="bottom" id="GCS-FB-g1c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G6F-mF-Oic">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ribgIPAD.png" translatesAutoresizingMaskIntoConstraints="NO" id="OzX-zj-79A">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U70-Sg-KyM">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WP0-xf-dMu">
+                                        <rect key="frame" x="27" y="9" width="21" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="YYn-Np-Jle"/>
+                                            <constraint firstAttribute="width" constant="21" id="nF7-Vc-7Up"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="fhicoIPad.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手游开服排期系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-Pa-R2F">
+                                        <rect key="frame" x="428" y="11" width="169" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="169" id="0ZO-dB-ivG"/>
+                                            <constraint firstAttribute="height" constant="21" id="jLF-oZ-0vM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBv-jt-RbH">
+                                        <rect key="frame" x="868" y="9" width="22" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="SdA-dW-2Eu"/>
+                                            <constraint firstAttribute="height" constant="25" id="wPo-m5-qFN"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="renIPad.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="662-NQ-DYg">
+                                        <rect key="frame" x="971" y="8" width="27" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="27" id="GQn-cO-i0Z"/>
+                                            <constraint firstAttribute="height" constant="27" id="fVb-tP-5zD"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="ico3IPad.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O09-5Y-eIw">
+                                        <rect key="frame" x="919" y="12" width="27" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="27" id="BhR-m4-ZH9"/>
+                                            <constraint firstAttribute="height" constant="19" id="wDG-Bk-HIB"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="ico4IPad.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="O09-5Y-eIw" secondAttribute="centerY" constant="0.5" id="9BP-2y-Iz7"/>
+                                    <constraint firstAttribute="centerX" secondItem="662-NQ-DYg" secondAttribute="centerX" constant="-472.5" id="BUe-2e-oWr"/>
+                                    <constraint firstAttribute="centerX" secondItem="ASv-Pa-R2F" secondAttribute="centerX" constant="-0.5" id="DAE-DJ-WUI"/>
+                                    <constraint firstAttribute="height" constant="44" id="EwQ-ip-BrP"/>
+                                    <constraint firstAttribute="centerX" secondItem="O09-5Y-eIw" secondAttribute="centerX" constant="-420.5" id="IEU-9m-J5N"/>
+                                    <constraint firstAttribute="centerY" secondItem="662-NQ-DYg" secondAttribute="centerY" constant="0.5" id="NYH-ux-SVH"/>
+                                    <constraint firstAttribute="centerY" secondItem="NBv-jt-RbH" secondAttribute="centerY" constant="0.5" id="alT-MS-ctD"/>
+                                    <constraint firstAttribute="centerX" secondItem="WP0-xf-dMu" secondAttribute="centerX" constant="474.5" id="bAY-5S-mKq"/>
+                                    <constraint firstAttribute="centerY" secondItem="ASv-Pa-R2F" secondAttribute="centerY" constant="0.5" id="f8S-dX-Va3"/>
+                                    <constraint firstAttribute="centerX" secondItem="NBv-jt-RbH" secondAttribute="centerX" constant="-367" id="nzk-w4-1WI"/>
+                                    <constraint firstAttribute="centerY" secondItem="WP0-xf-dMu" secondAttribute="centerY" constant="0.5" id="r8H-wb-8Ly"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQk-kO-YQD">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AQk-kO-YQD" firstAttribute="top" secondItem="U70-Sg-KyM" secondAttribute="bottom" id="0mQ-mU-3Uo"/>
+                            <constraint firstAttribute="trailing" secondItem="U70-Sg-KyM" secondAttribute="trailing" id="1Aw-DO-pPh"/>
+                            <constraint firstAttribute="trailing" secondItem="AQk-kO-YQD" secondAttribute="trailing" id="O2a-a9-04b"/>
+                            <constraint firstItem="U70-Sg-KyM" firstAttribute="leading" secondItem="G6F-mF-Oic" secondAttribute="leading" id="Rkf-NS-gxS"/>
+                            <constraint firstItem="AQk-kO-YQD" firstAttribute="leading" secondItem="G6F-mF-Oic" secondAttribute="leading" id="cm3-JT-0EM"/>
+                            <constraint firstItem="GCS-FB-g1c" firstAttribute="top" secondItem="AQk-kO-YQD" secondAttribute="bottom" id="fbq-L7-Qv6"/>
+                            <constraint firstItem="U70-Sg-KyM" firstAttribute="top" secondItem="BER-bl-ZE4" secondAttribute="bottom" id="gsf-lH-UBB"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNm-s4-lDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="-118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fhicoIPad.png" width="42" height="48"/>
+        <image name="ico3IPad.png" width="54" height="54"/>
+        <image name="ico4IPad.png" width="55" height="38"/>
+        <image name="renIPad.png" width="45" height="51"/>
+        <image name="ribgIPAD.png" width="2048" height="1536"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

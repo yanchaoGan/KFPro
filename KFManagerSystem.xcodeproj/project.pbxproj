@@ -97,6 +97,11 @@
 		A06B18711A1F14B200F617B5 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18661A1F14B200F617B5 /* MJRefreshHeaderView.m */; };
 		A06B18731A1F14B200F617B5 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B186A1A1F14B200F617B5 /* UIScrollView+MJRefresh.m */; };
 		A076BD321A30542D00D372A6 /* MainShowIPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A076BD311A30542D00D372A6 /* MainShowIPad.storyboard */; };
+		A076BD341A3056B900D372A6 /* fhicoIPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A076BD331A3056B900D372A6 /* fhicoIPad.png */; };
+		A076BD361A30572200D372A6 /* ribgIPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A076BD351A30572200D372A6 /* ribgIPAD.png */; };
+		A076BD381A3057D600D372A6 /* renIPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A076BD371A3057D600D372A6 /* renIPad.png */; };
+		A076BD3A1A3058B800D372A6 /* ico4IPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A076BD391A3058B800D372A6 /* ico4IPad.png */; };
+		A076BD3C1A30593100D372A6 /* ico3IPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A076BD3B1A30593100D372A6 /* ico3IPad.png */; };
 		A07771D01A22C99800E4B983 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A07771CF1A22C99800E4B983 /* Base64.m */; };
 		A07771D31A23318300E4B983 /* k.png in Resources */ = {isa = PBXBuildFile; fileRef = A07771D11A23318300E4B983 /* k.png */; };
 		A07771D41A23318300E4B983 /* xin.png in Resources */ = {isa = PBXBuildFile; fileRef = A07771D21A23318300E4B983 /* xin.png */; };
@@ -263,6 +268,11 @@
 		A06B18691A1F14B200F617B5 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
 		A06B186A1A1F14B200F617B5 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		A076BD311A30542D00D372A6 /* MainShowIPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainShowIPad.storyboard; sourceTree = "<group>"; };
+		A076BD331A3056B900D372A6 /* fhicoIPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fhicoIPad.png; sourceTree = "<group>"; };
+		A076BD351A30572200D372A6 /* ribgIPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ribgIPAD.png; path = "../../../../项目需求/KFManagerSystem/2048_1536/ribgIPAD.png"; sourceTree = "<group>"; };
+		A076BD371A3057D600D372A6 /* renIPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = renIPad.png; sourceTree = "<group>"; };
+		A076BD391A3058B800D372A6 /* ico4IPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico4IPad.png; sourceTree = "<group>"; };
+		A076BD3B1A30593100D372A6 /* ico3IPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico3IPad.png; sourceTree = "<group>"; };
 		A07771CE1A22C99800E4B983 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		A07771CF1A22C99800E4B983 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		A07771D11A23318300E4B983 /* k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = k.png; sourceTree = "<group>"; };
@@ -380,7 +390,6 @@
 		A0134B2F1A19E2320089693C /* KFManagerSystem */ = {
 			isa = PBXGroup;
 			children = (
-				A076BD301A30541900D372A6 /* afterloginIPAD */,
 				A0134B381A19E2320089693C /* KFAppDelegate.h */,
 				A0134B391A19E2320089693C /* KFAppDelegate.m */,
 				A0134B611A19E2A40089693C /* KFBaseViewController.h */,
@@ -388,6 +397,7 @@
 				A0134B641A19E44B0089693C /* Login */,
 				A0134B3E1A19E2320089693C /* Main_iPad.storyboard */,
 				A03C25EC1A1B1BF7005A56B7 /* AfterLogin */,
+				A076BD301A30541900D372A6 /* afterloginIPAD */,
 				A0134B681A19E5CE0089693C /* 开服排期执行系统jpg */,
 				A03C25701A1AF157005A56B7 /* openThirdCode */,
 				A03C25D61A1AFB32005A56B7 /* customTool */,
@@ -440,6 +450,11 @@
 		A0134B681A19E5CE0089693C /* 开服排期执行系统jpg */ = {
 			isa = PBXGroup;
 			children = (
+				A076BD3B1A30593100D372A6 /* ico3IPad.png */,
+				A076BD391A3058B800D372A6 /* ico4IPad.png */,
+				A076BD371A3057D600D372A6 /* renIPad.png */,
+				A076BD351A30572200D372A6 /* ribgIPAD.png */,
+				A076BD331A3056B900D372A6 /* fhicoIPad.png */,
 				A0453FEF1A25E2EB005D99D4 /* yunpng.png */,
 				A021524A1A1D8D0D007A1C40 /* ico2.png */,
 				A02152411A1D8B8C007A1C40 /* txbg.png */,
@@ -802,6 +817,7 @@
 				A02152401A1D85FD007A1C40 /* fhico.png in Resources */,
 				A07857F01A1B2F7D00C3FF15 /* logo.png in Resources */,
 				A0134B451A19E2320089693C /* Images.xcassets in Resources */,
+				A076BD381A3057D600D372A6 /* renIPad.png in Resources */,
 				A07857FE1A1B33DF00C3FF15 /* lb2_b.png in Resources */,
 				A0134B731A19E5CE0089693C /* 日历显示.png in Resources */,
 				A03C25E71A1B1206005A56B7 /* btn_close_normal.png in Resources */,
@@ -818,9 +834,11 @@
 				A0453FF01A25E2EB005D99D4 /* yunpng.png in Resources */,
 				A07857E51A1B1CE100C3FF15 /* MainShow.storyboard in Resources */,
 				A08B8EF71A1C4B41009E9057 /* t3.png in Resources */,
+				A076BD341A3056B900D372A6 /* fhicoIPad.png in Resources */,
 				A0134B741A19E5CE0089693C /* 登录.png in Resources */,
 				A08B8EFA1A1C710A009E9057 /* xt1.png in Resources */,
 				A02152421A1D8B8C007A1C40 /* txbg.png in Resources */,
+				A076BD361A30572200D372A6 /* ribgIPAD.png in Resources */,
 				A0134B6F1A19E5CE0089693C /* Navbar@2x.png in Resources */,
 				A07771D31A23318300E4B983 /* k.png in Resources */,
 				A07857F61A1B33B600C3FF15 /* ico4.png in Resources */,
@@ -828,8 +846,10 @@
 				A07857F21A1B2FC800C3FF15 /* but1_a.png in Resources */,
 				A0134B761A1A02F20089693C /* inputBG.png in Resources */,
 				A08B8EFB1A1C710A009E9057 /* xt2.png in Resources */,
+				A076BD3A1A3058B800D372A6 /* ico4IPad.png in Resources */,
 				A0134B341A19E2320089693C /* InfoPlist.strings in Resources */,
 				A07857FD1A1B33DF00C3FF15 /* lb2_a.png in Resources */,
+				A076BD3C1A30593100D372A6 /* ico3IPad.png in Resources */,
 				A0134B701A19E5CE0089693C /* 个人中心.png in Resources */,
 				A08B8F001A1C7415009E9057 /* PaiQiCell.xib in Resources */,
 				A03C25E91A1B1206005A56B7 /* btn_close_selected.png in Resources */,
