@@ -29,7 +29,15 @@ extern NSDate * calendarViewSelect;
             return;
         };
         
-        storyBoardName = @"MainShow";
+        
+        if ([KFSBHelper  isIPhone]) {
+            storyBoardName = @"MainShow";
+        }else{
+            
+             storyBoardName = @"MainShowIPad";
+        }
+        
+       
     }
     if (login) {
         if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:NSClassFromString(@"KFLoginViewController")]) {
