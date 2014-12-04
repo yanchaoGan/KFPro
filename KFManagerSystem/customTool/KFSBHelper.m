@@ -444,7 +444,7 @@ extern NSDate * calendarViewSelect;
     BOOL early = NO;
     
     NSTimeInterval interval =  [now timeIntervalSinceDate:date];
-    if (fabs(interval) > (30 * 24 * 60 * 60)) {
+    if (fabs(interval) > (30 * 24 * 60 * 60 * 2)) {
         early = YES;
     }
     return early;

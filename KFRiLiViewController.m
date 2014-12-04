@@ -41,6 +41,8 @@
     
     
     self.riliListTable.tableHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"Header" owner:nil options:nil] lastObject];
+    
+    self.riliListTable.tableFooterView = [[UIView alloc] init];
 
 }
 

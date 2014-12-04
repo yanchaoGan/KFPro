@@ -155,7 +155,7 @@
     
     // gyc add 2014-12-2 当刷新日期超过现在 一个月就提示 返回
     if ([KFSBHelper  isAfterNowThanOneMonth:self.maxDateDay]) {
-        [KFSBHelper simpleAlertTitle:nil message:@"刷新最多可查看一个月的数据" cancel:@"ok"];
+        [KFSBHelper simpleAlertTitle:nil message:@"刷新最多可查看2个月的数据" cancel:@"ok"];
         [self.listTable  headerEndRefreshing];
         return;
     }
@@ -237,7 +237,7 @@
     
     // gyc add 2014-12-2 当刷新日期超过现在 一个月就提示 返回
     if ([KFSBHelper  isAfterNowThanOneMonth:self.minDateDay]) {
-        [KFSBHelper simpleAlertTitle:nil message:@"加载最多可查看一个月的数据" cancel:@"ok"];
+        [KFSBHelper simpleAlertTitle:nil message:@"加载最多可查看2个月的数据" cancel:@"ok"];
         [self.listTable  footerEndRefreshing];
         return;
     }
