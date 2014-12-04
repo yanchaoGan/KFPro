@@ -48,6 +48,7 @@
 		A02152581A1DA0CA007A1C40 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02152571A1DA0CA007A1C40 /* Header.xib */; };
 		A021525A1A1DB0A4007A1C40 /* ReuesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02152591A1DB0A4007A1C40 /* ReuesView.xib */; };
 		A021525D1A1DB4E5007A1C40 /* KFReuseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A021525C1A1DB4E5007A1C40 /* KFReuseView.m */; };
+		A02818A31A30518B00F8B221 /* MainShowIPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02818A21A30518B00F8B221 /* MainShowIPad.storyboard */; };
 		A03C25851A1AF3CA005A56B7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A03C25731A1AF3CA005A56B7 /* AFHTTPRequestOperation.m */; };
 		A03C25861A1AF3CA005A56B7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A03C25731A1AF3CA005A56B7 /* AFHTTPRequestOperation.m */; };
 		A03C25871A1AF3CA005A56B7 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A03C25751A1AF3CA005A56B7 /* AFHTTPRequestOperationManager.m */; };
@@ -201,6 +202,7 @@
 		A02152591A1DB0A4007A1C40 /* ReuesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReuesView.xib; sourceTree = SOURCE_ROOT; };
 		A021525B1A1DB4E5007A1C40 /* KFReuseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFReuseView.h; sourceTree = SOURCE_ROOT; };
 		A021525C1A1DB4E5007A1C40 /* KFReuseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFReuseView.m; sourceTree = SOURCE_ROOT; };
+		A02818A21A30518B00F8B221 /* MainShowIPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainShowIPad.storyboard; sourceTree = "<group>"; };
 		A03C25721A1AF3CA005A56B7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		A03C25731A1AF3CA005A56B7 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		A03C25741A1AF3CA005A56B7 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				A0134B641A19E44B0089693C /* Login */,
 				A0134B3E1A19E2320089693C /* Main_iPad.storyboard */,
 				A03C25EC1A1B1BF7005A56B7 /* AfterLogin */,
+				A02818A11A30513E00F8B221 /* afterLoginIPad */,
 				A0134B681A19E5CE0089693C /* 开服排期执行系统jpg */,
 				A03C25701A1AF157005A56B7 /* openThirdCode */,
 				A03C25D61A1AFB32005A56B7 /* customTool */,
@@ -503,6 +506,14 @@
 			);
 			name = PersonCenter;
 			path = ../../../../demo/demo/demo/PersonCenter;
+			sourceTree = "<group>";
+		};
+		A02818A11A30513E00F8B221 /* afterLoginIPad */ = {
+			isa = PBXGroup;
+			children = (
+				A02818A21A30518B00F8B221 /* MainShowIPad.storyboard */,
+			);
+			path = afterLoginIPad;
 			sourceTree = "<group>";
 		};
 		A03C25701A1AF157005A56B7 /* openThirdCode */ = {
@@ -798,6 +809,7 @@
 				A02152501A1D98EE007A1C40 /* KFListTableViewCell.xib in Resources */,
 				A04E1A671A2EF07600508AB5 /* PushConfig.plist in Resources */,
 				A0134B721A19E5CE0089693C /* 列表显示.png in Resources */,
+				A02818A31A30518B00F8B221 /* MainShowIPad.storyboard in Resources */,
 				A0134B711A19E5CE0089693C /* 修改密码-2.png in Resources */,
 				A021524B1A1D8D0D007A1C40 /* ico2.png in Resources */,
 				A02152581A1DA0CA007A1C40 /* Header.xib in Resources */,
