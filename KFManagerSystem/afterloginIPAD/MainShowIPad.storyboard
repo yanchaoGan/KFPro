@@ -92,12 +92,98 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQk-kO-YQD">
                                 <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2X-wB-fNP">
-                                        <rect key="frame" x="20" y="18" width="577" height="641"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2X-wB-fNP" customClass="KFCalendarContainerView">
+                                        <rect key="frame" x="20" y="18" width="574" height="642"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="574" id="6tN-q1-iez"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当日开服" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNa-CR-wlV">
+                                        <rect key="frame" x="742" y="18" width="128" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="94c-DA-bNP"/>
+                                            <constraint firstAttribute="height" constant="31" id="B8M-ia-YCV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.19607844948768616" blue="0.34117648005485535" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-Ol-OTw">
+                                        <rect key="frame" x="607" y="57" width="392" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11月12日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H94-RJ-PiX">
+                                                <rect key="frame" x="21" y="4" width="350" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="392" id="8nf-8A-22v"/>
+                                            <constraint firstItem="H94-RJ-PiX" firstAttribute="leading" secondItem="aMM-Ol-OTw" secondAttribute="leading" constant="21" id="Rrm-8E-VeL"/>
+                                            <constraint firstAttribute="trailing" secondItem="H94-RJ-PiX" secondAttribute="trailing" constant="21" id="Yvj-WN-tvz"/>
+                                            <constraint firstItem="H94-RJ-PiX" firstAttribute="top" secondItem="aMM-Ol-OTw" secondAttribute="top" constant="4" id="bRe-Pn-WsC"/>
+                                            <constraint firstAttribute="height" constant="44" id="e07-IW-LQD"/>
+                                            <constraint firstAttribute="bottom" secondItem="H94-RJ-PiX" secondAttribute="bottom" id="zRH-I7-ep1"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hM6-Jh-cIQ">
+                                        <rect key="frame" x="-4" y="20" width="96" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COl-qC-NLS">
+                                        <rect key="frame" x="79" y="48" width="63" height="86"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xd8-fq-EMO">
+                                        <rect key="frame" x="607" y="615" width="392" height="45"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gEl-73-Fjl">
+                                                <rect key="frame" x="69" y="11" width="14" height="10"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t2.png" translatesAutoresizingMaskIntoConstraints="NO" id="eub-mt-a3S">
+                                                <rect key="frame" x="184" y="11" width="7" height="10"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未开服" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXA-Hv-Ygi">
+                                                <rect key="frame" x="195" y="8" width="42" height="15"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t3.png" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-Kf-eG0">
+                                                <rect key="frame" x="279" y="10" width="7" height="10"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="计划开服" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-KY-ONM">
+                                                <rect key="frame" x="294" y="8" width="64" height="15"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="确定开服" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-Rl-LVX">
+                                                <rect key="frame" x="105" y="8" width="53" height="15"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tNa-CR-wlV" firstAttribute="top" secondItem="AQk-kO-YQD" secondAttribute="top" constant="18" id="1mr-zf-mTC"/>
+                                    <constraint firstAttribute="bottom" secondItem="N2X-wB-fNP" secondAttribute="bottom" constant="44" id="4i2-bM-jru"/>
+                                    <constraint firstAttribute="trailing" secondItem="aMM-Ol-OTw" secondAttribute="trailing" constant="25" id="985-l4-Z6V"/>
+                                    <constraint firstAttribute="trailing" secondItem="tNa-CR-wlV" secondAttribute="trailing" constant="154" id="E4U-Vz-2dM"/>
+                                    <constraint firstItem="N2X-wB-fNP" firstAttribute="leading" secondItem="AQk-kO-YQD" secondAttribute="leading" constant="20" id="EDu-jk-Qu7"/>
+                                    <constraint firstItem="N2X-wB-fNP" firstAttribute="top" secondItem="AQk-kO-YQD" secondAttribute="top" constant="18" id="Hkg-kX-8fi"/>
+                                    <constraint firstItem="aMM-Ol-OTw" firstAttribute="top" secondItem="tNa-CR-wlV" secondAttribute="bottom" constant="8" id="q2M-K7-nmV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -116,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNm-s4-lDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="-118"/>
+            <point key="canvasLocation" x="894" y="-116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7RO-GO-wGm">
@@ -143,6 +229,9 @@
         <image name="ico4IPad.png" width="55" height="38"/>
         <image name="renIPad.png" width="45" height="51"/>
         <image name="ribgIPAD.png" width="2048" height="1536"/>
+        <image name="t1.png" width="14" height="19"/>
+        <image name="t2.png" width="14" height="19"/>
+        <image name="t3.png" width="14" height="19"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

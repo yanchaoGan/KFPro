@@ -89,6 +89,9 @@
 		A04E1A631A2EEFF500508AB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04E1A621A2EEFF500508AB5 /* Security.framework */; };
 		A04E1A651A2EEFFC00508AB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A04E1A641A2EEFFC00508AB5 /* libz.dylib */; };
 		A04E1A671A2EF07600508AB5 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04E1A661A2EF07600508AB5 /* PushConfig.plist */; };
+		A068AD2B1A306ED7004F3A03 /* t1IPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A068AD281A306ED7004F3A03 /* t1IPad.png */; };
+		A068AD2C1A306ED7004F3A03 /* t2IPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A068AD291A306ED7004F3A03 /* t2IPad.png */; };
+		A068AD2D1A306ED7004F3A03 /* t3IPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A068AD2A1A306ED7004F3A03 /* t3IPad.png */; };
 		A06B185B1A1F127700F617B5 /* KFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B185A1A1F127700F617B5 /* KFUser.m */; };
 		A06B186D1A1F14B200F617B5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A06B185D1A1F14B200F617B5 /* MJRefresh.bundle */; };
 		A06B186E1A1F14B200F617B5 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18601A1F14B200F617B5 /* MJRefreshBaseView.m */; };
@@ -253,6 +256,9 @@
 		A04E1A621A2EEFF500508AB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A04E1A641A2EEFFC00508AB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A04E1A661A2EF07600508AB5 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
+		A068AD281A306ED7004F3A03 /* t1IPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t1IPad.png; sourceTree = "<group>"; };
+		A068AD291A306ED7004F3A03 /* t2IPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t2IPad.png; sourceTree = "<group>"; };
+		A068AD2A1A306ED7004F3A03 /* t3IPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t3IPad.png; sourceTree = "<group>"; };
 		A06B18591A1F127700F617B5 /* KFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFUser.h; sourceTree = "<group>"; };
 		A06B185A1A1F127700F617B5 /* KFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFUser.m; sourceTree = "<group>"; };
 		A06B185D1A1F14B200F617B5 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -450,6 +456,9 @@
 		A0134B681A19E5CE0089693C /* 开服排期执行系统jpg */ = {
 			isa = PBXGroup;
 			children = (
+				A068AD281A306ED7004F3A03 /* t1IPad.png */,
+				A068AD291A306ED7004F3A03 /* t2IPad.png */,
+				A068AD2A1A306ED7004F3A03 /* t3IPad.png */,
 				A076BD3B1A30593100D372A6 /* ico3IPad.png */,
 				A076BD391A3058B800D372A6 /* ico4IPad.png */,
 				A076BD371A3057D600D372A6 /* renIPad.png */,
@@ -815,6 +824,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08B8EF51A1C4B41009E9057 /* t1.png in Resources */,
+				A068AD2D1A306ED7004F3A03 /* t3IPad.png in Resources */,
 				A07771D41A23318300E4B983 /* xin.png in Resources */,
 				A0134B401A19E2320089693C /* Main_iPad.storyboard in Resources */,
 				A07857F51A1B33B600C3FF15 /* ico3.png in Resources */,
@@ -849,6 +859,8 @@
 				A076BD361A30572200D372A6 /* ribgIPAD.png in Resources */,
 				A0134B6F1A19E5CE0089693C /* Navbar@2x.png in Resources */,
 				A07771D31A23318300E4B983 /* k.png in Resources */,
+				A068AD2C1A306ED7004F3A03 /* t2IPad.png in Resources */,
+				A068AD2B1A306ED7004F3A03 /* t1IPad.png in Resources */,
 				A07857F61A1B33B600C3FF15 /* ico4.png in Resources */,
 				A0134B3D1A19E2320089693C /* Main_iPhone.storyboard in Resources */,
 				A07857F21A1B2FC800C3FF15 /* but1_a.png in Resources */,
