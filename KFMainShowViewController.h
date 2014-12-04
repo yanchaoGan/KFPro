@@ -27,4 +27,32 @@
  */
 @property (weak, nonatomic) IBOutlet UIView *owerVCView;
 
+
+
+
+
+
+
+
+/**
+ *  ************************************
+ *  ************************************
+ *  ************************************
+ */
+#pragma mark -  以下是 mainshowiPad sb 上的 拖拽
+
+
+@property (weak, nonatomic) IBOutlet KFCalendarContainerView *calendarVIewContainter;
+
+
+@property (weak, nonatomic) IBOutlet UITableView *riliListTable;
+
+@property(nonatomic,strong) NSMutableArray * OneDayArr;
+
+@property (weak, nonatomic) IBOutlet UILabel *riliheader;
+
+
+
+
+
 @end

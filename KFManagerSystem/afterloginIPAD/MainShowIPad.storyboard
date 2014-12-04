@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Show View Controller-->
         <scene sceneID="DW8-so-cya">
             <objects>
-                <viewController id="GlJ-J8-cha" sceneMemberID="viewController">
+                <viewController id="GlJ-J8-cha" customClass="KFMainShowViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BER-bl-ZE4"/>
                         <viewControllerLayoutGuide type="bottom" id="GCS-FB-g1c"/>
@@ -253,6 +253,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vrd-QB-3S2"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="calendarVIewContainter" destination="N2X-wB-fNP" id="zwU-n5-umG"/>
+                        <outlet property="riliListTable" destination="hM6-Jh-cIQ" id="GOe-e4-OKx"/>
+                        <outlet property="riliheader" destination="H94-RJ-PiX" id="47B-7n-DNu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNm-s4-lDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
