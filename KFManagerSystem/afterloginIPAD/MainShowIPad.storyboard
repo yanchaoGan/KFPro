@@ -139,9 +139,14 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xd8-fq-EMO">
                                         <rect key="frame" x="607" y="615" width="392" height="45"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gEl-73-Fjl">
-                                                <rect key="frame" x="69" y="11" width="14" height="10"/>
-                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-Rl-LVX">
+                                                <rect key="frame" x="105" y="8" width="53" height="15"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t2.png" translatesAutoresizingMaskIntoConstraints="NO" id="eub-mt-a3S">
                                                 <rect key="frame" x="184" y="11" width="7" height="10"/>
                                             </imageView>
@@ -162,14 +167,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="确定开服" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-Rl-LVX">
-                                                <rect key="frame" x="105" y="8" width="53" height="15"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t1IPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="gEl-73-Fjl">
+                                                <rect key="frame" x="78" y="11" width="10" height="13"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -229,7 +229,7 @@
         <image name="ico4IPad.png" width="55" height="38"/>
         <image name="renIPad.png" width="45" height="51"/>
         <image name="ribgIPAD.png" width="2048" height="1536"/>
-        <image name="t1.png" width="14" height="19"/>
+        <image name="t1IPad.png" width="21" height="26"/>
         <image name="t2.png" width="14" height="19"/>
         <image name="t3.png" width="14" height="19"/>
     </resources>

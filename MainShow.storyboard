@@ -663,7 +663,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.69019609689999994" blue="0.74509805439999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.41176474094390869" blue="0.5372549295425415" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="RKI-8c-Fvo" secondAttribute="centerY" id="2aa-YY-IUj"/>
                                     <constraint firstAttribute="centerX" secondItem="RKI-8c-Fvo" secondAttribute="centerX" constant="-37.5" id="59Z-Mg-68O"/>
@@ -800,7 +800,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.69019609689999994" blue="0.74509805439999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.41176474094390869" blue="0.5372549295425415" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="SHF-b0-rtA" secondAttribute="trailing" constant="47" id="4Be-dq-kvH"/>
                                     <constraint firstItem="jho-bZ-jy7" firstAttribute="centerY" secondItem="Jl7-sz-ksi" secondAttribute="centerY" id="4X0-co-MHM"/>
