@@ -96,6 +96,7 @@
 		A06B18701A1F14B200F617B5 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18641A1F14B200F617B5 /* MJRefreshFooterView.m */; };
 		A06B18711A1F14B200F617B5 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B18661A1F14B200F617B5 /* MJRefreshHeaderView.m */; };
 		A06B18731A1F14B200F617B5 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B186A1A1F14B200F617B5 /* UIScrollView+MJRefresh.m */; };
+		A076BD321A30542D00D372A6 /* MainShowIPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A076BD311A30542D00D372A6 /* MainShowIPad.storyboard */; };
 		A07771D01A22C99800E4B983 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A07771CF1A22C99800E4B983 /* Base64.m */; };
 		A07771D31A23318300E4B983 /* k.png in Resources */ = {isa = PBXBuildFile; fileRef = A07771D11A23318300E4B983 /* k.png */; };
 		A07771D41A23318300E4B983 /* xin.png in Resources */ = {isa = PBXBuildFile; fileRef = A07771D21A23318300E4B983 /* xin.png */; };
@@ -261,6 +262,7 @@
 		A06B18661A1F14B200F617B5 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
 		A06B18691A1F14B200F617B5 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
 		A06B186A1A1F14B200F617B5 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		A076BD311A30542D00D372A6 /* MainShowIPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainShowIPad.storyboard; sourceTree = "<group>"; };
 		A07771CE1A22C99800E4B983 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		A07771CF1A22C99800E4B983 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		A07771D11A23318300E4B983 /* k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = k.png; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		A0134B2F1A19E2320089693C /* KFManagerSystem */ = {
 			isa = PBXGroup;
 			children = (
+				A076BD301A30541900D372A6 /* afterloginIPAD */,
 				A0134B381A19E2320089693C /* KFAppDelegate.h */,
 				A0134B391A19E2320089693C /* KFAppDelegate.m */,
 				A0134B611A19E2A40089693C /* KFBaseViewController.h */,
@@ -660,6 +663,14 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
+		A076BD301A30541900D372A6 /* afterloginIPAD */ = {
+			isa = PBXGroup;
+			children = (
+				A076BD311A30542D00D372A6 /* MainShowIPad.storyboard */,
+			);
+			path = afterloginIPAD;
+			sourceTree = "<group>";
+		};
 		A07771CD1A22C99800E4B983 /* Base64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +809,7 @@
 				A02152501A1D98EE007A1C40 /* KFListTableViewCell.xib in Resources */,
 				A04E1A671A2EF07600508AB5 /* PushConfig.plist in Resources */,
 				A0134B721A19E5CE0089693C /* 列表显示.png in Resources */,
+				A076BD321A30542D00D372A6 /* MainShowIPad.storyboard in Resources */,
 				A0134B711A19E5CE0089693C /* 修改密码-2.png in Resources */,
 				A021524B1A1D8D0D007A1C40 /* ico2.png in Resources */,
 				A02152581A1DA0CA007A1C40 /* Header.xib in Resources */,
