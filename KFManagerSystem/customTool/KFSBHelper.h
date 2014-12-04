@@ -114,6 +114,13 @@ typedef enum url{
 
 
 
+
+
++(NSString *)getTags;
+
+
+
+
 /**
  *  存储数据
  *

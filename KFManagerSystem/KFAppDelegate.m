@@ -17,7 +17,7 @@
    
     
     // Required
-    #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
+   
         if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
             //categories
             [APService
@@ -31,26 +31,15 @@
              registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
                                                  UIRemoteNotificationTypeSound |
                                                  UIRemoteNotificationTypeAlert)
-    #else
              //categories nil
              categories:nil];
-            [APService
-             registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                 UIRemoteNotificationTypeSound |
-                                                 UIRemoteNotificationTypeAlert)
-    #endif
-             // Required
-             categories:nil];
-    
+  
         }
     [APService setupWithOption:launchOptions];
     
     return YES;
 }
--(void)rcode:(int)ircode  tags:(NSSet *)tags  ailas:(NSString *)alias{
 
-    NSLog(@" %d  \n %@ \n %@",ircode,tags,alias);
-}
 
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -87,12 +76,19 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Required
     [APService registerDeviceToken:deviceToken];
     
-     [APService setTags:[NSSet setWithObject:@"tag1"] alias:nil callbackSelector:@selector(rcode: tags: ailas:) object:self];
+    
+    NSString * tag1 = [KFSBHelper getTags];
+    
+     [APService setTags:[NSSet setWithObject:tag1] alias:nil callbackSelector:@selector(rcode: tags: ailas:) object:self];
 }
+
+
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // Required
     [APService handleRemoteNotification:userInfo];
+    
+    [self dealapp:application Message:userInfo];
 }
 
 - (void)application:(UIApplication *)application
@@ -101,9 +97,31 @@ fetchCompletionHandler:(void
                         (^)(UIBackgroundFetchResult))completionHandler {
     // IOS 7 Support Required
     [APService handleRemoteNotification:userInfo];
-    
     completionHandler(UIBackgroundFetchResultNewData);
+    
+    [self dealapp:application Message:userInfo];
 }
 
+
+
+
+-(void)rcode:(int)ircode  tags:(NSSet *)tags  ailas:(NSString *)alias{
+    
+    NSLog(@" %d  \n %@ \n %@",ircode,tags,alias);
+}
+
+-(void)dealapp:(UIApplication *)application Message:(NSDictionary *)userInfo{
+
+    // 收到得显示
+    application.applicationIconBadgeNumber = 0;
+    
+    NSDictionary * aps = [userInfo objectForKey:@"aps"];
+    
+    NSString * alert = [aps objectForKey:@"alert"];
+    
+    
+    [KFSBHelper  simpleAlertTitle:nil message:alert cancel:@"OK"];
+    
+}
 
 @end

@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KFManagerSystem/openThirdCode/Vurig Calendar/VRGCalendarView.m"
-            timestampString = "439298245.105295"
+            filePath = "KFPersonCenterViewController.m"
+            timestampString = "439353703.262836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
-            landmarkName = "-touchesBegan:withEvent:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFManagerSystem/openThirdCode/Vurig Calendar/VRGCalendarView.m"
-            timestampString = "439298266.93746"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "-touchesBegan:withEvent:"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-backBtnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>APS_Group</key>
+	<string>operate</string>
 	<key>APS_FOR_PRODUCTION</key>
 	<string>0</string>
 	<key>APP_KEY</key>
-	<string>0e8cacce64125b85f40f6734</string>
+	<string>c4f0328b8bcccfe38fd6d881</string>
 	<key>CHANNEL</key>
 	<string>HDKEJI</string>
 </dict>

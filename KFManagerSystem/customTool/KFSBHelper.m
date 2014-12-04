@@ -472,6 +472,18 @@ extern NSDate * calendarViewSelect;
 
 
 
++(NSString *)getTags{
+
+ 
+    NSString * filepath = [[NSBundle mainBundle] pathForResource:@"PushConfig" ofType:@"plist"];
+
+    NSDictionary * info = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    
+    NSString * tags = [info objectForKey:@"APS_Group"];
+    
+    return tags;
+}
+
 
 
 + (BOOL)saveAccount:(KFUser *)account
