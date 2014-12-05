@@ -333,27 +333,27 @@ extern NSDate * calendarViewSelect;
     
     if ([urltype  isEqualToString:@"login"]) {
         
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/login.do";
+        urlstring = @"http://paiqi.awo.cn/xml/login.do";
     
     }else if ([urltype isEqualToString:@"monthsummary"]){
     
-          urlstring = @"http://192.168.0.118:8080/GamePlan/xml/calendar.do";
+          urlstring = @"http://paiqi.awo.cn/xml/calendar.do";
     
     }else if ([urltype isEqualToString:@"onedaydetail"]){
         
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/day.do";
+        urlstring = @"http://paiqi.awo.cn/xml/day.do";
         
     }else if ([urltype isEqualToString:@"planList"]){
     
-        urlstring =@"http://192.168.0.118:8080/GamePlan/xml/week.do";
+        urlstring =@"http://paiqi.awo.cn/xml/week.do";
         
     }else if ([urltype isEqualToString:@"changepassword"]){
     
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/edit.do";
+        urlstring = @"http://paiqi.awo.cn/xml/edit.do";
         
     }else if ([urltype isEqualToString:@"changeuserphoto"]){
     
-        urlstring = @"http://192.168.0.118:8080/GamePlan/xml/edit.do";
+        urlstring = @"http://paiqi.awo.cn/xml/edit.do";
     }
     
     return urlstring;

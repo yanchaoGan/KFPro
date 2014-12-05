@@ -57,8 +57,8 @@
         NSString * lastrefrshtime   = @"1970-01-01 10:00:00";
         NSString * lastloadmoretime = @"1970-01-01 10:00:00";
         
-        NSString *  clientshowmaxday = @"1970-01-01";
-        NSString * clientshowminday = @"1970-01-01";
+        NSString *  clientshowmaxday = @"-1";
+        NSString * clientshowminday = @"-1";
         
         NSMutableDictionary * MP = [KFSBHelper getParamaByUrlType:urltypeplanlist andOtherParamas:@{@"date":date,@"lastrefrshtime":lastrefrshtime,@"lastloadmoretime":lastloadmoretime,@"clientshowmaxday":clientshowmaxday,@"clientshowminday":clientshowminday,@"refreshdirection":@"normal"}];
         
@@ -145,12 +145,12 @@
     
     NSString * CMD = self.maxDateDay; //gyc change 2014-12-2 [[self.ListSouceArr firstObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CMD]) {
-        CMD = @"1970-01-01";
+        CMD = @"-1";
     }
     
     NSString * CminD = self.minDateDay;//gyc change 2014-12-2 [[self.ListSouceArr lastObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CminD]) {
-        CminD = @"1970-01-01";
+        CminD = @"-1";
     }
     
     // gyc add 2014-12-2 当刷新日期超过现在 一个月就提示 返回
@@ -226,12 +226,12 @@
     
     NSString * CMD = self.maxDateDay; //gyc change 2014-12-2 [[self.ListSouceArr firstObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CMD]) {
-        CMD = @"1970-01-01";
+        CMD = @"-1";
     }
     
     NSString * CminD = self.minDateDay; //gyc change 2014-12-2  [[self.ListSouceArr lastObject] objectForKey:@"date"];
     if (![KFSBHelper isNotEmptyStringOfObj:CminD]) {
-        CminD = @"1970-01-01";
+        CminD = @"-1";
     }
     
     
@@ -330,33 +330,64 @@
     
     
     // gyc add 2014-12-2 在这里记录下 最大最小时间
+    // gyc add 修改记录编号的最大和最小  change 2014-12-5
     if (!self.maxDateDay) {
-        self.maxDateDay = @"1970-11-11";
+        self.maxDateDay = @"-1";
     }
-    NSString * maxDay = [[ListSouceArr firstObject] objectForKey:@"date"];
-    int early = [maxDay isEarlyThanOtherDateString:self.maxDateDay];
-    if (early == 0) {
-    }else if (early == 1){
-    }else{
-        self.maxDateDay = maxDay;
+    
+    // 获取最大的 maxdateday
+    for (NSDictionary * result  in ListSouceArr) {
+        
+        for (NSDictionary * infoTem in result[@"info"]) {
+            
+            if (  [infoTem[@"appid"] intValue] >  [self.maxDateDay integerValue] ) {
+              
+                self.maxDateDay = infoTem[@"appid"];
+            }
+        }
     }
+   
+    
+    
+//    NSString * maxDay = [[ListSouceArr firstObject] objectForKey:@"date"];
+//    int early = [maxDay isEarlyThanOtherDateString:self.maxDateDay];
+//    if (early == 0) {
+//    }else if (early == 1){
+//    }else{
+//        self.maxDateDay = maxDay;
+//    }
     
     
     if (!self.minDateDay) {
-        self.minDateDay = @"1970-01-01";
+        self.minDateDay = [NSString stringWithFormat:@"%d",INT32_MIN];
     }
-    static dispatch_once_t once;
-    dispatch_once(&once,^{
-        self.minDateDay = [[ListSouceArr lastObject] objectForKey:@"date"];
-    });
+    // 获取最小的 maxdateday
+    for (NSDictionary * result  in ListSouceArr) {
+        
+        for (NSDictionary * infoTem in result[@"info"]) {
+            
+            if (  [infoTem[@"appid"] intValue] <  [self.maxDateDay integerValue] ) {
+                
+                self.minDateDay = infoTem[@"appid"];
+            }
+        }
+    }
+
     
-    NSString * minday = [[ListSouceArr lastObject] objectForKey:@"date"];
-    int early1 = [minday isEarlyThanOtherDateString:self.minDateDay];
-    if (early1 == 0) {
-    }else if (early1 == 1){
-        self.minDateDay = minday;
-    }else{
-    }
+    
+    //
+//    static dispatch_once_t once;
+//    dispatch_once(&once,^{
+//        self.minDateDay = [[ListSouceArr lastObject] objectForKey:@"date"];
+//    });
+//    
+//    NSString * minday = [[ListSouceArr lastObject] objectForKey:@"date"];
+//    int early1 = [minday isEarlyThanOtherDateString:self.minDateDay];
+//    if (early1 == 0) {
+//    }else if (early1 == 1){
+//        self.minDateDay = minday;
+//    }else{
+//    }
 
    
     //end add
@@ -417,7 +448,7 @@
     static dispatch_once_t once;
     dispatch_once(&once,^{
     
-        int row = [self.listTable numberOfRowsInSection:0];
+        int row = (int)[self.listTable numberOfRowsInSection:0];
         if (row) {
             NSIndexPath * index  = [NSIndexPath indexPathForRow:ceil(row/2) inSection:0];
             [self.listTable  scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:YES];
