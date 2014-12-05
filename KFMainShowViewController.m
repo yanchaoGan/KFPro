@@ -10,7 +10,7 @@
 #import "KFRiLiViewController.h"
 #import "KFListViewController.h"
 
-@interface KFMainShowViewController ()<VRGCalendarViewDelegate>{
+@interface KFMainShowViewController ()<VRGCalendarViewDelegate,UITableViewDataSource,UITableViewDelegate>{
 
     KFRiLiViewController * _RILI;
     
@@ -255,6 +255,45 @@
     
 }
 
+#pragma mark - tableView
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.OneDayArr.count;
+}
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    KFCommonTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"rililist"];
+    if (!cell) {
+        NSArray * cells = [[NSBundle mainBundle] loadNibNamed:@"PaiQiCell" owner:nil options:nil];
+        
+        for (KFCommonTableViewCell * tcell in cells) {
+            
+            if ([tcell.reuseIdentifier  isEqualToString:@"rililist"]) {
+                
+                cell = tcell;
+                break;
+            }
+        }
+        
+    }
+    
+    [cell reDisplayUseData:self.OneDayArr[indexPath.row] byReuseIdentifier:@"rililist"];
+    
+    return cell;
+}
+
+
+
+- (IBAction)iPadUIMainShowBtnClick:(id)sender {
+    
+    if (sender == self.personBtn) {
+     
+        
+    }
+    
+    
+}
 
 @end

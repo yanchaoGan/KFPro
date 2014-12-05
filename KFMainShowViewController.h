@@ -53,6 +53,13 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *personBtn;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *talkBtn;
+
 
 
 @end

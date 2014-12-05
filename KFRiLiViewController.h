@@ -19,10 +19,13 @@ extern NSDate * calendarViewSelect;
 
 
 
+
 #pragma mark - 日历list 需要
 @property (weak, nonatomic) IBOutlet UITableView *riliListTable;
-
-
 @property(nonatomic,strong) NSMutableArray * OneDayArr;
+
+
+
+
 
 @end

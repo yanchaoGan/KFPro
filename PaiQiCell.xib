@@ -14,13 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IFT-4F-axG">
-                        <rect key="frame" x="7" y="10" width="35" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="35" id="PGt-vc-WGe"/>
-                            <constraint firstAttribute="height" constant="24" id="oDw-lz-jyG"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="115" placeholderIntrinsicHeight="43" text="小小莫搜－细想打发－2去" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="115" translatesAutoresizingMaskIntoConstraints="NO" id="tnd-mO-xEG">
                         <rect key="frame" x="50" y="0.0" width="115" height="43"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -48,11 +41,18 @@
                             <constraint firstAttribute="width" constant="18" id="mxK-Mz-4Un"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IFT-4F-axG">
+                        <rect key="frame" x="8" y="5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="PGt-vc-WGe"/>
+                            <constraint firstAttribute="height" constant="35" id="oDw-lz-jyG"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="centerX" secondItem="IFT-4F-axG" secondAttribute="centerX" constant="125.5" id="9bU-Ij-b6Z"/>
+                    <constraint firstAttribute="centerX" secondItem="IFT-4F-axG" secondAttribute="centerX" constant="124.5" id="9bU-Ij-b6Z"/>
                     <constraint firstAttribute="centerX" secondItem="tnd-mO-xEG" secondAttribute="centerX" constant="42.5" id="Mgg-Jc-Ys3"/>
                     <constraint firstAttribute="centerY" secondItem="YzL-9b-Ff6" secondAttribute="centerY" id="NBH-MY-ASU"/>
                     <constraint firstAttribute="centerY" secondItem="tnd-mO-xEG" secondAttribute="centerY" id="Qfa-P9-vt8"/>
@@ -74,6 +74,7 @@
                 <outlet property="appTypeIosXAligConstraint" destination="cjO-2S-PFq" id="WEa-dO-PZZ"/>
                 <outlet property="appdescrble" destination="tnd-mO-xEG" id="Dzg-LX-sJg"/>
             </connections>
+            <point key="canvasLocation" x="140" y="153"/>
         </tableViewCell>
     </objects>
     <resources>

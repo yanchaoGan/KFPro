@@ -52,16 +52,9 @@
                                         <state key="normal" backgroundImage="renIPad.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="662-NQ-DYg">
-                                        <rect key="frame" x="971" y="8" width="27" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="27" id="GQn-cO-i0Z"/>
-                                            <constraint firstAttribute="height" constant="27" id="fVb-tP-5zD"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="ico3IPad.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="iPadUIMainShowBtnClick:" destination="GlJ-J8-cha" eventType="touchUpInside" id="Ncg-TH-pSt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O09-5Y-eIw">
                                         <rect key="frame" x="919" y="12" width="27" height="19"/>
@@ -70,6 +63,16 @@
                                             <constraint firstAttribute="height" constant="19" id="wDG-Bk-HIB"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="ico4IPad.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="662-NQ-DYg">
+                                        <rect key="frame" x="971" y="8" width="27" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="27" id="GQn-cO-i0Z"/>
+                                            <constraint firstAttribute="height" constant="27" id="fVb-tP-5zD"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="ico3IPad.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -136,6 +139,10 @@
                                             <constraint firstAttribute="width" constant="387" id="D9X-6c-Lvh"/>
                                             <constraint firstAttribute="height" constant="504" id="wml-F9-eAY"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="GlJ-J8-cha" id="rKJ-Bk-s0f"/>
+                                            <outlet property="delegate" destination="GlJ-J8-cha" id="7dS-7r-m6e"/>
+                                        </connections>
                                     </tableView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="COl-qC-NLS">
                                         <rect key="frame" x="610" y="613" width="387" height="1"/>
@@ -254,9 +261,12 @@
                     <navigationItem key="navigationItem" id="Vrd-QB-3S2"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="backBtn" destination="WP0-xf-dMu" id="PsH-wV-gvV"/>
                         <outlet property="calendarVIewContainter" destination="N2X-wB-fNP" id="zwU-n5-umG"/>
+                        <outlet property="personBtn" destination="NBv-jt-RbH" id="4bc-vS-k6K"/>
                         <outlet property="riliListTable" destination="hM6-Jh-cIQ" id="GOe-e4-OKx"/>
                         <outlet property="riliheader" destination="H94-RJ-PiX" id="47B-7n-DNu"/>
+                        <outlet property="talkBtn" destination="O09-5Y-eIw" id="OoZ-TZ-O2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNm-s4-lDM" userLabel="First Responder" sceneMemberID="firstResponder"/>

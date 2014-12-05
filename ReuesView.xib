@@ -11,13 +11,6 @@
             <rect key="frame" x="0.0" y="0.0" width="245" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YAQ-71-zoD">
-                    <rect key="frame" x="12" y="10" width="35" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="MXM-gH-jxB"/>
-                        <constraint firstAttribute="width" constant="35" id="ca9-Vr-HcX"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="56" placeholderIntrinsicHeight="43" text="[10:10}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfX-Y0-Jrn">
                     <rect key="frame" x="142" y="0.0" width="56" height="43"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -57,6 +50,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YAQ-71-zoD">
+                    <rect key="frame" x="12" y="4" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="MXM-gH-jxB"/>
+                        <constraint firstAttribute="width" constant="35" id="ca9-Vr-HcX"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -71,7 +71,7 @@
                 <constraint firstItem="YAQ-71-zoD" firstAttribute="leading" secondItem="dxl-yB-5y9" secondAttribute="leading" id="nuz-il-8rb"/>
                 <constraint firstAttribute="centerX" secondItem="xfX-Y0-Jrn" secondAttribute="centerX" constant="-47.5" id="pOK-md-WiH"/>
                 <constraint firstAttribute="bottom" secondItem="dxl-yB-5y9" secondAttribute="bottom" constant="1" id="pig-D2-5HE"/>
-                <constraint firstItem="YAQ-71-zoD" firstAttribute="top" secondItem="63A-Ub-2Ss" secondAttribute="top" constant="10" id="tGy-yV-nN6"/>
+                <constraint firstItem="YAQ-71-zoD" firstAttribute="top" secondItem="63A-Ub-2Ss" secondAttribute="top" constant="4" id="tGy-yV-nN6"/>
                 <constraint firstAttribute="trailing" secondItem="dxl-yB-5y9" secondAttribute="trailing" constant="10" id="yVh-bw-aag"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
